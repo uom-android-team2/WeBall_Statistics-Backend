@@ -1,4 +1,6 @@
 <?php
+    // Todo:  to complete this file 
+    // this file is an expiriemnt
     require_once "config.php";
 
     // select correct database
