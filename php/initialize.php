@@ -32,6 +32,16 @@ if($mysqli->query($sql) === true){
     echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
 }
 
+// prepare statment for creating the championship database
+$sql = "CREATE DATABASE IF NOT EXISTS championship";
+
+// execute statment
+
+if($mysqli->query($sql) === true){
+    // do nothing
+}else{
+    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+}
 
 // Close connection
 $mysqli->close();
