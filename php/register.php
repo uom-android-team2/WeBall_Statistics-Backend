@@ -3,8 +3,8 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$username = $password = $confirm_password = $secret =  "";
+$username_err = $password_err = $confirm_password_err = $secret_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -63,8 +63,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     
+    if(empty($_POST["secret"]) || $_POST["secret"] !== "uom-android-team2"){
+        $secret_err = "Please provide a correct admin secret to create an account";
+    }else{
+        $secret = $_POST["secret"];
+    }
+
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($secret_err)){
         
         // Prepare an insert statement
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
@@ -125,6 +131,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label>Provide admin secret</label>
+                <input type="text" name="secret" class="form-control <?php echo (!empty($secret_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $secret; ?>">
+                <span class="invalid-feedback"><?php echo $secret_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
