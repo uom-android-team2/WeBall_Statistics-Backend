@@ -145,6 +145,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <label>Provide admin secret</label>
                     <input type="text" name="secret" class="form-control <?php echo (!empty($secret_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $secret; ?>">
                     <span class="invalid-feedback"><?php echo $secret_err; ?></span>
+                    <p class="text-success" style ="font-weight: bold;">the secret for now is: uom-android-team2</p>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">

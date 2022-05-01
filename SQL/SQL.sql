@@ -14,20 +14,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `admins`
 --
-CREATE DATABASE IF NOT EXISTS `admins` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `admins`;
+-- CREATE DATABASE IF NOT EXISTS `admins` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- USE `admins`;
 
--- --------------------------------------------------------
+-- -- --------------------------------------------------------
 
---
--- Table structure : `admin`
---
+-- --
+-- -- Table structure : `admin`
+-- --
 
-CREATE TABLE admins.`admin`(
-  `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `username` varchar(32) NOT NULL, 
-  `password` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE admins.`admin`(
+--   `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+--   `username` varchar(32) NOT NULL, 
+--   `password` varchar(32) NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Database: `championship`
