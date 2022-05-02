@@ -25,7 +25,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to WeBall-Statistics admin dashboard.</h1>
     <p>
         <a href="#" class="btn btn-success">Δημιουργία Ομάδων</a>
-        <a href="#" class="btn btn-success">Δημιουργία παικτών </a>
+        <a href="create-player-page.php" class="btn btn-success">Δημιουργία παικτών </a>
         <a href="#" class="btn btn-success">Δημιουργία Πρωταθλήματος</a>
         <a href="#" class="btn btn-success">Κλήρωση Πρωταθλήματος</a>
         <br>
