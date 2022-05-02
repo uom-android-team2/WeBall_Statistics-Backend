@@ -11,11 +11,15 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
-      #header {
+      #container {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
+        padding: 1rem 1rem 0.5rem 1rem;
+      }
+      #teams-message {
+          color: red;
+          text-align: center;
       }
       #title {
         text-align: center;
@@ -38,6 +42,20 @@
         padding: 1rem; 
         margin: 1rem 1rem 0 1rem;
       }
+      /*Should remove this classes when teams are availabe*/
+      .select-no-teams {
+          border: 2px solid red;
+      }
+      .btn-disabled {
+        opacity: 0.5;
+        pointer-events: none;;
+      }
+      /*---------------------------------------*/
+      /*add this class when teams are available*/
+      .message-hidden {
+          opacity: 0;
+          font-size: 0px;
+      }
     </style>
     <script 
         defer 
@@ -47,69 +65,72 @@
     </script>
   </head>
   <body>
-    <header id="header">
-      <a id="back" href="index.php" class="btn btn-info">Back</a>
-      <h1 id="title">Add new player to the championship</h1>
+    <header>
+        <div id="container">
+            <a id="back" href="index.php" class="btn btn-info">Back</a>
+            <h1 id="title">Add new player to the championship</h1>
+        </div>
+        <h5 id="teams-message">No teams available to add players</h5> <!-- class="message-hidden" -->
     </header>
     <section>
       <form action="" class="table-responsive">
         <table class="table">
             <thead>
                 <tr class="table-active">
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Surname</th>
-                <th scope="col">Number</th>
-                <th scope="col">Position</th>
-                <th scope="col">Team</th>
-                <th scope="col">Photo</th>
-                <th scope="col">Submit</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Submit</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <th scope="row">1</th>
-                <td>
-                    <input type="text" name="playerName" placeholder="Enter name..." />
-                </td>
-                <td>
-                    <input type="text" name="playerSurname" placeholder="Enter surname..." />
-                </td>
-                <td>
-                    <input type="number" name="playerNumber" min="0"/>
-                </td>
-                <td>
-                    <select name="positions" class="select-form">
-                        <option value="select">Select Position</option>
-                        <option value="Point guard">Point guard</option>
-                        <option value="Shooting guard">Shooting guard</option>
-                        <option value="Small forward">Small forward</option>
-                        <option value="Power forward">Power forward</option>
-                        <option value="Center">Center</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="teams" class="select-form">
-                        <option value="select">Select Team</option>
-                        <?php 
-                        //code to fill the select for the team from db
-                            //foreach($release as $i => $r){
-                                //echo"<option value = '$r->title' > $r->title ($r->release_year) </option>";
-                            //}
-                        ?>
-                    </select>
-                </td>
-                <td>
-                    <input type="file" name="playerPhoto" id="badge" />
+                    <th scope="row">1</th>
+                    <td>
+                        <input type="text" name="playerName" placeholder="Enter name..." />
                     </td>
-                <td>
-                    <input
-                    class="btn btn-primary"
-                    type="submit"
-                    name="submit"
-                    value="Submit"
-                    />
-                </td>
+                    <td>
+                        <input type="text" name="playerSurname" placeholder="Enter surname..." />
+                    </td>
+                    <td>
+                        <input type="number" name="playerNumber" min="0"/>
+                    </td>
+                    <td>
+                        <select name="positions" class="select-form">
+                            <option value="select">Select Position</option>
+                            <option value="Point guard">Point guard</option>
+                            <option value="Shooting guard">Shooting guard</option>
+                            <option value="Small forward">Small forward</option>
+                            <option value="Power forward">Power forward</option>
+                            <option value="Center">Center</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="teams" class="select-form select-no-teams">
+                            <option value="select">Select Team</option>
+                            <?php 
+                            //code to fill the select for the team from db
+                                //foreach($release as $i => $r){
+                                    //echo"<option value = '$r->title' > $r->title ($r->release_year) </option>";
+                                //}
+                            ?>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="file" name="playerPhoto" id="badge" />
+                        </td>
+                    <td>
+                        <input
+                        class="btn btn-primary btn-disabled"
+                        type="submit"
+                        name="submit"
+                        value="Submit"
+                        />
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -152,11 +173,11 @@
                     <td>Point guard</td>
                     <td><b>New York Knicks</b></td>
                     <td>
-                    <img
-                        class="img"
-                        src="../resources/player_images/derrick-rose.png"
-                        alt="image"
-                    />
+                        <img
+                            class="img"
+                            src="../resources/player_images/derrick-rose.png"
+                            alt="image"
+                        />
                     </td>
                 </tr>
             </tbody>
