@@ -36,12 +36,29 @@ if($mysqli->query($sql) === true){
 $sql = "CREATE DATABASE IF NOT EXISTS championship";
 
 // execute statment
-
 if($mysqli->query($sql) === true){
     // do nothing
 }else{
     echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
 }
+
+$mysqli->select_db("championship");
+
+$sql = "CREATE TABLE IF NOT EXISTS championship.`team`(
+    `id` int(12) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name`  VARCHAR(32) NOT NULL UNIQUE,
+    `city`varchar(32) NOT NULL,
+    `badge` VARCHAR(255) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  ";
+
+// execute statment
+if($mysqli->query($sql) === true){
+    // do nothing
+}else{
+    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+}
+
 
 // Close connection
 $mysqli->close();

@@ -1,5 +1,74 @@
 <?php
+  // Initialize the session
+  session_start();
+  
+  // Check if the user is logged in, if not then redirect him to the login page
+  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+      header("location: login.php");
+      exit;
+  }
 
+  require_once "config.php";
+  $mysqli->select_db("championship");
+
+  $name  = $city = "";
+  $name_err = $city_err = "";
+  $file_err = "";
+
+
+  $filename = "";
+	$tempname = "";	
+	$folder = "../resources/team_images/";
+
+  $no_teams_text = "";
+
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["name"])){
+      $name_err = "Name is required";
+    }else{
+      $name = $_POST["name"];
+    }
+
+    if(empty($_POST["city"])){
+      $city_err = "City is required";
+    }else{
+      $city = $_POST["city"];
+    }
+
+    if(empty($_FILES["badge"]["name"])){
+      $file_err = "File is required";
+    }else{
+      $filename = $_FILES["badge"]["name"];
+    }
+
+    
+    if(empty($tempname = $_FILES["badge"]["tmp_name"])){
+      $file_err = "File is required";
+    }else{
+      $tempname = $_FILES["badge"]["tmp_name"];	
+    }
+
+    if(empty($name_err) && empty($city_err) && empty($file_err)){
+      // Attempt insert query execution
+      $sql = "INSERT INTO team (name, city, badge) VALUES ('$name', '$city', '$filename')";
+        
+      try {
+          $mysqli->query($sql);
+        
+          // Now let's move the uploaded image into the folder: image
+          if (move_uploaded_file($tempname, $folder.$filename)) {
+          
+          }else{
+            echo "ERROR: Could not able to store the image";
+          }
+
+      } catch (\Throwable $th) {
+        if($mysqli->errno == 1062){
+          $name_err = "* Error: Team ".$name." already exists";
+        }
+      }
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +106,7 @@
       <h1 id="title">Create a team for the championship</h1>
     </Header>
     <section>
-      <form action="" class="table-responsive">
+      <form enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="table-responsive">
         <table class="table">
           <thead>
             <tr class="table-active">
@@ -52,12 +121,12 @@
             <tr>
               <th scope="row">1</th>
               <td>
-                <input type="text" name="teamName" placeholder="Enter a name" />
+                <input type="text" name="name" placeholder="Enter a name" required />
               </td>
               <td>
-                <input type="text" name="city" placeholder="Enter a city" />
+                <input type="text" name="city" placeholder="Enter a city" required />
               </td>
-              <td><input type="file" name="badge" id="badge" /></td>
+              <td><input type="file" name="badge" id="badge" required /></td>
               <td>
                 <input
                   class="btn btn-primary"
@@ -72,6 +141,7 @@
       </form>
     </section>
     <hr />
+    <h2 style="text-align: center;" class="text-danger"><?php echo $name_err ?></h2>
     <section class="table-responsive" id="database">
       <h2 style="padding: 1rem; margin: 1rem">Teams in the database</h2>
       <table class="table">
@@ -85,21 +155,36 @@
           </tr>
         </thead>
         <tbody class="table-info">
-          <tr>
-            <th scope="row">1</th>
-            <td>1</td>
-            <td>Σικαγο Μπουλς</td>
-            <td>Σικαγο</td>
-            <td>
-              <img
-                class="img"
-                src="../resources/team_images/bulls.png"
-                alt="image"
-              />
-            </td>
-          </tr>
+          <?php
+              $sql = "SELECT * FROM team";
+              if($result = $mysqli->query($sql)){
+                  while($row = $result->fetch_array()){
+                    echo "<tr>";
+                      echo "<th scope='row'>1</th>";
+                      echo "<td>$row[id]</td>";
+                      echo "<td>$row[name]</td>";
+                      echo "<td>$row[city]</td>";
+                      echo "<td>";
+                        echo "<img
+                          class='img'
+                          src='$folder/$row[badge]'
+                          alt='image'
+                        />";
+                      echo "</td>";
+                    echo "</tr>";
+                  }
+                  if($result->num_rows < 1){
+                    $no_teams_text = "There are no teams in the database";
+                  }
+                  $result->free();
+                
+            } else{
+              echo "<h3> Error retrieving data from databse</h3>";
+            }
+          ?>
         </tbody>
       </table>
+      <h3 class="text-danger" style="text-align: center;"><?php echo $no_teams_text; ?></h3>
     </section>
   </body>
 </html>
