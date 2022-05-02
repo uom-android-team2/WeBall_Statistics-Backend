@@ -40,6 +40,7 @@
             <tr class="table-active">
               <th scope="col">#</th>
               <th scope="col">Name</th>
+              <th scope="col">Surname</th>
               <th scope="col">Number</th>
               <th scope="col">Position</th>
               <th scope="col">Team</th>
@@ -51,12 +52,23 @@
             <tr>
               <th scope="row">1</th>
               <td>
-                <input type="text" name="teamName" placeholder="Enter a name" />
+                <input type="text" name="playerName" placeholder="Enter name..." />
               </td>
               <td>
-                <input type="text" name="city" placeholder="Enter a city" />
+                <input type="text" name="playerSurname" placeholder="Enter surname..." />
               </td>
-              <td><input type="file" name="badge" id="badge" /></td>
+              <td>
+                <input type="number" name="playerNumber" min="0"/>
+            </td>
+              <td>
+                <input type="text" name="playerPosition" placeholder="Enter position" />
+              </td>
+              <td>
+                <input type="text" name="playerTeam" placeholder="Enter team" />
+              </td>
+              <td>
+                  <input type="file" name="playerPhoto" id="badge" />
+                </td>
               <td>
                 <input
                   class="btn btn-primary"
@@ -72,27 +84,33 @@
     </section>
     <hr />
     <section class="table-responsive" id="database">
-      <h2 style="padding: 1rem; margin: 1rem">Teams in the database</h2>
+      <h2 style="padding: 1rem; margin: 1rem">Players in the database</h2>
       <table class="table">
         <thead>
           <tr class="table-active">
             <th scope="col">#</th>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
-            <th scope="col">City</th>
-            <th scope="col">Badge</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Number</th>
+            <th scope="col">Position</th>
+            <th scope="col">Team</th>
+            <th scope="col">Photo</th>
           </tr>
         </thead>
         <tbody class="table-info">
           <tr>
             <th scope="row">1</th>
             <td>1</td>
-            <td>Σικαγο Μπουλς</td>
-            <td>Σικαγο</td>
+            <td>Derrick</td>
+            <td>Rose</td>
+            <td>24</td>
+            <td>Point guard</td>
+            <td><b>New York Knicks</b></td>
             <td>
               <img
                 class="img"
-                src="../resources/team_images/bulls.png"
+                src="../resources/player_images/derrick-rose.png"
                 alt="image"
               />
             </td>
