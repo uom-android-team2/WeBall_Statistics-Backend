@@ -143,7 +143,7 @@
     <hr />
     <h2 style="text-align: center;" class="text-danger"><?php echo $name_err ?></h2>
     <section class="table-responsive" id="database">
-      <h2 style="padding: 1rem; margin: 1rem">Teams in the database</h2>
+      <h2  style="padding: 1rem; margin: 1rem; text-align: center;">Teams in the database</h2>
       <table class="table">
         <thead>
           <tr class="table-active">
