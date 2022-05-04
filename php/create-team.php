@@ -147,6 +147,11 @@
               $name_err
         </div>" ;
       }
+      if($city_err != ""){
+        echo "<div class='alert alert-danger text-center' role='alert'>
+              $city_err
+        </div>" ;
+      }
     ?>
     <section class="table-responsive" id="database">
       <h2  style="padding: 1rem; margin: 1rem; text-align: center;">Teams in the database</h2>
