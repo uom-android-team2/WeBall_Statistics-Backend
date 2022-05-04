@@ -1,4 +1,92 @@
+<?php
+  // Initialize the session
+  session_start();
+  
+  // Check if the user is logged in, if not then redirect him to the login page
+  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+      header("location: login.php");
+      exit;
+  }
 
+  require_once "config.php";
+  $mysqli->select_db("championship");
+
+  // initialize values
+  $name = $surname = $number = $position = $team = "";
+  // initialize error messages
+  $name_error = $surname_error = $number_error = $position_error = $team_error = "";
+  $file_error = "";
+
+
+  $filename = "";
+    $tempname = "";	
+    $folder = "../resources/player_images/";
+
+  $no_teams_text = "";
+
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty(trim($_POST["playerName"]))){
+        $name_error = "Name is required";
+    }else{
+        $name = $_POST["playerName"];
+    }
+
+    if(empty(trim($_POST["playerSurname"]))){
+        $surname_error = "Surname is required";
+    }else{
+        $surname = $_POST["playerSurname"];
+    }
+
+    if(empty(trim($_POST["playerNumber"]))){
+      $number_error = "Player number is required";
+    }else{
+      $number = $_POST["playerNumber"];
+    }
+    
+    if(empty(trim($_POST["position"])) || $_POST["position"] == "select"){
+        $position_error = "Player position is required";
+    }else{
+        $position = $_POST["position"];
+    }
+
+    if(empty(trim($_POST["team"])) || $_POST["team"] == "select"){
+        $team_error = "Player team is required";
+    }else{
+        $team = $_POST["team"];
+    }
+
+    if(empty($_FILES["playerPhoto"]["name"])){
+      $file_error = "File is required";
+    }else{
+      $filename = $_FILES["playerPhoto"]["name"];
+    }
+
+    
+    if(empty($tempname = $_FILES["playerPhoto"]["tmp_name"])){
+      $file_err = "File is required";
+    }else{
+      $tempname = $_FILES["playerPhoto"]["tmp_name"];	
+    }
+
+    if(empty($name_error) && empty($surname_error) && empty($number_error) && empty($position_error) && empty($team_error) && empty($file_error)){
+      // Attempt insert query execution
+      $sql = "INSERT INTO player (name, surname, number, position, team, photo) VALUES ('$name', '$surname', '$number', '$position', '$team', '$filename')";
+        
+      try {
+          $mysqli->query($sql);
+          // Move the uploaded image into the folder: image
+          $stored = move_uploaded_file($tempname, $folder.$filename);
+          if (!$stored) {
+            echo "ERROR: Could not able to store the image";
+          }
+      } catch (\Throwable $th) {
+        if($mysqli->errno == 1062){
+          $name_err = "* Error: Player ".$name." already exists";
+        }
+      }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,53 +98,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <style>
-      #container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 1rem 0.5rem 1rem;
-      }
-      #teams-message {
-          color: red;
-          text-align: center;
-      }
-      #title {
-        text-align: center;
-        margin-left: 2rem;
-      }
-      .img {
-        width: 100%;
-        height: auto;
-        max-width: 35px;
-      }
-      .select-form {
-          height: 30px;
-          padding: 2px 2px 2px 2px;
-      }
-      .custom-button-css {
-          margin-left: 2rem;
-          margin-bottom: 1rem;
-      }
-      .h2-display {
-        padding: 1rem; 
-        margin: 1rem 1rem 0 1rem;
-      }
-      /*Should remove this classes when teams are availabe*/
-      .select-no-teams {
-          border: 2px solid red;
-      }
-      .btn-disabled {
-        opacity: 0.5;
-        pointer-events: none;;
-      }
-      /*---------------------------------------*/
-      /*add this class when teams are available*/
-      .message-hidden {
-          opacity: 0;
-          font-size: 0px;
-      }
-    </style>
+    <link rel="stylesheet" href="../style/css/create-player-page.css">
     <script 
         defer 
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
@@ -70,10 +112,10 @@
             <a id="back" href="index.php" class="btn btn-info">Back</a>
             <h1 id="title">Add new player to the championship</h1>
         </div>
-        <h5 id="teams-message">No teams available to add players</h5> <!-- class="message-hidden" -->
+        <!--<h5 id="teams-message">No teams available to add players</h5> --> <!-- class="message-hidden" -->
     </header>
     <section>
-      <form action="" class="table-responsive">
+      <form enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="table-responsive">
         <table class="table">
             <thead>
                 <tr class="table-active">
@@ -97,10 +139,10 @@
                         <input type="text" name="playerSurname" placeholder="Enter surname..." />
                     </td>
                     <td>
-                        <input type="number" name="playerNumber" min="0"/>
+                        <input type="number" name="playerNumber" min="0" max="99"/>
                     </td>
                     <td>
-                        <select name="positions" class="select-form">
+                        <select name="position" class="select-form">
                             <option value="select">Select Position</option>
                             <option value="Point guard">Point guard</option>
                             <option value="Shooting guard">Shooting guard</option>
@@ -110,13 +152,18 @@
                         </select>
                     </td>
                     <td>
-                        <select name="teams" class="select-form select-no-teams">
+                        <select name="team" class="select-form">
                             <option value="select">Select Team</option>
                             <?php 
-                            //code to fill the select for the team from db
-                                //foreach($release as $i => $r){
-                                    //echo"<option value = '$r->title' > $r->title ($r->release_year) </option>";
-                                //}
+                                $sql = "SELECT * FROM team";
+                                if($result = $mysqli->query($sql)){
+                                    while($row = $result->fetch_array()){
+                                        echo "<option value='$row[name]'>$row[name]</option>";
+                                    }
+                                    $result->free();
+                                } else{
+                                    echo "<h3> Error retrieving data from databse</h3>";
+                                }
                             ?>
                         </select>
                     </td>
@@ -125,7 +172,8 @@
                         </td>
                     <td>
                         <input
-                        class="btn btn-primary btn-disabled"
+                        class="btn btn-primary"
+                        id="submit-button"
                         type="submit"
                         name="submit"
                         value="Submit"
@@ -136,6 +184,44 @@
         </table>
       </form>
     </section>
+    <?php
+      if($name_error != ""){
+        echo 
+        "<div class='alert alert-danger text-center' role='alert'>
+              $name_error
+        </div>";
+      }
+      if($surname_error != ""){
+        echo 
+        "<div class='alert alert-danger text-center' role='alert'>
+              $surname_error
+        </div>";
+      }
+      if($number_error != ""){
+        echo 
+        "<div class='alert alert-danger text-center' role='alert'>
+              $number_error
+        </div>";
+      }
+      if($position_error != ""){
+        echo 
+        "<div class='alert alert-danger text-center' role='alert'>
+              $position_error
+        </div>";
+      }
+      if($team_error != ""){
+        echo 
+        "<div class='alert alert-danger text-center' role='alert'>
+              $team_error
+        </div>";
+      }
+      if($file_error != ""){
+        echo 
+        "<div class='alert alert-danger text-center' role='alert'>
+              $file_error
+        </div>";
+      }
+    ?>
     <hr />
     <section class="table-responsive" id="database">
         <h2 class="h2-display">Players in the database</h2>
@@ -164,24 +250,40 @@
                 </tr>
             </thead>
             <tbody class="table-info">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>1</td>
-                    <td>Derrick</td>
-                    <td>Rose</td>
-                    <td>24</td>
-                    <td>Point guard</td>
-                    <td><b>New York Knicks</b></td>
-                    <td>
-                        <img
-                            class="img"
-                            src="../resources/player_images/derrick-rose.png"
-                            alt="image"
-                        />
-                    </td>
-                </tr>
+                <?php
+                    $sql = "SELECT * FROM player";
+                    if($result = $mysqli->query($sql)){
+                        $index = 0;
+                        while($row = $result->fetch_array()){
+                            echo "<tr>";
+                            echo "<th scope='row'>$index</th>";
+                            echo "<td>$row[id]</td>";
+                            echo "<td>$row[name]</td>";
+                            echo "<td>$row[surname]</td>";
+                            echo "<td>$row[number]</td>";
+                            echo "<td>$row[position]</td>";
+                            echo "<td>$row[team]</td>";
+                            echo "<td>";
+                                echo "<img
+                                class='img'
+                                src='$folder/$row[photo]'
+                                alt='image'
+                                />";
+                            echo "</td>";
+                            echo "</tr>";
+                            $index = $index + 1;
+                        }
+                        if($result->num_rows < 1){
+                            $no_teams_text = "There are no players in the database";
+                        }
+                        $result->free();
+                    } else{
+                        echo "<h3> Error retrieving data from databse</h3>";
+                    }
+                ?>
             </tbody>
         </table>
+        <h3 class="text-danger" style="text-align: center;"><?php echo $no_teams_text; ?></h3>
     </section>
   </body>
 </html>

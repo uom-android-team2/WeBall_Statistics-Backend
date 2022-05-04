@@ -1,0 +1,35 @@
+:root {
+  --red-error: red;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+#teams-message {
+  color: var(--red-error);
+  text-align: center;
+}
+#title {
+  text-align: center;
+  margin-left: 2rem;
+}
+.img {
+  width: 100%;
+  height: auto;
+  max-width: 35px;
+}
+.select-form {
+  height: 30px;
+  padding: 2px 2px 2px 2px;
+}
+.custom-button-css {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.h2-display {
+  padding: 1rem;
+  margin: 1rem 1rem 0 1rem;
+}
