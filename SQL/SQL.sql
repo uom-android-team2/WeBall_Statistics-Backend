@@ -102,22 +102,22 @@ CREATE TABLE championship.`match`(
 -- Table structure: `playerstatslive`
 --
 
-CREATE TABLE championship.`playerstatslive`(
-  `idplayer` int(144) UNSIGNED NOT NULL,
-  `idmatch`int(6) UNSIGNED NOT NULL,
-  `successfulefforts` int  UNSIGNED NOT NULL,
-  `totaleforts`int UNSIGNED NOT NULL,
-  `successfulfreethrows`int UNSIGNED NOT NULL,
-  `totalfreethrows` int UNSIGNED NOT NULL,
-  `succesfultwopointsshot` int UNSIGNED NOT NULL,
-  `totaltwopointsshot` int UNSIGNED NOT NULL,
-  `succesfulthreepointsshot` int UNSIGNED NOT NULL,
-  `totalthreepointsshot` int UNSIGNED NOT NULL,
-  `steels` int UNSIGNED NOT NULL,
+CREATE TABLE championship.`player_live_statistics`(
+  `player_id` int(144) UNSIGNED NOT NULL,
+  `match_id`int(12) UNSIGNED NOT NULL,
+  `successful_effort` int  UNSIGNED NOT NULL,
+  `total_effort`int UNSIGNED NOT NULL,
+  `successful_freethrow`int UNSIGNED NOT NULL,
+  `total_freethrow` int UNSIGNED NOT NULL,
+  `successful_twopointer` int UNSIGNED NOT NULL,
+  `total_twopointer` int UNSIGNED NOT NULL,
+  `successful_threepointer` int UNSIGNED NOT NULL,
+  `total_threepointer` int UNSIGNED NOT NULL,
+  `steel` int UNSIGNED NOT NULL,
   `assist` int UNSIGNED NOT NULL,
-  `blocks` int UNSIGNED NOT NULL,
+  `block` int UNSIGNED NOT NULL,
   `rebound` int UNSIGNED NOT NULL,
-  `foul` int(5) UNSIGNED NOT NULL,
+  `foul` int UNSIGNED NOT NULL,
   `turnover`int UNSIGNED NOT NULL,
   `minutes`datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -126,20 +126,20 @@ CREATE TABLE championship.`playerstatslive`(
 -- Table structure: `playerstatschampionship`
 --
 
-CREATE TABLE championship.`playerstatschampionship`(
-  `idplayer` int(144) UNSIGNED NOT NULL,
-  `matchesplayed`int UNSIGNED NOT NULL,
-  `successfulefforts` int UNSIGNED NOT NULL,
-  `totalfreethrows`int UNSIGNED NOT NULL,
-  `succesfultwopointsshot` int UNSIGNED NOT NULL,
-  `totaltwopointsshot` int UNSIGNED NOT NULL,
-  `succesfulthreepointsshot` int UNSIGNED NOT NULL,
-  `totalthreepointsshot` int UNSIGNED NOT NULL,
-  `steels` int UNSIGNED NOT NULL,
+CREATE TABLE championship.`player_championship_statistics`(
+  `player_id` int UNSIGNED NOT NULL,
+  `matches_played`int UNSIGNED NOT NULL,
+  `successful_effort` int UNSIGNED NOT NULL,
+  `total_freethrow`int UNSIGNED NOT NULL,
+  `successful_twopointer` int UNSIGNED NOT NULL,
+  `total_twopointer` int UNSIGNED NOT NULL,
+  `successful_threepointer` int UNSIGNED NOT NULL,
+  `total_threepointer` int UNSIGNED NOT NULL,
+  `steel` int UNSIGNED NOT NULL,
   `assist` int UNSIGNED NOT NULL,
-  `blocks` int UNSIGNED NOT NULL,
+  `block` int UNSIGNED NOT NULL,
   `rebound` int UNSIGNED NOT NULL,
-  `foul` int(5) UNSIGNED NOT NULL,
+  `foul` int UNSIGNED NOT NULL,
   `turnover`int UNSIGNED NOT NULL,
   `minutes`datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -148,20 +148,20 @@ CREATE TABLE championship.`playerstatschampionship`(
 -- Table structure: `teamstatslive`
 --
 
-CREATE TABLE championship.`teamstatslive`(
-  `idmatch` int(6) UNSIGNED NOT NULL,
-  `idteam`int(12) UNSIGNED NOT NULL,
-  `successfulefforts` int UNSIGNED NOT NULL,
-  `totaleforts`int UNSIGNED NOT NULL,
-  `successfulfreethrows`int UNSIGNED NOT NULL,
-  `totalfreethrows` int UNSIGNED NOT NULL,
-  `succesfultwopointsshot` int UNSIGNED NOT NULL,
-  `totaltwopointsshot` int UNSIGNED NOT NULL,
-  `succesfulthreepointsshot` int UNSIGNED NOT NULL,
-  `totalthreepointsshot` int UNSIGNED NOT NULL,
-  `steels` int UNSIGNED NOT NULL,
+CREATE TABLE championship.`team_live_statistics`(
+  `match_id` int(6) UNSIGNED NOT NULL,
+  `team_id`int(12) UNSIGNED NOT NULL,
+  `successful_effort` int UNSIGNED NOT NULL,
+  `total_effort`int UNSIGNED NOT NULL,
+  `successful_freethrow`int UNSIGNED NOT NULL,
+  `total_freethrow` int UNSIGNED NOT NULL,
+  `succesful_twopointer` int UNSIGNED NOT NULL,
+  `total_twopointer` int UNSIGNED NOT NULL,
+  `succesful_threepointer` int UNSIGNED NOT NULL,
+  `total_threepointer` int UNSIGNED NOT NULL,
+  `steel` int UNSIGNED NOT NULL,
   `assist` int UNSIGNED NOT NULL,
-  `blocks` int UNSIGNED NOT NULL,
+  `block` int UNSIGNED NOT NULL,
   `rebound` int UNSIGNED NOT NULL,
   `foul` int UNSIGNED NOT NULL,
   `turnover`int UNSIGNED NOT NULL
@@ -171,22 +171,22 @@ CREATE TABLE championship.`teamstatslive`(
 -- Table structure: `teamstatschampionship`
 --
 
-CREATE TABLE championship.`teamstatschampionship`(
-  `idteam` int(12) UNSIGNED NOT NULL,
-  `totalmatches`int(24) UNSIGNED NOT NULL,
-  `wins` int UNSIGNED NOT NULL,
-  `looses` int UNSIGNED NOT NULL,
-  `succesfulefforts` int UNSIGNED NOT NULL,
-  `totalefforts` int UNSIGNED NOT NULL,
-  `successfulfreethrows`int UNSIGNED NOT NULL,
-  `totalfreethrows` int UNSIGNED NOT NULL,
-  `succesfultwopointsshot` int UNSIGNED NOT NULL,
-  `totaltwopointsshot` int UNSIGNED NOT NULL,
-  `succesfulthreepointsshot` int UNSIGNED NOT NULL,
-  `totalthreepointsshot` int UNSIGNED NOT NULL,
-  `steels` int UNSIGNED NOT NULL,
+CREATE TABLE championship.`team_championship_statistics`(
+  `team_id` int(12) UNSIGNED NOT NULL,
+  `total_matches`int(24) UNSIGNED NOT NULL,
+  `win` int UNSIGNED NOT NULL,
+  `lose` int UNSIGNED NOT NULL,
+  `succesful_effort` int UNSIGNED NOT NULL,
+  `total_effort` int UNSIGNED NOT NULL,
+  `successful_freethrow`int UNSIGNED NOT NULL,
+  `total_freethrow` int UNSIGNED NOT NULL,
+  `succesful_twopointer` int UNSIGNED NOT NULL,
+  `total_twopointer` int UNSIGNED NOT NULL,
+  `succesful_threepointer` int UNSIGNED NOT NULL,
+  `total_threepointer` int UNSIGNED NOT NULL,
+  `steel` int UNSIGNED NOT NULL,
   `assist` int UNSIGNED NOT NULL,
-  `blocks` int UNSIGNED NOT NULL,
+  `block` int UNSIGNED NOT NULL,
   `rebound` int UNSIGNED NOT NULL,
   `foul` int UNSIGNED NOT NULL,
   `turnover`int UNSIGNED NOT NULL
