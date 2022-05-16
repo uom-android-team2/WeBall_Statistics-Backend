@@ -91,8 +91,8 @@ CREATE TABLE championship.`referee`(
 
 CREATE TABLE championship.`match`(
   `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `team1id`int(12) UNSIGNED NOT NULL,
-  `team2id`int(12) UNSIGNED NOT NULL,
+  `teamlandlordid`int(12) UNSIGNED NOT NULL,
+  `teamguestid`int(12) UNSIGNED NOT NULL,
   `date`date NOT NULL,
   `progress`BIT(1) NOT NULL,
   `completed`BIT(1) NOT NULL

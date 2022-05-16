@@ -80,8 +80,8 @@ if($mysqli->query($sql) === true){
 
 $sql = "CREATE TABLE IF NOT EXISTS championship.`match`(
     `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `team1_id`int(12) UNSIGNED NOT NULL,
-    `team2_id`int(12) UNSIGNED NOT NULL,
+    `teamlandlord_id`int(12) UNSIGNED NOT NULL,
+    `teamguest_id`int(12) UNSIGNED NOT NULL,
     `date`date NOT NULL,
     `progress`BIT(1) NOT NULL,
     `completed`BIT(1) NOT NULL
