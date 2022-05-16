@@ -205,6 +205,37 @@ if($mysqli->query($sql) === true){
     echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS championship.`coach`(
+    `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `teamid`int(12) NOT NULL,
+    `firstname`varchar(32) NOT NULL,
+    `surname`varchar(32) NOT NULL,
+    `headcoach` BIT(1) NOT NULL,
+    `image` VARBINARY(100) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  ";
+
+// execute statment
+if($mysqli->query($sql) === true){
+    // do nothing
+}else{
+    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+}
+
+$sql = "CREATE TABLE IF NOT EXISTS championship.`referee`(
+    `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `firstname`varchar(32) NOT NULL,
+    `surename`varchar(32) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  ";
+
+// execute statment
+if($mysqli->query($sql) === true){
+    // do nothing
+}else{
+    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+}
+
 
 // Close connection
 $mysqli->close();
