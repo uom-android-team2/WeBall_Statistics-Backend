@@ -29,16 +29,18 @@ if($id != null){
 // execute statment
 try {
 
-    $result = $mysqli->query($sql) ;
-    
-    if($id){
-        $row = $result->fetch_assoc();
-        $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-        $data = $team;
-    }else{
-        while($row = $result->fetch_assoc()) {
+    $result = $mysqli->query($sql);
+    //Check if data exists
+    if ($result->num_rows > 0) {
+        if($id){
+            $row = $result->fetch_assoc();
             $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-            array_push($data, $team);
+            $data = $team;
+        }else{
+            while($row = $result->fetch_assoc()) {
+                $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
+                array_push($data, $team);
+            }
         }
     }
     
@@ -49,7 +51,6 @@ try {
 } catch (\Throwable $th) {
     echo $mysqli->error;
 }
-
 
 $mysqli->close();
 ?>

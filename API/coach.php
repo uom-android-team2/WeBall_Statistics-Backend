@@ -51,6 +51,5 @@ try {
     echo $mysqli->error;
 }
 
-
 $mysqli->close();
 ?>

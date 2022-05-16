@@ -30,19 +30,20 @@ if($id != null){
 // execute statment
 try {
 
-    $result = $mysqli->query($sql) ;
-
-    if($id){
-        $row = $result->fetch_assoc();
-        $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
-        $data = $player;
-    }else{
-        while($row = $result->fetch_assoc()) {
+    $result = $mysqli->query($sql);
+    //Check if data exists
+    if ($result->num_rows > 0) {
+        if($id){
+            $row = $result->fetch_assoc();
             $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
-            array_push($data, $player);
+            $data = $player;
+        }else{
+            while($row = $result->fetch_assoc()) {
+                $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
+                array_push($data, $player);
+            }
         }
     }
-    
     
     header("Content-Type: application/json");
     echo json_encode($data);
@@ -50,7 +51,6 @@ try {
 } catch (\Throwable $th) {
     echo $mysqli->error;
 }
-
 
 $mysqli->close();
 ?>
