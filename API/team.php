@@ -11,13 +11,11 @@ function test_input($data){
 }
 
 $data = array();
-
 $id = "";
 
-if(isset($_GET["id"]) && is_int($_GET["id"])){
+if(isset($_GET["id"]) ){
     $id = test_input($_GET["id"]);
 }
-
 
 $mysqli->select_db("championship");
 
@@ -32,13 +30,21 @@ if($id != null){
 try {
 
     $result = $mysqli->query($sql) ;
-    while($row = $result->fetch_assoc()) {
+    
+    if($id){
+        $row = $result->fetch_assoc();
         $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-        array_push($data, $team);
+        $data = $team;
+    }else{
+        while($row = $result->fetch_assoc()) {
+            $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
+            array_push($data, $team);
+        }
     }
     
     header("Content-Type: application/json");
 	echo json_encode($data);
+    
 
 } catch (\Throwable $th) {
     echo $mysqli->error;

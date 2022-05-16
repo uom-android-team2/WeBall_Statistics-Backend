@@ -15,7 +15,7 @@ $data = array();
 
 $id = "";
 
-if(isset($_GET["id"]) && is_int($_GET["id"])){
+if(isset($_GET["id"])){
     $id = test_input($_GET["id"]);
 }
 
@@ -31,13 +31,21 @@ if($id != null){
 try {
 
     $result = $mysqli->query($sql) ;
-    while($row = $result->fetch_assoc()) {
+
+    if($id){
+        $row = $result->fetch_assoc();
         $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
-        array_push($data, $player);
+        $data = $player;
+    }else{
+        while($row = $result->fetch_assoc()) {
+            $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
+            array_push($data, $player);
+        }
     }
     
+    
     header("Content-Type: application/json");
-	echo json_encode($data);
+    echo json_encode($data);
 
 } catch (\Throwable $th) {
     echo $mysqli->error;
