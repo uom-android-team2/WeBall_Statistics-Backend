@@ -1,56 +1,58 @@
 <?php
 
 include_once "../php/config.php";
-include_once "../php/models/team.php";
-
-function test_input($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-$data = array();
-$id = "";
-
-if(isset($_GET["id"]) ){
-    $id = test_input($_GET["id"]);
-}
+include "service/teamService.php";
+include "utils/validation.php";
 
 $mysqli->select_db("championship");
+$teamService = new TeamService("team", $mysqli);
+    
+if($_SERVER['REQUEST_METHOD'] == "GET"){
+    $data = "";
+    $id = "";
+    if(isset($_GET["id"]) ){
+        $id = test_input($_GET["id"]);
+    }
+    
 
-
-if($id != null){
-    $sql = "SELECT * FROM `team` WHERE `id` = $id";
-}else{
-    $sql = "SELECT * FROM `team`";
-}
-
-// execute statment
-try {
-
-    $result = $mysqli->query($sql);
-    //Check if data exists
-    if ($result->num_rows > 0) {
-        if($id){
-            $row = $result->fetch_assoc();
-            $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-            $data = $team;
-        }else{
-            while($row = $result->fetch_assoc()) {
-                $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-                array_push($data, $team);
-            }
-        }
+    if($id){
+        $data = $teamService->findTeamById($id);
+    }else{
+        $data = $teamService->findAllTeams();
     }
     
     header("Content-Type: application/json");
-	echo json_encode($data);
-    
+    echo json_encode($data);
 
-} catch (\Throwable $th) {
-    echo $mysqli->error;
+}else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
+    $data = "";
+    $id = "";
+    
+    if(isset($_GET["id"]) ){
+        $id = test_input($_GET["id"]);
+    }
+
+    if($id){
+        $data = $teamService->deleteTeamById($id);
+    }else{
+        $data = $teamService->deleteAllTeams();
+    }
+    
+    header("Content-Type: application/json");
+    echo json_encode($data);
+    
+}else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
+    $entityBody = file_get_contents('php://input');
+    $data = json_decode($entityBody);
+
+    $data = $teamService->updateTeam($data);
+
+    header("Content-Type: application/json");
+    echo json_encode($data);
+    
 }
+
 
 $mysqli->close();
 ?>

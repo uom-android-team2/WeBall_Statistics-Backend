@@ -2,7 +2,7 @@
 
 
 include_once "../php/config.php";
-include_once "../php/models/player.php";
+include_once "models/player.php";
 
 function test_input($data){
     $data = trim($data);

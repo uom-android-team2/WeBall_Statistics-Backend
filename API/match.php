@@ -1,7 +1,7 @@
 <?php
 
 include_once "../php/config.php";
-include_once "../php/models/match.php";
+include_once "models/match.php";
 
 function test_input($data){
     $data = trim($data);

@@ -1,7 +1,7 @@
 <?php
 
 include_once "../php/config.php";
-include_once "../php/models/referee.php";
+include_once "models/referee.php";
 
 function test_input($data){
     $data = trim($data);
