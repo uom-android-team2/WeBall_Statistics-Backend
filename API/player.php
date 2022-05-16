@@ -1,7 +1,8 @@
 <?php
 
+
 include_once "../php/config.php";
-include_once "../php/models/team.php";
+include_once "../php/models/player.php";
 
 function test_input($data){
     $data = trim($data);
@@ -18,14 +19,12 @@ if(isset($_GET["id"]) && is_int($_GET["id"])){
     $id = test_input($_GET["id"]);
 }
 
-
 $mysqli->select_db("championship");
 
-
 if($id != null){
-    $sql = "SELECT * FROM `team` WHERE `id` = $id";
+    $sql = "SELECT * FROM `player` WHERE `id` = $id";
 }else{
-    $sql = "SELECT * FROM `team`";
+    $sql = "SELECT * FROM `player`";
 }
 
 // execute statment
@@ -33,8 +32,8 @@ try {
 
     $result = $mysqli->query($sql) ;
     while($row = $result->fetch_assoc()) {
-        $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-        array_push($data, $team);
+        $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
+        array_push($data, $player);
     }
     
     header("Content-Type: application/json");
