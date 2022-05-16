@@ -225,7 +225,7 @@ if($mysqli->query($sql) === true){
 $sql = "CREATE TABLE IF NOT EXISTS championship.`referee`(
     `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `firstname`varchar(32) NOT NULL,
-    `surename`varchar(32) NOT NULL
+    `surname`varchar(32) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
   ";
 

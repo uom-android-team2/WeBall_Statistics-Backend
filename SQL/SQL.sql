@@ -82,7 +82,7 @@ CREATE TABLE championship.`coach`(
 CREATE TABLE championship.`referee`(
   `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `firstname`varchar(32) NOT NULL,
-  `surename`varchar(32) NOT NULL
+  `surname`varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
