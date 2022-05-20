@@ -5,8 +5,8 @@ require_once "models/team.php";
 
 class TeamRepository implements CRUDRepository{
 
-    public $table;
-    public $mysqli;
+    private $table;
+    private $mysqli;
 
     public function __construct($table, $mysqli){
         $this->table = $table;
@@ -88,8 +88,8 @@ class TeamRepository implements CRUDRepository{
                 $name = $entity->badge;
             }
 
-            $sql = "UPDATE $this->table
-            SET 'name' = `$name`,
+            $sql = "UPDATE  `$this->table`
+             SET 'name' = `$name`,
                 'city' = `$city`,
                 'badge' = `$badge`
             WHERE `id` = `$entity->id`;";
