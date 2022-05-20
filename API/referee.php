@@ -2,54 +2,61 @@
 
 include_once "../php/config.php";
 include_once "models/referee.php";
-
-function test_input($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-$data = array();
-
-$id = "";
-
-if(isset($_GET["id"])){
-    $id = test_input($_GET["id"]);
-}
+include_once "service/refereeService.php";
+include_once "utils/validation.php";
 
 $mysqli->select_db("championship");
+$refereeService = new RefereeService("referee", $mysqli);
 
-if($id != null){
-    $sql = "SELECT * FROM `referee` WHERE `id` = $id";
-}else{
-    $sql = "SELECT * FROM `referee`";
-}
+if($_SERVER['REQUEST_METHOD'] == "GET"){
 
-// execute statment
-try {
+    $data = "";
+    $id = "";
+    if(isset($_GET["id"]) ){
+        $id = test_input($_GET["id"]);
+    }
+    
 
-    $result = $mysqli->query($sql);
-    //Check if data exists
-    if ($result->num_rows > 0) {
-        if($id){
-            $row = $result->fetch_assoc();
-            $referee = new Referee($row["id"], $row["firstname"], $row["surname"]);
-            $data = $referee;
-        }else{
-            while($row = $result->fetch_assoc()) {
-                $referee = new Referee($row["id"], $row["firstname"], $row["surname"]);
-                array_push($data, $referee);
-            }
-        }
+    if($id){
+        $data = $refereeService->findRefereeById($id);
+    }else{
+        $data = $refereeService->findAllReferees();
     }
     
     header("Content-Type: application/json");
     echo json_encode($data);
 
-} catch (\Throwable $th) {
-    echo $mysqli->error;
+}else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
+    $data = "";
+    $id = "";
+    
+    if(isset($_GET["id"]) ){
+        $id = test_input($_GET["id"]);
+    }
+
+    if($id){
+        $data = $refereeService->deleteRefereeById($id);
+    }else{
+        $data = $refereeService->deleteAllReferees();
+    }
+    
+    header("Content-Type: application/json");
+    echo json_encode($data);
+    
+}else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
+    $entityBody = file_get_contents('php://input');
+    
+    $refereeProvided = json_decode($entityBody);
+
+    $data = $refereeService->updateReferee($refereeProvided);
+    
+    header("Content-Type: application/json");
+    echo json_encode($data);
 }
+
+
+
 
 $mysqli->close();
 ?>
