@@ -45,7 +45,7 @@ class TeamRepository implements CRUDRepository{
     
     public function deleteById($id){
         try {
-            $sql = " DELETE FROM $this->table WHERE `id` = $id";
+            $sql = " DELETE FROM `$this->table` WHERE `id` = $id";
             $result = $this->mysqli->query($sql);
             return $this->findAll();
         }catch(Exception $e){
@@ -55,7 +55,7 @@ class TeamRepository implements CRUDRepository{
     
     public function deleteAll(){
         try {
-            $sql = " DELETE FROM $this->table WHERE 1 = 1";
+            $sql = " DELETE FROM `$this->table` WHERE 1 = 1";
             $result = $this->mysqli->query($sql);
             return $this->findAll();
         }catch(Exception $e){
@@ -87,8 +87,8 @@ class TeamRepository implements CRUDRepository{
             if(strcmp($entity->badge, "") !== 0 && strcmp($badge, $entity->badge) !== 0){
                 $badge = $entity->badge;
             }
-            
-            $sql = "UPDATE team SET name = '$name', city = '$city', badge = '$badge' WHERE id = $teamFound->id;";
+           
+            $sql = "UPDATE `$this->table` SET `name` = '$name', `city` = '$city', `badge` = '$badge' WHERE `id` = $entity->id";
             $result = $this->mysqli->query($sql);
             
             return $this->findById($teamFound->id);

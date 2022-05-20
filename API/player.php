@@ -4,52 +4,58 @@
 include_once "../php/config.php";
 include_once "models/player.php";
 
-function test_input($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-$data = array();
-
-$id = "";
-
-if(isset($_GET["id"])){
-    $id = test_input($_GET["id"]);
-}
+include "service/playerService.php";
+include "utils/validation.php";
 
 $mysqli->select_db("championship");
+$playerService = new PlayerService("player", $mysqli);
 
-if($id != null){
-    $sql = "SELECT * FROM `player` WHERE `id` = $id";
-}else{
-    $sql = "SELECT * FROM `player`";
-}
 
-// execute statment
-try {
+if($_SERVER['REQUEST_METHOD'] == "GET"){
+    $data = "";
+    $id = "";
+    if(isset($_GET["id"]) ){
+        $id = test_input($_GET["id"]);
+    }
+    
 
-    $result = $mysqli->query($sql);
-    //Check if data exists
-    if ($result->num_rows > 0) {
-        if($id){
-            $row = $result->fetch_assoc();
-            $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
-            $data = $player;
-        }else{
-            while($row = $result->fetch_assoc()) {
-                $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
-                array_push($data, $player);
-            }
-        }
+    if($id){
+        $data = $playerService->findPlayerById($id);
+    }else{
+        $data = $playerService->findAllPlayers();
     }
     
     header("Content-Type: application/json");
     echo json_encode($data);
 
-} catch (\Throwable $th) {
-    echo $mysqli->error;
+}else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
+    $data = "";
+    $id = "";
+    
+    if(isset($_GET["id"]) ){
+        $id = test_input($_GET["id"]);
+    }
+
+    if($id){
+        $data = $playerService->deletePlayerById($id);
+    }else{
+        $data = $playerService->deleteAllPlayers();
+    }
+    
+    header("Content-Type: application/json");
+    echo json_encode($data);
+    
+}else if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+    $entityBody = file_get_contents('php://input');
+    
+    $playerProvided = json_decode($entityBody);
+
+    $data = $playerService->updatePlayer($playerProvided);
+    
+    header("Content-Type: application/json");
+    echo json_encode($data);
+
 }
 
 $mysqli->close();
