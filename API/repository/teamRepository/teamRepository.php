@@ -14,30 +14,33 @@ class TeamRepository implements CRUDRepository{
     }
 
     public function findById($id){
+        $team = null;
         try {
             $sql = "SELECT * FROM `$this->table` WHERE `id` = $id";
             $result = $this->mysqli->query($sql);
             $row = $result->fetch_assoc();
-            $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
-            return $team;
+            if($result->num_rows > 0){
+                $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
+            }
         }catch(Exception $e){
             echo 'Message: ' .$e->getMessage();
         } 
+        return $team;
     }
     
     public function findAll(){
+        $data = array();
         try {
-            $data = array();
             $sql = "SELECT * FROM `$this->table`";   
             $result = $this->mysqli->query($sql);
             while($row = $result->fetch_assoc()) {
                 $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
                 array_push($data, $team);
             }
-            return $data;
         }catch(Exception $e){
             echo 'Message: ' .$e->getMessage();
         }
+        return $data;
     }
     
     public function deleteById($id){
@@ -65,33 +68,38 @@ class TeamRepository implements CRUDRepository{
     }
     
     public function update($entity){
-        // try {
-        //     $teamFound = $this->findById($entity->id);
-        //     if(!$teamFound){
-        //         return "team doesnt exist";
-        //     }
-        //     $name = $teamFound->name;
-        //     $city = $teamFound->city;
-        //     $badge =  $teamFound->badge;
+        try {
+            $teamFound = $this->findById($entity->id);
+            if($teamFound == null){
+                return "team doesn't exist";
+            }
 
-        //     if($teamFound->name != $entity->name && !empty($entity->name)){
-        //         $name = $entity->name;
-        //     }
-        //     if($teamFound->city != $entity->city && !empty($entity->city)){
-        //         $city = $entity->city;
-        //     }
-        //     if($teamFound->badge != $entity->badge && !empty($entity->badge)){
-        //         $badge = $entity->badge;
-        //     }
+            $name = $teamFound->name;
+            $city = $teamFound->city;
+            $badge = $teamFound->badge;
 
-        //     $sql = "UPDATE `$this->table`
-        //     SET `name` = `$name`, city = `$city`, badge = `$badge`
-        //     WHERE `id` = $entity->id;";
-        //     $result = $this->mysqli->query($sql);
-        //     return $this->findById($entity->id);
-        // }catch(Exception $e){
-        //     echo 'Message: ' .$e->getMessage();
-        // }
+            if($name != "" && $name != $teamFound->name){
+                $name = $entity->name;
+            }
+            if($city != "" && $city != $teamFound->city){
+                $city = $entity->city;
+            }
+            if($badge != "" && $badge != $teamFound->badge){
+                $name = $entity->badge;
+            }
+
+            $sql = "UPDATE $this->table
+            SET 'name' = `$name`,
+                'city' = `$city`,
+                'badge' = `$badge`
+            WHERE `id` = `$entity->id`;";
+            $this->mysqli->query($sql);
+
+            return $this->findById($entity->id);
+
+        }catch(Exception $e){
+            echo 'Message: ' .$e->getMessage();
+        }
     }
     
     public function count(){

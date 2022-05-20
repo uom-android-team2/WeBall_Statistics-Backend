@@ -44,10 +44,11 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 }else if($_SERVER['REQUEST_METHOD'] == "POST"){
     
     $entityBody = file_get_contents('php://input');
-    $data = json_decode($entityBody);
+    
+    $teamProvided = json_decode($entityBody);
 
-    $data = $teamService->updateTeam($data);
-
+    $data = $teamService->updateTeam($teamProvided);
+    
     header("Content-Type: application/json");
     echo json_encode($data);
     
