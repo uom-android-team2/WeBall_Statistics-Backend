@@ -78,24 +78,20 @@ class TeamRepository implements CRUDRepository{
             $city = $teamFound->city;
             $badge = $teamFound->badge;
 
-            if($name != "" && $name != $teamFound->name){
+            if(strcmp($entity->name, "") !== 0 && strcmp($name, $entity->name) !== 0){
                 $name = $entity->name;
             }
-            if($city != "" && $city != $teamFound->city){
+            if(strcmp($entity->city, "") !== 0 && strcmp($city, $entity->city) !== 0){
                 $city = $entity->city;
             }
-            if($badge != "" && $badge != $teamFound->badge){
-                $name = $entity->badge;
+            if(strcmp($entity->badge, "") !== 0 && strcmp($badge, $entity->badge) !== 0){
+                $badge = $entity->badge;
             }
-
-            $sql = "UPDATE  `$this->table`
-             SET 'name' = `$name`,
-                'city' = `$city`,
-                'badge' = `$badge`
-            WHERE `id` = `$entity->id`;";
-            $this->mysqli->query($sql);
-
-            return $this->findById($entity->id);
+            
+            $sql = "UPDATE team SET name = '$name', city = '$city', badge = '$badge' WHERE id = $teamFound->id;";
+            $result = $this->mysqli->query($sql);
+            
+            return $this->findById($teamFound->id);
 
         }catch(Exception $e){
             echo 'Message: ' .$e->getMessage();
