@@ -81,10 +81,10 @@
                 $firstname = $refereeFound->firstname;
                 $surname = $refereeFound->surname;
 
-                if(strcmp($entity->firstname, "") !== 0 && strcmp($firstname, $entity->firstname) !== 0){
+                if(property_exists($entity, 'firstname') && strcmp($entity->firstname, "") !== 0 && strcmp($firstname, $entity->firstname) !== 0){
                     $firstname = $entity->firstname;
                 }
-                if(strcmp($entity->surname, "") !== 0 && strcmp($surname, $entity->surname) !== 0){
+                if(property_exists($entity, 'surname') && strcmp($entity->surname, "") !== 0 && strcmp($surname, $entity->surname) !== 0){
                     $surname = $entity->surname;
                 }
                 

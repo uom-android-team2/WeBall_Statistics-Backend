@@ -105,27 +105,27 @@
                 $team = $playerFound->team;
                 $photo = $playerFound->photo;
                 
-                if(strcmp($entity->name, "") !== 0 && strcmp($name, $entity->name) !== 0){
+                if(property_exists($entity, 'name') && strcmp($entity->name, "") !== 0 && strcmp($name, $entity->name) !== 0){
                     $name = $entity->name;
                 }
 
-                if(strcmp($entity->surname, "") !== 0 && strcmp($surname, $entity->surname) !== 0){
+                if(property_exists($entity, 'surname') && strcmp($entity->surname, "") !== 0 && strcmp($surname, $entity->surname) !== 0){
                     $surname = $entity->surname;
                 }
                 
-                if(strcmp($entity->number, "") !== 0 && strcmp($number, $entity->number) !== 0){
+                if(property_exists($entity, 'number') && strcmp($entity->number, "") !== 0 && strcmp($number, $entity->number) !== 0){
                     $number = $entity->number;
                 }
                 
-                if(strcmp($entity->position, "") !== 0 && strcmp($position, $entity->position) !== 0){
+                if(property_exists($entity, 'position') && strcmp($entity->position, "") !== 0 && strcmp($position, $entity->position) !== 0){
                     $position = $entity->position;
                 }
                 
-                if(strcmp($entity->team, "") !== 0 && strcmp($team, $entity->team) !== 0){
+                if(property_exists($entity, 'team') && strcmp($entity->team, "") !== 0 && strcmp($team, $entity->team) !== 0){
                     $team = $entity->team;
                 }
 
-                if(strcmp($entity->photo, "") !== 0 && strcmp($photo, $entity->photo) !== 0){
+                if(property_exists($entity, 'photo') && strcmp($entity->photo, "") !== 0 && strcmp($photo, $entity->photo) !== 0){
                     $photo = $entity->photo;
                 }
                 

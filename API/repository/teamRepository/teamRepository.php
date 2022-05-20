@@ -78,13 +78,13 @@ class TeamRepository implements CRUDRepository{
             $city = $teamFound->city;
             $badge = $teamFound->badge;
 
-            if(strcmp($entity->name, "") !== 0 && strcmp($name, $entity->name) !== 0){
+            if(property_exists($entity, 'name') && strcmp($entity->name, "") !== 0 && strcmp($name, $entity->name) !== 0){
                 $name = $entity->name;
             }
-            if(strcmp($entity->city, "") !== 0 && strcmp($city, $entity->city) !== 0){
+            if(property_exists($entity, 'city') && strcmp($entity->city, "") !== 0 && strcmp($city, $entity->city) !== 0){
                 $city = $entity->city;
             }
-            if(strcmp($entity->badge, "") !== 0 && strcmp($badge, $entity->badge) !== 0){
+            if(property_exists($entity, 'badge') && strcmp($entity->badge, "") !== 0 && strcmp($badge, $entity->badge) !== 0){
                 $badge = $entity->badge;
             }
            
@@ -94,7 +94,7 @@ class TeamRepository implements CRUDRepository{
             return $this->findById($teamFound->id);
 
         }catch(Exception $e){
-            echo 'Message: ' .$e->getMessage();
+            // echo 'Message: ' .$e->getMessage();
         }
     }
     
