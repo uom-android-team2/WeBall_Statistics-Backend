@@ -28,6 +28,6 @@
         public function updateMatch($entity){
             return $this->matchRepository->update($entity);
         }
-
     }
+
 ?>

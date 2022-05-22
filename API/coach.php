@@ -1,55 +1,58 @@
 <?php
 
-include_once "../php/config.php";
-include_once "models/coach.php";
+    include_once "../php/config.php";
+    include_once "models/coach.php";
 
-function test_input($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+    include "service/coachService.php";
+    include "utils/validation.php";
 
-$data = array();
+    $mysqli->select_db("championship");
+    $coachService = new CoachService("coach", $mysqli);
 
-$id = "";
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        $data = "";
+        $id = "";
+        if(isset($_GET["id"]) ){
+            $id = test_input($_GET["id"]);
+        }
+        
+        if($id){
+            $data = $coachService->findCoachById($id);
+        }else{
+            $data = $coachService->findAllCoaches();
+        }
+        
+        header("Content-Type: application/json");
+        echo json_encode($data);
 
-if(isset($_GET["id"])){
-    $id = test_input($_GET["id"]);
-}
-
-$mysqli->select_db("championship");
-
-if($id != null){
-    $sql = "SELECT * FROM `coach` WHERE `id` = $id";
-}else{
-    $sql = "SELECT * FROM `coach`";
-}
-
-try {
-
-    $result = $mysqli->query($sql);
-    //Check if data exists
-    if ($result->num_rows > 0) {
+    }else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
+        $data = "";
+        $id = "";
+        
+        if(isset($_GET["id"]) ){
+            $id = test_input($_GET["id"]);
+        }
 
         if($id){
-            $row = $result->fetch_assoc();
-            $coach = new Coach($row["id"], $row["teamid"], $row["firstname"], $row["surname"], $row["headcoach"], $row["image"], $mysqli);
-            $data = $coach;
+            $data = $coachService->deleteCoachById($id);
         }else{
-            while($row = $result->fetch_assoc()) {
-                $coach = new Coach($row["id"], $row["teamid"], $row["firstname"], $row["surname"], $row["headcoach"], $row["image"], $mysqli);
-                array_push($data, $coach);
-            }
+            $data = $coachService->deleteAllCoaches();
         }
-    }
         
-    header("Content-Type: application/json");
-    echo json_encode($data);
+        header("Content-Type: application/json");
+        echo json_encode($data);
+        
+    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-} catch (\Throwable $th) {
-    echo $mysqli->error;
-}
+        $entityBody = file_get_contents('php://input');
+        
+        $coachProvided = json_decode($entityBody);
 
-$mysqli->close();
+        $data = $coachService->updateCoach($coachProvided);
+        
+        header("Content-Type: application/json");
+        echo json_encode($data);
+    }
+
+    $mysqli->close();
 ?>

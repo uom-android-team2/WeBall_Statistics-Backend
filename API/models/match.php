@@ -18,7 +18,6 @@ class BasketballMatch {
     public $progress; //0 || 1
     public $completed; //0 || 1
 
-
     public function __construct($id, $teamlandlord_id, $teamguest_id, $date, $progress, $completed, $mysqli){
         $this->id = $id;
         $this->teamlandlord_id = $teamlandlord_id;
