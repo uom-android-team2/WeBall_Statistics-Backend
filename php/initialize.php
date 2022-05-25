@@ -95,25 +95,25 @@ if($mysqli->query($sql) === true){
     echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
 }
 
-$sql = " CREATE TABLE IF NOT EXISTS championship.`player_live_statistics`(
-  `player_id` int(144) UNSIGNED NOT NULL,
-  `match_id`int(12) UNSIGNED NOT NULL,
-  `successful_effort` int  UNSIGNED NOT NULL,
-  `total_effort`int UNSIGNED NOT NULL,
-  `successful_freethrow`int UNSIGNED NOT NULL,
-  `total_freethrow` int UNSIGNED NOT NULL,
-  `successful_twopointer` int UNSIGNED NOT NULL,
-  `total_twopointer` int UNSIGNED NOT NULL,
-  `successful_threepointer` int UNSIGNED NOT NULL,
-  `total_threepointer` int UNSIGNED NOT NULL,
-  `steel` int UNSIGNED NOT NULL,
-  `assist` int UNSIGNED NOT NULL,
-  `block` int UNSIGNED NOT NULL,
-  `rebound` int UNSIGNED NOT NULL,
-  `foul` int UNSIGNED NOT NULL,
-  `turnover`int UNSIGNED NOT NULL,
-  `minutes`datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+$sql = " CREATE TABLE IF NOT EXISTS championship.`player_championship_statistics`(
+    `player_id` int UNSIGNED NOT NULL,
+    `matches_played`int UNSIGNED NOT NULL,
+    `successful_effort` int UNSIGNED NOT NULL,
+    `total_effort` int UNSIGNED NOT NULL,
+    `successful_freethrow`int UNSIGNED NOT NULL,
+    `total_freethrow`int UNSIGNED NOT NULL,
+    `successful_twopointer` int UNSIGNED NOT NULL,
+    `total_twopointer` int UNSIGNED NOT NULL,
+    `successful_threepointer` int UNSIGNED NOT NULL,
+    `total_threepointer` int UNSIGNED NOT NULL,
+    `steal` int UNSIGNED NOT NULL,
+    `assist` int UNSIGNED NOT NULL,
+    `block` int UNSIGNED NOT NULL,
+    `rebound` int UNSIGNED NOT NULL,
+    `foul` int UNSIGNED NOT NULL,
+    `turnover`int UNSIGNED NOT NULL,
+    `minutes`datetime NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ";
 
 // execute statment
