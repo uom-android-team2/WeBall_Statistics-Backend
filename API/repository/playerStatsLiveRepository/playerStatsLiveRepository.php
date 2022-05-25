@@ -5,7 +5,6 @@
 
 
         
-    
     class PlayerStatsLiveRepository implements CRUDRepository {
 
         private $table;
@@ -23,7 +22,7 @@
                 $result = $this->mysqli->query($sql);
                 $row = $result->fetch_assoc();
                 if($result->num_rows > 0){
-                    $player = new PlayerStatsLive($row["player_id"], $row["match_id"], $row["successful_effort"], $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["successful_twopointer"], $row["total_twopointer"], $row["successful_threepointer"], $row["total_threepointer"], $row["steel"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $row["minutes"], $row["photo"]);
+                    $player = new PlayerStatsLive($row["player_id"], $row["match_id"], $row["successful_effort"], $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["successful_twopointer"], $row["total_twopointer"], $row["successful_threepointer"], $row["total_threepointer"], $row["steel"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $row["minutes"]);
                 }
             }catch(Exception $e){
                 echo 'Message: ' .$e->getMessage();
@@ -174,10 +173,6 @@
         }
 
     }
-
-
-
-
 
 
 
