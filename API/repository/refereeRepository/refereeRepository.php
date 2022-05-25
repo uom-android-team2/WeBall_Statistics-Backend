@@ -75,7 +75,7 @@
             try {
                 $refereeFound = $this->findById($entity->id);
                 if($refereeFound == null){
-                    return "referee doesn't exist";
+                    return "Referee doesn't exist";
                 }
 
                 $firstname = $refereeFound->firstname;
@@ -97,13 +97,10 @@
             }
         }
     
-        
         public function count(){
 
         }
     
     }
-
-
 
 ?>
