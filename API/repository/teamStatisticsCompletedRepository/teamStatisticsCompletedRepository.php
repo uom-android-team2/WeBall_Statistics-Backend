@@ -16,7 +16,7 @@
         public function findById($id){
             $teamStatsCompleted = null;
             try {
-                $sql = "SELECT * FROM `$this->table` WHERE `id` = $id";
+                $sql = "SELECT * FROM `$this->table` WHERE `team_id` = $id";
                 $result = $this->mysqli->query($sql);
                 $row = $result->fetch_assoc();
                 if($result->num_rows > 0){
@@ -51,7 +51,7 @@
 
         public function deleteById($id){
             try {
-                $sql = " DELETE FROM `$this->table` WHERE `id` = $id";
+                $sql = " DELETE FROM `$this->table` WHERE `team_id` = $id";
                 $result = $this->mysqli->query($sql);
                 return $this->findAll();
             }catch(Exception $e){

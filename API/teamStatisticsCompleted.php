@@ -9,13 +9,13 @@
         
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $data = "";
-        $id = "";
-        if(isset($_GET["id"]) ){
-            $id = test_input($_GET["id"]);
+        $team_id = "";
+        if(isset($_GET["team_id"]) ){
+            $team_id = test_input($_GET["team_id"]);
         }
         
-        if($id){
-            $data = $teamCompletedStatsService->findTeamCompletedStatsByTeamId($id);
+        if($team_id){
+            $data = $teamCompletedStatsService->findTeamCompletedStatsByTeamId($team_id);
         }else{
             $data = $teamCompletedStatsService->findAllTeamCompletedStats();
         }
@@ -24,14 +24,14 @@
         echo json_encode($data);
     }else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
         $data = "";
-        $id = "";
+        $team_id = "";
         
-        if(isset($_GET["id"]) ){
-            $id = test_input($_GET["id"]);
+        if(isset($_GET["team_id"]) ){
+            $team_id = test_input($_GET["team_id"]);
         }
 
-        if($id){
-            $data = $teamCompletedStatsService->deleteTeamCompletedStatsById($id);
+        if($team_id){
+            $data = $teamCompletedStatsService->deleteTeamCompletedStatsById($team_id);
         }else{
             $data = $teamCompletedStatsService->deleteAllTeamCompletedStats();
         }
