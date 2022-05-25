@@ -1,2 +1,3 @@
 # WeBall Statistics Backend
-# Android Development Project for Univercity of Macedonia
+
+# Android Development Project for the University of Macedonia
