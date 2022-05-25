@@ -1,11 +1,11 @@
 <?php
 
     include_once "../php/config.php";
-    include "service/teamService.php";
+    include "service/teamStatisticsCompletedService.php";
     include "utils/validation.php";
 
     $mysqli->select_db("championship");
-    $teamService = new TeamService("team", $mysqli);
+    $teamCompletedStatsService = new TeamStatisticsCompletedService("team_championship_statistics", $mysqli);
         
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $data = "";
@@ -14,16 +14,14 @@
             $id = test_input($_GET["id"]);
         }
         
-
         if($id){
-            $data = $teamService->findTeamById($id);
+            $data = $teamCompletedStatsService->findTeamCompletedStatsByTeamId($id);
         }else{
-            $data = $teamService->findAllTeams();
+            $data = $teamCompletedStatsService->findAllTeamCompletedStats();
         }
         
         header("Content-Type: application/json");
         echo json_encode($data);
-
     }else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
         $data = "";
         $id = "";
@@ -33,26 +31,25 @@
         }
 
         if($id){
-            $data = $teamService->deleteTeamById($id);
+            $data = $teamCompletedStatsService->deleteTeamCompletedStatsById($id);
         }else{
-            $data = $teamService->deleteAllTeams();
+            $data = $teamCompletedStatsService->deleteAllTeamCompletedStats();
         }
         
         header("Content-Type: application/json");
         echo json_encode($data);
-        
     }else if($_SERVER['REQUEST_METHOD'] == "POST"){
         
         $entityBody = file_get_contents('php://input');
         
-        $teamProvided = json_decode($entityBody);
+        $teamStatsProvided = json_decode($entityBody);
 
-        $data = $teamService->updateTeam($teamProvided);
+        $data = $teamCompletedStatsService->updateTeamCompletedStats($teamStatsProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);
-        
     }
 
     $mysqli->close();
+
 ?>
