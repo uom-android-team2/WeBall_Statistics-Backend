@@ -8,13 +8,25 @@ const teams = [
   "Washington Wizards",
   "Orlando Magic",
 ];
+// const teams = [];
 
 if (teams.length % 4 != 0) {
   for (let i = 0; i < teams.length % 4; i++) {
     teams.push("-");
   }
 }
-console.log(teams);
+const no_teams_section = document.getElementById("no-teams-section");
+
+if (teams.length === 0) {
+  no_teams_section.insertAdjacentHTML(
+    "beforeend",
+    `<h2>In order to manually create the championship you need 4 or more (even number of teams).</h2>
+      <h3>Head back to the Create Team Page</h3>
+      <a href="create-team.php" class="btn btn-success"> Create some teams</a>
+     `
+  );
+}
+
 const numberOfMatches = teams.length / 2;
 
 const numberOfWeeks = teams.length - 1;
@@ -25,7 +37,7 @@ const createContainers = function () {
   for (let i = 0; i < numberOfWeeks; i++) {
     week_container.insertAdjacentHTML(
       "beforeend",
-      `<h2>Week ${i + 1}</h2>
+      `<h2 style="text-align:center; padding-top: 10px;">Week ${i + 1}</h2>
        <div class="team-container" id="team-container${i + 1}"></div>`
     );
   }
@@ -37,7 +49,10 @@ const createMatches = function (myContainer) {
     document.getElementById(`team-container${myContainer}`).insertAdjacentHTML(
       "beforeend",
       `<h3 class="matchTitle">Match ${i + 1}</h3>
-    <div draggable="true" class="box"></div><h4 class="vsOperator"> VS </h4>
+    <div draggable="true" class="box"></div>
+    <div class="res-circle">
+      <div class="circle-txt">VS</div>
+    </div>
     <div draggable="true" class="box"></div>`
     );
   }
@@ -110,3 +125,8 @@ items.forEach(function (item) {
   item.addEventListener("dragend", handleDragEnd);
   item.addEventListener("drop", handleDrop);
 });
+
+//Done button clicked
+function my_button_click_handler() {
+  alert("Button Clcked");
+}

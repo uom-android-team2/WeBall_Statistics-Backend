@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  background-color: rgb(22, 139, 104);
+  background-color: #4b85b7;
   padding: 60px 50px 40px 50px;
   border-radius: 10%;
 }
@@ -25,13 +25,66 @@
 }
 
 .box.over {
-  border: 3px dotted #666;
+  border: 3px dotted #667;
 }
 
 .matchTitle {
   padding-left: 2rem;
 }
 
-.vsOperator {
-  padding-left: 8rem;
+/* VS circle*/
+.res-circle {
+  /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
+  width: 20%;
+  border-radius: 50%;
+
+  /* (B) BACKGROUND COLOR */
+  background: #b77d4b;
+
+  /* (C) NECESSARY TO POSITION TEXT BLOCK */
+  line-height: 0;
+  position: relative;
+}
+
+/* (D) MATCH HEIGHT */
+.res-circle::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* (E) TEXT BLOCK */
+.circle-txt {
+  /* (E1) CENTER TEXT IN CIRCLE */
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+#no-teams-section {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+}
+
+#button-div {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 20px 40px 20px;
+}
+
+#submit-button {
+  background-color: #b77d4b;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  font-weight: bold;
 }

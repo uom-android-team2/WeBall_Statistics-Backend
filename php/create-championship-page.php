@@ -19,14 +19,20 @@
     <script defer src="../Js/script.js"></script>
   </head>
     <body>
-        <header>
+        <header >
+            
             <div id="container">
                 <a id="back" href="index.php" class="btn btn-info">Back</a>
                 <h1 id="title">Create the championship manually</h1>
             </div>
+            <div id="no-teams-section"></div>
         </header>
         <div id="week-container">
             <div id="team-container" ></div>
         </div>
+        <div id="button-div">
+        <button id='submit-button' onclick="my_button_click_handler" type="submit" >Done</button>
+        </div>
+
     </body>
 </html>
