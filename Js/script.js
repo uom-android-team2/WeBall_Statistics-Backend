@@ -9,6 +9,7 @@ const teams = [
   "Orlando Magic",
 ];
 // const teams = [];
+console.log(teams.length); //Helps refresh the page to avoid bug
 
 if (teams.length % 4 != 0) {
   for (let i = 0; i < teams.length % 4; i++) {
@@ -25,6 +26,7 @@ if (teams.length === 0) {
       <a href="create-team.php" class="btn btn-success"> Create some teams</a>
      `
   );
+  document.getElementById("submit-button").classList.add("hidden");
 }
 
 const numberOfMatches = teams.length / 2;

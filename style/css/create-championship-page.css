@@ -84,7 +84,9 @@
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 26px;
   font-weight: bold;
+}
+.hidden {
+  display: none;
 }
