@@ -1,0 +1,37 @@
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+#title {
+  padding-left: 2rem;
+}
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: rgb(22, 139, 104);
+  padding: 60px 50px 40px 50px;
+  border-radius: 10%;
+}
+
+.box {
+  border: 3px solid #667;
+  background-color: #ddd;
+  border-radius: 0.5em;
+  padding: 10px;
+  cursor: move;
+}
+
+.box.over {
+  border: 3px dotted #666;
+}
+
+.matchTitle {
+  padding-left: 2rem;
+}
+
+.vsOperator {
+  padding-left: 8rem;
+}
