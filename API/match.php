@@ -12,14 +12,41 @@
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $data = "";
         $id = "";
+        $live = "";
+        $completed = "";
+        $upcoming = "";
+
         if(isset($_GET["id"]) ){
             $id = test_input($_GET["id"]);
+        }
+
+        if(isset($_GET["live"]) ){
+            $live = test_input($_GET["live"]);
+        }
+
+        if(isset($_GET["completed"]) ){
+            $completed = test_input($_GET["completed"]);
+        }
+
+        if(isset($_GET["upcoming"]) ){
+            $upcoming = test_input($_GET["upcoming"]);
         }
         
         if($id){
             $data = $matchService->findMatchById($id);
         }else{
             $data = $matchService->findAllMatches();
+        }
+
+        if(strcmp($live, "true") === 0){
+            $data = $matchService->findLiveMatches();
+        }
+
+        if(strcmp($completed, "true") === 0){
+            $data = $matchService->findCompletedMatches();
+        }
+        if(strcmp($upcoming, "true") === 0){
+            $data = $matchService->findUpComingMatches();
         }
         
         header("Content-Type: application/json");

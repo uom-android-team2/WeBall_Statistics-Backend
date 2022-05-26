@@ -112,6 +112,55 @@
         
         public function count(){
         }
+
+
+        public function findLiveMatches(){
+            $data = array();
+            try {
+                $sql = "SELECT * FROM `$this->table` WHERE `progress` = '1'";   
+                $result = $this->mysqli->query($sql);
+                while($row = $result->fetch_assoc()) {
+                    $match = new BasketballMatch($row["id"], $row["teamlandlord_id"], $row["teamguest_id"], $row["date"], $row["progress"], $row["completed"], $this->mysqli);
+                    array_push($data, $match);
+                }
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+            return $data;
+        }
+
+
+        public function findCompletedMatches(){
+            $data = array();
+            try {
+                $sql = "SELECT * FROM `$this->table` WHERE `completed` = '1'";   
+                $result = $this->mysqli->query($sql);
+                while($row = $result->fetch_assoc()) {
+                    $match = new BasketballMatch($row["id"], $row["teamlandlord_id"], $row["teamguest_id"], $row["date"], $row["progress"], $row["completed"], $this->mysqli);
+                    array_push($data, $match);
+                }
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+            return $data;
+        }
+
+        public function findUpComingMatches(){
+            $data = array();
+            try {
+                $sql = "SELECT * FROM `$this->table` WHERE `date` > NOW() AND `completed` = '0'";   
+                $result = $this->mysqli->query($sql);
+                while($row = $result->fetch_assoc()) {
+                    $match = new BasketballMatch($row["id"], $row["teamlandlord_id"], $row["teamguest_id"], $row["date"], $row["progress"], $row["completed"], $this->mysqli);
+                    array_push($data, $match);
+                }
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+            return $data;
+        }
+
+
     }
 
 ?>

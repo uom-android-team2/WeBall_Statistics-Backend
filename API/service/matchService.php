@@ -28,6 +28,17 @@
         public function updateMatch($entity){
             return $this->matchRepository->update($entity);
         }
+
+        public function findLiveMatches(){
+            return $this->matchRepository->findLiveMatches();
+        }
+
+        public function findCompletedMatches(){
+            return $this->matchRepository->findCompletedMatches();
+        }
+        public function findUpComingMatches(){
+            return $this->matchRepository->findUpComingMatches();
+        }
     }
 
 ?>
