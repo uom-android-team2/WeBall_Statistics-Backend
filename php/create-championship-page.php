@@ -31,7 +31,7 @@
             <div id="team-container" ></div>
         </div>
         <div id="button-div">
-        <button id='submit-button' onclick="my_button_click_handler" type="submit" >Done</button>
+        <button id='submit-button' type="submit" >Done</button>
         </div>
 
     </body>

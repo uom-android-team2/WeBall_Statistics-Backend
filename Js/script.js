@@ -1,15 +1,14 @@
 const teams = [
   "Boston Celtics",
   "Golden State Warriors",
-  "Miami Heat",
-  "Denver Nuggets",
+  //"Miami Heat",
+  //"Denver Nuggets",
   "Chicago Bulls",
   "Charlotte Hornets",
   "Washington Wizards",
   "Orlando Magic",
 ];
 // const teams = [];
-console.log(teams.length); //Helps refresh the page to avoid bug
 
 if (teams.length % 4 != 0) {
   for (let i = 0; i < teams.length % 4; i++) {
@@ -30,11 +29,10 @@ if (teams.length === 0) {
 }
 
 const numberOfMatches = teams.length / 2;
-
-const numberOfWeeks = teams.length - 1;
-
+const numberOfWeeks = teams.filter((entry) => entry.trim() != "-").length - 1;
 const week_container = document.getElementById("week-container");
 
+//createContainers creates the containers for each week so that later function can just append elements and not create
 const createContainers = function () {
   for (let i = 0; i < numberOfWeeks; i++) {
     week_container.insertAdjacentHTML(
@@ -46,6 +44,7 @@ const createContainers = function () {
 };
 createContainers();
 
+//createTeams creates the fields that receive the matches
 const createMatches = function (myContainer) {
   for (let i = 0; i < numberOfMatches; i++) {
     document.getElementById(`team-container${myContainer}`).insertAdjacentHTML(
@@ -60,6 +59,7 @@ const createMatches = function (myContainer) {
   }
 };
 
+//createTeams creates the box with the drag and drop functionallity for easy match customizing by the admin
 const createTeams = function (myContainer) {
   for (let i = 0; i < teams.length; i++) {
     document
@@ -71,6 +71,7 @@ const createTeams = function (myContainer) {
   }
 };
 
+//createWeeks function calls the two essential funtions that create the UI
 const createWeeks = function () {
   for (let i = 0; i < numberOfWeeks; i++) {
     createTeams(i + 1);
@@ -128,7 +129,44 @@ items.forEach(function (item) {
   item.addEventListener("drop", handleDrop);
 });
 
+const listOfMatches = []; //This will later contain all the Match objects that will later be stored in the DB
+
+//This class represents the entity of a Match between two teams
+class Match {
+  constructor(homeTeam, awayTeam, week) {
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+    this.week = week;
+  }
+}
+
 //Done button clicked
-function my_button_click_handler() {
-  alert("Button Clcked");
+document.getElementById("submit-button").addEventListener("click", function () {
+  //This function handles all actions that need to be done once the done button is clicked by the admin
+  alert("Done button clicked");
+  array = document.getElementsByClassName("box");
+  var data = [];
+  for (let i = 0; i < array.length; i++) {
+    data.push(array[i].innerHTML);
+  }
+  console.log(data);
+  data = data.filter((entry) => entry.trim() != "");
+  const dataIn2d = splitArrayIntoChunksOfLen(data, teams.length);
+  for (let i = 0; i < dataIn2d.length; i++) {
+    for (let j = 0; j < dataIn2d[0].length; j = j + 2) {
+      listOfMatches.push(new Match(dataIn2d[i][j], dataIn2d[i][j + 1], i + 1));
+    }
+  }
+  //need to remove matches that have - as a team name
+  console.log(listOfMatches);
+});
+
+function splitArrayIntoChunksOfLen(arr, len) {
+  var chunks = [],
+    i = 0,
+    n = arr.length;
+  while (i < n) {
+    chunks.push(arr.slice(i, (i += len)));
+  }
+  return chunks;
 }
