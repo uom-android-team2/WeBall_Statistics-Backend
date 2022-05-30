@@ -1,8 +1,8 @@
 const teams = [
   "Boston Celtics",
   "Golden State Warriors",
-  //"Miami Heat",
-  //"Denver Nuggets",
+  "Miami Heat",
+  "Denver Nuggets",
   "Chicago Bulls",
   "Charlotte Hornets",
   "Washington Wizards",
