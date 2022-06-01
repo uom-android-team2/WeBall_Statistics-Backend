@@ -22,7 +22,7 @@
                 if($result->num_rows > 0){
                     $teamStatsCompleted = new TeamStatisticsCompleted($row["team_id"], $row["total_matches"], $row["win"], $row["lose"], $row["succesful_effort"], 
                     $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["succesful_twopointer"], $row["total_twopointer"], 
-                    $row["succesful_threepointer"], $row["total_threepointer"], $row["steel"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $this->mysqli);
+                    $row["succesful_threepointer"], $row["total_threepointer"], $row["steal"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $this->mysqli);
                 }
             }catch(Exception $e){
                 echo 'Message: ' .$e->getMessage();
@@ -39,7 +39,7 @@
                 while($row = $result->fetch_assoc()) {
                     $teamStatsCompleted = new TeamStatisticsCompleted($row["team_id"], $row["total_matches"], $row["win"], $row["lose"], $row["succesful_effort"], 
                     $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["succesful_twopointer"], $row["total_twopointer"], 
-                    $row["succesful_threepointer"], $row["total_threepointer"], $row["steel"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], 
+                    $row["succesful_threepointer"], $row["total_threepointer"], $row["steal"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], 
                     $row["turnover"], $this->mysqli);
                     array_push($data, $teamStatsCompleted);
                 }
@@ -93,7 +93,7 @@
                 $total_twopointer = $teamStatsCompletedFound->total_twopointer;
                 $succesful_threepointer = $teamStatsCompletedFound->succesful_threepointer;
                 $total_threepointer = $teamStatsCompletedFound->total_threepointer;
-                $steel = $teamStatsCompletedFound->steel;
+                $steal = $teamStatsCompletedFound->steal;
                 $assist = $teamStatsCompletedFound->assist;
                 $block = $teamStatsCompletedFound->block;
                 $rebound = $teamStatsCompletedFound->rebound;
@@ -148,8 +148,8 @@
                     $total_threepointer = $entity->total_threepointer;
                 }
 
-                if(property_exists($entity, 'steel') && strcmp($entity->steel, "") !== 0 && strcmp($steel, $entity->steel) !== 0){
-                    $steel = $entity->steel;
+                if(property_exists($entity, 'steal') && strcmp($entity->steal, "") !== 0 && strcmp($steal, $entity->steal) !== 0){
+                    $steal = $entity->steal;
                 }
 
                 if(property_exists($entity, 'assist') && strcmp($entity->assist, "") !== 0 && strcmp($assist, $entity->assist) !== 0){
@@ -172,7 +172,7 @@
                     $turnover = $entity->turnover;
                 }
                 
-                $sql = "UPDATE `$this->table` SET `team_id`='$team_id',`total_matches`='$total_matches',`win`='$win',`lose`='$lose',`succesful_effort`='$succesful_effort',`total_effort`='$total_effort',`successful_freethrow`='$successful_freethrow',`total_freethrow`='$total_freethrow',`succesful_twopointer`='$succesful_twopointer',`total_twopointer`='$total_twopointer',`succesful_threepointer`='$succesful_threepointer',`total_threepointer`='$total_threepointer',`steel`='$steel',`assist`='$assist',`block`='$block',`rebound`='$rebound',`foul`='$foul',`turnover`='$turnover WHERE `team_id` = $entity->team_id";
+                $sql = "UPDATE `$this->table` SET `team_id`='$team_id',`total_matches`='$total_matches',`win`='$win',`lose`='$lose',`succesful_effort`='$succesful_effort',`total_effort`='$total_effort',`successful_freethrow`='$successful_freethrow',`total_freethrow`='$total_freethrow',`succesful_twopointer`='$succesful_twopointer',`total_twopointer`='$total_twopointer',`succesful_threepointer`='$succesful_threepointer',`total_threepointer`='$total_threepointer',`steal`='$steal',`assist`='$assist',`block`='$block',`rebound`='$rebound',`foul`='$foul',`turnover`='$turnover WHERE `team_id` = $entity->team_id";
                 $result = $this->mysqli->query($sql);
                 
                 return $this->findById($teamStatsCompletedFound->team_id);

@@ -11,7 +11,7 @@
     //     `total_twopointer` int UNSIGNED NOT NULL,
     //     `succesful_threepointer` int UNSIGNED NOT NULL,
     //     `total_threepointer` int UNSIGNED NOT NULL,
-    //     `steel` int UNSIGNED NOT NULL,
+    //     `steal` int UNSIGNED NOT NULL,
     //     `assist` int UNSIGNED NOT NULL,
     //     `block` int UNSIGNED NOT NULL,
     //     `rebound` int UNSIGNED NOT NULL,
@@ -34,7 +34,7 @@
         public $total_twopointer;
         public $succesful_threepointer;
         public $total_threepointer;
-        public $steel;
+        public $steal;
         public $assist;
         public $block;
         public $rebound;
@@ -42,7 +42,7 @@
         public $turnover;
 
         public function __construct($team_id, $total_matches, $win, $lose, $succesful_effort, $total_effort, $successful_freethrow, 
-        $total_freethrow, $succesful_twopointer, $total_twopointer, $succesful_threepointer, $total_threepointer, $steel, $assist, 
+        $total_freethrow, $succesful_twopointer, $total_twopointer, $succesful_threepointer, $total_threepointer, $steal, $assist, 
         $block, $rebound, $foul, $turnover, $mysqli){
             $this->team_id = $team_id;
             $this->team_name = $this->get_team_name($mysqli);
@@ -57,7 +57,7 @@
             $this->total_twopointer = $total_twopointer;
             $this->succesful_threepointer = $succesful_threepointer;
             $this->total_threepointer = $total_threepointer;
-            $this->steel = $steel;
+            $this->steal = $steal;
             $this->assist = $assist;
             $this->block = $block;
             $this->rebound = $rebound;
