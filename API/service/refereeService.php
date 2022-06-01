@@ -29,6 +29,10 @@
         public function updateReferee($entity){
             return $this->refereeRepository->update($entity);
         }
+        
+        public function saveReferee($entity){
+            return $this->refereeRepository->save($entity);
+        }
     }
 
 ?>

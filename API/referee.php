@@ -43,13 +43,23 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
     header("Content-Type: application/json");
     echo json_encode($data);
     
-}else if($_SERVER['REQUEST_METHOD'] == "POST"){
+}else if($_SERVER['REQUEST_METHOD'] == "PUT"){
     
     $entityBody = file_get_contents('php://input');
     
     $refereeProvided = json_decode($entityBody);
 
     $data = $refereeService->updateReferee($refereeProvided);
+    
+    header("Content-Type: application/json");
+    echo json_encode($data);
+}else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
+    $entityBody = file_get_contents('php://input');
+    
+    $refereeProvided = json_decode($entityBody);
+
+    $data = $refereeService->saveReferee($refereeProvided);
     
     header("Content-Type: application/json");
     echo json_encode($data);
