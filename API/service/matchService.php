@@ -39,6 +39,10 @@
         public function findUpComingMatches(){
             return $this->matchRepository->findUpComingMatches();
         }
+        
+        public function saveMatch($entity){
+            return $this->matchRepository->save($entity);
+        }
     }
 
 ?>

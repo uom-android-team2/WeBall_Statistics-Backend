@@ -69,13 +69,23 @@
         header("Content-Type: application/json");
         echo json_encode($data);
         
-    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    }else if($_SERVER['REQUEST_METHOD'] == "PUT"){
 
         $entityBody = file_get_contents('php://input');
         
         $matchProvided = json_decode($entityBody);
 
         $data = $matchService->updateMatch($matchProvided);
+        
+        header("Content-Type: application/json");
+        echo json_encode($data);
+    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+        $entityBody = file_get_contents('php://input');
+        
+        $matchProvided = json_decode($entityBody);
+
+        $data = $matchService->saveMatch($matchProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);
