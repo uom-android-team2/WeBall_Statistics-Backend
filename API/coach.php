@@ -42,13 +42,23 @@
         header("Content-Type: application/json");
         echo json_encode($data);
         
-    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    }else if($_SERVER['REQUEST_METHOD'] == "PUT"){
 
         $entityBody = file_get_contents('php://input');
         
         $coachProvided = json_decode($entityBody);
 
         $data = $coachService->updateCoach($coachProvided);
+        
+        header("Content-Type: application/json");
+        echo json_encode($data);
+    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+        $entityBody = file_get_contents('php://input');
+        
+        $coachProvided = json_decode($entityBody);
+
+        $data = $coachService->saveCoach($coachProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);

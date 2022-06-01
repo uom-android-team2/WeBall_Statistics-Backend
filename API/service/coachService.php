@@ -28,6 +28,11 @@
         public function updateCoach($entity){
             return $this->coachRepository->update($entity);
         }
+
+        //save coach
+        public function saveCoach($entity){
+            return $this->coachRepository->save($entity);
+        }
     }
 
 ?>
