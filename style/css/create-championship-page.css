@@ -1,3 +1,6 @@
+*{
+  padding: 0px 5px;
+}
 #container {
   display: flex;
   align-items: center;
@@ -13,7 +16,7 @@
   gap: 10px;
   background-color: #4b85b7;
   padding: 60px 50px 40px 50px;
-  border-radius: 10%;
+  border-radius: 20px;
 }
 
 .box {
@@ -44,6 +47,8 @@
   /* (C) NECESSARY TO POSITION TEXT BLOCK */
   line-height: 0;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* (D) MATCH HEIGHT */
@@ -57,9 +62,9 @@
 .circle-txt {
   /* (E1) CENTER TEXT IN CIRCLE */
   position: absolute;
-  bottom: 50%;
-  width: 100%;
-  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   font-family: arial, sans-serif;
   font-weight: bold;
 }
