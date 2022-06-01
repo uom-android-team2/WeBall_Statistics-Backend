@@ -125,6 +125,7 @@ if($mysqli->query($sql) === true){
 
 $sql = "CREATE TABLE IF NOT EXISTS championship.`player_live_statistics`(
   `player_id` int UNSIGNED NOT NULL,
+  `match_id` int UNSIGNED NOT NULL,
   `successful_effort` int UNSIGNED NOT NULL,
   `total_freethrow`int UNSIGNED NOT NULL,
   `successful_twopointer` int UNSIGNED NOT NULL,
