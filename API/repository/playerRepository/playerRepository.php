@@ -88,7 +88,13 @@
             } 
         }
         public function save($entity){
-
+            try {
+                $sql = "INSERT INTO `$this->table` (`name`, `surname`, `number`, `position`, `team`, `photo`) VALUES ('$entity->name', '$entity->surname', '$entity->number', '$entity->position', '$entity->team', '$entity->photo')";
+                $result = $this->mysqli->query($sql);
+                return $this->findAll();
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            } 
         }
         public function update($entity){
             try {

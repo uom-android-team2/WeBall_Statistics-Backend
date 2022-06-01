@@ -41,13 +41,24 @@
         header("Content-Type: application/json");
         echo json_encode($data);
         
-    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    }else if($_SERVER['REQUEST_METHOD'] == "PUT"){
         
         $entityBody = file_get_contents('php://input');
         
         $teamProvided = json_decode($entityBody);
 
         $data = $teamService->updateTeam($teamProvided);
+        
+        header("Content-Type: application/json");
+        echo json_encode($data);
+        
+    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        $entityBody = file_get_contents('php://input');
+        
+        $teamProvided = json_decode($entityBody);
+
+        $data = $teamService->saveTeam($teamProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);

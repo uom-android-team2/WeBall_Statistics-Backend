@@ -64,7 +64,13 @@ class TeamRepository implements CRUDRepository{
     }
     
     public function save($entity){
-
+        try {
+            $sql = "INSERT INTO `$this->table` (`name`, `city`, `badge`) VALUES ('$entity->name', '$entity->city', '$entity->badge')";
+            $result = $this->mysqli->query($sql);
+            return $this->findAll();
+        }catch(Exception $e){
+            echo 'Message: ' .$e->getMessage();
+        } 
     }
     
     public function update($entity){

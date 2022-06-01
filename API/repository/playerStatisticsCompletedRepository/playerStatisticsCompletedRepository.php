@@ -69,7 +69,13 @@
         }
 
         public function save($entity){
-
+            try {
+                $sql = "INSERT INTO `$this->table` (`player_id`, `matches_played`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `successful_twopointer`, `total_twopointer`, `successful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`, `minutes`) VALUES ('$entity->player_id', '$entity->matches_played', '$entity->successful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->successful_twopointer', '$entity->total_twopointer', '$entity->successful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover', '$entity->minutes')";
+                $result = $this->mysqli->query($sql);
+                return $this->findAll();
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            } 
         }
         
         public function update($entity){

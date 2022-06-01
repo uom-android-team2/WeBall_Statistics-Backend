@@ -30,6 +30,10 @@
         public function updateTeam($entity){
             return $this->teamRepository->update($entity);
         }
+        
+        public function saveTeam($entity){
+            return $this->teamRepository->save($entity);
+        }
 
     }
 
