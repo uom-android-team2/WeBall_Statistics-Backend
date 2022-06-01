@@ -29,5 +29,9 @@
             return $this->playerRepository->update($entity);
         }
 
+        public function savePlayer($entity){
+            return $this->playerRepository->save($entity);
+        }
+
     }
 ?>
