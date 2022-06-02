@@ -1,8 +1,8 @@
-fetch("http://localhost/php/WeBall_Statistics-Backend/API/team.php")
+fetch("http://localhost/WeBall_Backend/API/team.php")
   .then((response) => response.json())
   .then((result) => {
     teams = result.map((team) => {
-      return team.name;
+      return team.name; //This needs to be changed
     });
     start(teams);
   })
@@ -16,18 +16,37 @@ const start = (teams) => {
   }
 
   const no_teams_section = document.getElementById("no-teams-section");
+  const not_enough_teams_section = document.getElementById(
+    "not-enough-teams-section"
+  );
 
+  //no teams
   if (teams.length === 0) {
     no_teams_section.insertAdjacentHTML(
       "beforeend",
-      `<h2>In order to manually create the championship you need 4 or more (even number of teams).</h2>
-        <h3>Head back to the Create Team Page</h3>
+      `<h2>You currently have not created any teams.</h2>
+        <h4>Head back to the Create Team Page!</h4>
         <a href="create-team.php" class="btn btn-success"> Create some teams</a>
        `
     );
     document.getElementById("submit-button").classList.add("hidden");
   }
 
+  //not enought teams code goes below
+  if (
+    (teams.length !== 0 &&
+      teams.filter((entry) => entry.trim() != "-").length < 4) ||
+    teams.filter((entry) => entry.trim() != "-").length % 2 === 1
+  ) {
+    not_enough_teams_section.insertAdjacentHTML(
+      "beforeend",
+      `<h2>In order to manually create the championship you need 4 or more (even number of teams).</h2>
+        <h4>Head back to the Create Team Page</h4>
+        <a href="create-team.php" class="btn btn-success"> Create some teams</a>
+       `
+    );
+    document.getElementById("submit-button").classList.add("hidden");
+  }
   const numberOfMatches = teams.length / 2;
   const numberOfWeeks = teams.filter((entry) => entry.trim() != "-").length - 1;
   const week_container = document.getElementById("week-container");
@@ -42,8 +61,12 @@ const start = (teams) => {
       );
     }
   };
-  createContainers();
-
+  if (
+    teams.filter((entry) => entry.trim() != "-").length >= 4 &&
+    teams.filter((entry) => entry.trim() != "-").length % 2 === 0
+  ) {
+    createContainers();
+  }
   //createTeams creates the fields that receive the matches
   const createMatches = function (myContainer) {
     for (let i = 0; i < numberOfMatches; i++) {
@@ -81,8 +104,12 @@ const start = (teams) => {
     }
   };
 
-  createWeeks();
-
+  if (
+    teams.filter((entry) => entry.trim() != "-").length >= 4 &&
+    teams.filter((entry) => entry.trim() != "-").length % 2 === 0
+  ) {
+    createWeeks();
+  }
   //Implementing the drap and drop feature
   function handleDragStart(e) {
     this.style.opacity = "0.4";
@@ -149,11 +176,10 @@ const start = (teams) => {
       //This function handles all actions that need to be done once the done button is clicked by the admin
       alert("Done button clicked");
       array = document.getElementsByClassName("box");
-      var data = [];
+      let data = [];
       for (let i = 0; i < array.length; i++) {
         data.push(array[i].innerHTML);
       }
-      console.log(data);
       data = data.filter((entry) => entry.trim() != "");
       const dataIn2d = splitArrayIntoChunksOfLen(data, teams.length);
       for (let i = 0; i < dataIn2d.length; i++) {
@@ -168,7 +194,7 @@ const start = (teams) => {
     });
 
   function splitArrayIntoChunksOfLen(arr, len) {
-    var chunks = [],
+    let chunks = [],
       i = 0,
       n = arr.length;
     while (i < n) {

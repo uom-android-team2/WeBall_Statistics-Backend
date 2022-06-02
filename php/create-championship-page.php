@@ -26,6 +26,7 @@
                 <h1 id="title">Create the championship manually</h1>
             </div>
             <div id="no-teams-section"></div>
+            <div id="not-enough-teams-section"></div>
         </header>
         <div id="week-container">
             <div id="team-container" ></div>
