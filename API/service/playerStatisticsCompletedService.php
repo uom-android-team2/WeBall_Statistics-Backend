@@ -30,6 +30,10 @@
         public function updatePlayerCompletedStats($entity){
             return $this->playerStatsRepository->update($entity);
         }
+        
+        public function savePlayerCompletedStats($entity){
+            return $this->playerStatsRepository->save($entity);
+        }
     }
 
 ?>

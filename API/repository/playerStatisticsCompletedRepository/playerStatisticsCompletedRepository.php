@@ -172,8 +172,7 @@
                     $minutes = $entity->minutes;
                 }
 
-                
-                $sql = "UPDATE `$this->table` SET `player_id`='$player_id',`matches_played`='$matches_played',`successful_effort`='$successful_effort',`total_effort`='$total_effort',`successful_freethrow`='$successful_freethrow',`total_freethrow`='$total_freethrow',`successful_twopointer`='$successful_twopointer',`total_twopointer`='$total_twopointer',`successful_threepointer`='$successful_threepointer',`total_threepointer`='$total_threepointer',`steal`='$steal',`assist`='$assist',`block`='$block',`rebound`='$rebound',`foul`='$foul',`turnover`='$turnover',`minutes`='$minutes' WHERE `player_id` = $entity->player_id";
+                $sql = "UPDATE `$this->table` SET matches_played = '$matches_played', successful_effort = '$successful_effort', total_effort = '$total_effort', successful_freethrow = '$successful_freethrow', total_freethrow = '$total_freethrow', successful_twopointer = '$successful_twopointer', total_twopointer = '$total_twopointer', successful_threepointer = '$successful_threepointer', total_threepointer = '$total_threepointer', steal = '$steal', assist = '$assist', block = '$block', rebound = '$rebound', foul = '$foul', turnover = '$turnover', minutes = '$minutes' WHERE player_id = '$player_id'";
                 $result = $this->mysqli->query($sql);
                 
                 return $this->findById($playerStatsCompletedFound->player_id);
