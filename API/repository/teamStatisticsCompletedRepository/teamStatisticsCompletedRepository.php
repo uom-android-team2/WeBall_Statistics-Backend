@@ -82,7 +82,7 @@
         public function update($entity){
            
             try {
-                $teamStatsCompletedFound = $this->findById($entity->id);
+                $teamStatsCompletedFound = $this->findById($entity->team_id);
                 if($teamStatsCompletedFound == null){
                     return "Seasson Statistics for this Team doesn't exist";
                 }
@@ -178,7 +178,7 @@
                     $turnover = $entity->turnover;
                 }
                 
-                $sql = "UPDATE `$this->table` SET `team_id`='$team_id',`total_matches`='$total_matches',`win`='$win',`lose`='$lose',`succesful_effort`='$succesful_effort',`total_effort`='$total_effort',`successful_freethrow`='$successful_freethrow',`total_freethrow`='$total_freethrow',`succesful_twopointer`='$succesful_twopointer',`total_twopointer`='$total_twopointer',`succesful_threepointer`='$succesful_threepointer',`total_threepointer`='$total_threepointer',`steal`='$steal',`assist`='$assist',`block`='$block',`rebound`='$rebound',`foul`='$foul',`turnover`='$turnover WHERE `team_id` = $entity->team_id";
+                $sql = "UPDATE `$this->table` SET total_matches = '$total_matches', win = '$win', lose = '$lose', succesful_effort = '$succesful_effort', total_effort = '$total_effort', successful_freethrow = '$successful_freethrow', total_freethrow = '$total_freethrow', succesful_twopointer = '$succesful_twopointer', total_twopointer = '$total_twopointer', succesful_threepointer = '$succesful_threepointer', total_threepointer = '$total_threepointer', steal = '$steal', assist = '$assist', block = '$block', rebound = '$rebound', foul = '$foul', turnover = '$turnover' WHERE team_id = '$team_id'";
                 $result = $this->mysqli->query($sql);
                 
                 return $this->findById($teamStatsCompletedFound->team_id);

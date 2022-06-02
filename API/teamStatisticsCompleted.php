@@ -38,13 +38,23 @@
         
         header("Content-Type: application/json");
         echo json_encode($data);
-    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+    }else if($_SERVER['REQUEST_METHOD'] == "PUT"){
         
         $entityBody = file_get_contents('php://input');
         
         $teamStatsProvided = json_decode($entityBody);
 
         $data = $teamCompletedStatsService->updateTeamCompletedStats($teamStatsProvided);
+        
+        header("Content-Type: application/json");
+        echo json_encode($data);
+    }else if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        $entityBody = file_get_contents('php://input');
+        
+        $teamStatsProvided = json_decode($entityBody);
+
+        $data = $teamCompletedStatsService->saveTeamCompletedStats($teamStatsProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);
