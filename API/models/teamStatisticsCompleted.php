@@ -3,13 +3,13 @@
     //     `total_matches`int(24) UNSIGNED NOT NULL,
     //     `win` int UNSIGNED NOT NULL,
     //     `lose` int UNSIGNED NOT NULL,
-    //     `succesful_effort` int UNSIGNED NOT NULL,
+    //     `successful_effort` int UNSIGNED NOT NULL,
     //     `total_effort` int UNSIGNED NOT NULL,
     //     `successful_freethrow`int UNSIGNED NOT NULL,
     //     `total_freethrow` int UNSIGNED NOT NULL,
-    //     `succesful_twopointer` int UNSIGNED NOT NULL,
+    //     `successful_twopointer` int UNSIGNED NOT NULL,
     //     `total_twopointer` int UNSIGNED NOT NULL,
-    //     `succesful_threepointer` int UNSIGNED NOT NULL,
+    //     `successful_threepointer` int UNSIGNED NOT NULL,
     //     `total_threepointer` int UNSIGNED NOT NULL,
     //     `steal` int UNSIGNED NOT NULL,
     //     `assist` int UNSIGNED NOT NULL,
@@ -26,13 +26,13 @@
         public $total_matches;
         public $win;
         public $lose;
-        public $succesful_effort;
+        public $successful_effort;
         public $total_effort;
         public $successful_freethrow;
         public $total_freethrow;
-        public $succesful_twopointer;
+        public $successful_twopointer;
         public $total_twopointer;
-        public $succesful_threepointer;
+        public $successful_threepointer;
         public $total_threepointer;
         public $steal;
         public $assist;
@@ -41,21 +41,21 @@
         public $foul;
         public $turnover;
 
-        public function __construct($team_id, $total_matches, $win, $lose, $succesful_effort, $total_effort, $successful_freethrow, 
-        $total_freethrow, $succesful_twopointer, $total_twopointer, $succesful_threepointer, $total_threepointer, $steal, $assist, 
+        public function __construct($team_id, $total_matches, $win, $lose, $successful_effort, $total_effort, $successful_freethrow, 
+        $total_freethrow, $successful_twopointer, $total_twopointer, $successful_threepointer, $total_threepointer, $steal, $assist, 
         $block, $rebound, $foul, $turnover, $mysqli){
             $this->team_id = $team_id;
             $this->team_name = $this->get_team_name($mysqli);
             $this->total_matches = $total_matches;
             $this->win = $win;
             $this->lose = $lose;
-            $this->succesful_effort = $succesful_effort;
+            $this->successful_effort = $successful_effort;
             $this->total_effort = $total_effort;
             $this->successful_freethrow = $successful_freethrow;
             $this->total_freethrow = $total_freethrow;
-            $this->succesful_twopointer = $succesful_twopointer;
+            $this->successful_twopointer = $successful_twopointer;
             $this->total_twopointer = $total_twopointer;
-            $this->succesful_threepointer = $succesful_threepointer;
+            $this->successful_threepointer = $successful_threepointer;
             $this->total_threepointer = $total_threepointer;
             $this->steal = $steal;
             $this->assist = $assist;
