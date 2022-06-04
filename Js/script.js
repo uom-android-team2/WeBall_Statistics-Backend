@@ -9,10 +9,23 @@ fetch("http://localhost/WeBall_Backend/API/team.php")
   .catch((error) => console.log("error", error));
 
 const start = (teams) => {
+  console.log(teams[0]);
   if (teams.length % 4 != 0) {
     for (let i = 0; i < teams.length % 4; i++) {
       teams.push("-");
     }
+  }
+
+  const hyphen_exists_section = document.getElementById(
+    "hyphen-exists-section"
+  );
+  if (teams.includes("-")) {
+    hyphen_exists_section.insertAdjacentHTML(
+      "beforeend",
+      `<h3 style="padding-top:40px;">If you are seeing Hypens at the end of the teams list (This -> "-"). Please put them together on match 4 and they will not count as a match...</h3>
+       `
+    );
+    document.getElementById("submit-button").classList.add("hidden");
   }
 
   const no_teams_section = document.getElementById("no-teams-section");
@@ -191,6 +204,10 @@ const start = (teams) => {
       }
       //need to remove matches that have - as a team name
       console.log(listOfMatches);
+      var filteredListOfMatches = listOfMatches.filter(function (el) {
+        return el.homeTeam != "-";
+      });
+      console.log(filteredListOfMatches);
     });
 
   function splitArrayIntoChunksOfLen(arr, len) {

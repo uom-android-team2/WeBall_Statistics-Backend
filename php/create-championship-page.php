@@ -25,6 +25,7 @@
                 <a id="back" href="index.php" class="btn btn-info">Back</a>
                 <h1 id="title">Create the championship manually</h1>
             </div>
+            <div id="hyphen-exists-section"></div>
             <div id="no-teams-section"></div>
             <div id="not-enough-teams-section"></div>
         </header>
