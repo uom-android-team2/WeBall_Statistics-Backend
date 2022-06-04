@@ -2,33 +2,33 @@
 
     include_once "../php/config.php";
 
-    include "service/playerLiveStatisticsService.php";
+    include "service/teamLiveStatisticsService.php";
     include "utils/validation.php";
 
     $mysqli->select_db("championship");
 
-    $playerLiveStatisticsService = new PlayerLivestatisticsService("player_live_statistics", $mysqli);
+    $teamLiveStatisticsService = new TeamLivestatisticsService("team_live_statistics", $mysqli);
 
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $data = "";
 
 
         $matchId = "";
-        $playerId = "";
+        $teamId = "";
         
         if(isset($_GET["matchId"])){
             $matchId = test_input($_GET['matchId']);
         }
 
-        if(isset($_GET["playerId"])){
-            $playerId = test_input($_GET['playerId']);
+        if(isset($_GET["teamId"])){
+            $teamId = test_input($_GET['teamId']);
         }
 
-        // check if matchId and playerId are not "" WITH STRCMP
-        if(strcmp($matchId, "") != 0 && strcmp($playerId, "") != 0){
-            $data = $playerLiveStatisticsService->findByMatchAndPlayerId($matchId, $playerId);
+        // check if matchId and teamId are not "" WITH STRCMP
+        if(strcmp($matchId, "") != 0 && strcmp($teamId, "") != 0){
+            $data = $teamLiveStatisticsService->findByMatchIdAndTeamId($matchId, $teamId);
         }else{
-            $data = $playerLiveStatisticsService->findAllPlayerLiveStatistics();
+            $data = $teamLiveStatisticsService->findAllTeamLiveStatistics();
         }
         
         header("Content-Type: application/json");
@@ -43,9 +43,9 @@
         }
 
         if($matchId){
-            $data = $playerLiveStatisticsService->deletePlayerLiveStatistics($matchId);
+            $data = $teamLiveStatisticsService->deleteByMatchId($matchId);
         }else{
-            $data = $playerLiveStatisticsService->deleteAllPlayerLiveStatistics();
+            $data = $teamLiveStatisticsService->deleteAll();
         }
         
         header("Content-Type: application/json");
@@ -57,7 +57,7 @@
         
         $matchProvided = json_decode($entityBody);
 
-        $data = $playerLiveStatisticsService->updatePlayerLiveStatistics($matchProvided);
+        $data = $teamLiveStatisticsService->updateTeamLiveStatistics($matchProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);
@@ -67,7 +67,7 @@
         
         $matchProvided = json_decode($entityBody);
 
-        $data = $playerLiveStatisticsService->savePlayerLiveStatistics($matchProvided);
+        $data = $teamLiveStatisticsService->saveTeamLiveStatistics($matchProvided);
         
         header("Content-Type: application/json");
         echo json_encode($data);

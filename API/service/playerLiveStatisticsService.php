@@ -30,6 +30,10 @@
             return $this->playerLivestatisticsRepository->save($playerLiveStatistics);
         }
 
+        public function updatePlayerLiveStatistics($playerLiveStatistics){
+            return $this->playerLivestatisticsRepository->update($playerLiveStatistics);
+        }
+
 
     }
 
