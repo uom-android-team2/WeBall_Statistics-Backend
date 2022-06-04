@@ -172,12 +172,6 @@ const start = (teams) => {
 
   const listOfMatches = []; //This will later contain all the Match objects that will later be stored in the DB
 
-  // class Team{
-  //   id;
-  //   name;
-  //   city;
-  //   badge;
-  // }
   //This class represents the entity of a Match between two teams
   class Match {
     constructor(homeTeam, awayTeam, week) {
@@ -235,8 +229,8 @@ const start = (teams) => {
           this.teamlandlord_id = teamlandlord_id;
           this.teamguest_id = teamguest_id;
           this.date = date;
-          this.progress = false;
-          this.completed = false;
+          this.progress = 0;
+          this.completed = 0;
         }
       }
       //Connecting real team objects to text from drag and drop championship creation
