@@ -1,0 +1,34 @@
+* {
+  padding: 0px 5px;
+}
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+#title {
+  padding-left: 2rem;
+}
+#button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 40px 70px;
+  background-color: #4b85b7d0;
+  border-radius: 20px;
+}
+
+#create-button {
+  background-color: #b77d4b;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}

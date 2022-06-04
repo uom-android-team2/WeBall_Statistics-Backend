@@ -27,7 +27,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a href="create-team.php" class="btn btn-success">Δημιουργία Ομάδων</a>
         <a href="create-player-page.php" class="btn btn-success">Δημιουργία παικτών </a>
         <a href="create-championship-page.php" class="btn btn-success">Δημιουργία Πρωταθλήματος</a>
-        <a href="#" class="btn btn-success">Κλήρωση Πρωταθλήματος</a>
+        <a href="create-random-championship-page.php" class="btn btn-success">Κλήρωση Πρωταθλήματος</a>
         <br>
         <br>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
