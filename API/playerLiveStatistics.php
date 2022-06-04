@@ -53,14 +53,14 @@
         
     }else if($_SERVER['REQUEST_METHOD'] == "PUT"){
 
-    //     $entityBody = file_get_contents('php://input');
+        $entityBody = file_get_contents('php://input');
         
-    //     $matchProvided = json_decode($entityBody);
+        $matchProvided = json_decode($entityBody);
 
-    //     $data = $matchService->updateMatch($matchProvided);
+        $data = $playerLiveStatisticsService->updatePlayerLiveStatistics($matchProvided);
         
-    //     header("Content-Type: application/json");
-    //     echo json_encode($data);
+        header("Content-Type: application/json");
+        echo json_encode($data);
     }else if($_SERVER['REQUEST_METHOD'] == "POST"){
 
         $entityBody = file_get_contents('php://input');
