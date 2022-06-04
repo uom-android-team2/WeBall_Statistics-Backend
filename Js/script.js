@@ -2,23 +2,29 @@ fetch("http://localhost/WeBall_Backend/API/team.php")
   .then((response) => response.json())
   .then((result) => {
     teams = result.map((team) => {
-      return team.name; //This needs to be changed
+      return team; //return team.name;
     });
     start(teams);
   })
   .catch((error) => console.log("error", error));
 
 const start = (teams) => {
-  console.log(teams[0]);
   if (teams.length % 4 != 0) {
     for (let i = 0; i < teams.length % 4; i++) {
       teams.push("-");
     }
   }
 
+  //Removing "-" from teams list for later error handling
+  var filteredListOfTeams = teams.filter(function (el) {
+    return el != "-";
+  });
+
   const hyphen_exists_section = document.getElementById(
     "hyphen-exists-section"
   );
+
+  //Works
   if (teams.includes("-")) {
     hyphen_exists_section.insertAdjacentHTML(
       "beforeend",
@@ -33,7 +39,7 @@ const start = (teams) => {
     "not-enough-teams-section"
   );
 
-  //no teams
+  //no teams -> Works
   if (teams.length === 0) {
     no_teams_section.insertAdjacentHTML(
       "beforeend",
@@ -47,9 +53,8 @@ const start = (teams) => {
 
   //not enought teams code goes below
   if (
-    (teams.length !== 0 &&
-      teams.filter((entry) => entry.trim() != "-").length < 4) ||
-    teams.filter((entry) => entry.trim() != "-").length % 2 === 1
+    (teams.length !== 0 && filteredListOfTeams.length < 4) ||
+    filteredListOfTeams.length % 2 === 1
   ) {
     not_enough_teams_section.insertAdjacentHTML(
       "beforeend",
@@ -61,7 +66,7 @@ const start = (teams) => {
     document.getElementById("submit-button").classList.add("hidden");
   }
   const numberOfMatches = teams.length / 2;
-  const numberOfWeeks = teams.filter((entry) => entry.trim() != "-").length - 1;
+  const numberOfWeeks = filteredListOfTeams.length - 1;
   const week_container = document.getElementById("week-container");
 
   //createContainers creates the containers for each week so that later function can just append elements and not create
@@ -74,10 +79,7 @@ const start = (teams) => {
       );
     }
   };
-  if (
-    teams.filter((entry) => entry.trim() != "-").length >= 4 &&
-    teams.filter((entry) => entry.trim() != "-").length % 2 === 0
-  ) {
+  if (filteredListOfTeams.length >= 4 && filteredListOfTeams.length % 2 === 0) {
     createContainers();
   }
   //createTeams creates the fields that receive the matches
@@ -104,7 +106,7 @@ const start = (teams) => {
         .getElementById(`team-container${myContainer}`)
         .insertAdjacentHTML(
           "beforeend",
-          `<div draggable="true" class="box">${teams[i]}</div>`
+          `<div draggable="true" class="box">${teams[i].name}</div>`
         );
     }
   };
@@ -117,10 +119,7 @@ const start = (teams) => {
     }
   };
 
-  if (
-    teams.filter((entry) => entry.trim() != "-").length >= 4 &&
-    teams.filter((entry) => entry.trim() != "-").length % 2 === 0
-  ) {
+  if (filteredListOfTeams.length >= 4 && filteredListOfTeams.length % 2 === 0) {
     createWeeks();
   }
   //Implementing the drap and drop feature
@@ -173,21 +172,38 @@ const start = (teams) => {
 
   const listOfMatches = []; //This will later contain all the Match objects that will later be stored in the DB
 
+  // class Team{
+  //   id;
+  //   name;
+  //   city;
+  //   badge;
+  // }
   //This class represents the entity of a Match between two teams
   class Match {
     constructor(homeTeam, awayTeam, week) {
       this.homeTeam = homeTeam;
       this.awayTeam = awayTeam;
+
       this.week = week;
     }
   }
-
+  function splitArrayIntoChunksOfLen(arr, len) {
+    let chunks = [],
+      i = 0,
+      n = arr.length;
+    while (i < n) {
+      chunks.push(arr.slice(i, (i += len)));
+    }
+    return chunks;
+  }
   //Done button clicked
   document
     .getElementById("submit-button")
     .addEventListener("click", function () {
       //This function handles all actions that need to be done once the done button is clicked by the admin
-      alert("Done button clicked");
+      alert(
+        `Congrats! You just manually created a ${numberOfWeeks}-week championship.`
+      );
       array = document.getElementsByClassName("box");
       let data = [];
       for (let i = 0; i < array.length; i++) {
@@ -202,21 +218,52 @@ const start = (teams) => {
           );
         }
       }
-      //need to remove matches that have - as a team name
-      console.log(listOfMatches);
+      //need to remove matches that have "-" as a team name
       var filteredListOfMatches = listOfMatches.filter(function (el) {
         return el.homeTeam != "-";
       });
-      console.log(filteredListOfMatches);
-    });
 
-  function splitArrayIntoChunksOfLen(arr, len) {
-    let chunks = [],
-      i = 0,
-      n = arr.length;
-    while (i < n) {
-      chunks.push(arr.slice(i, (i += len)));
-    }
-    return chunks;
-  }
+      class FinalMatch {
+        id;
+        teamlandlord_id;
+        teamguest_id;
+        date;
+        progress;
+        completed;
+        constructor(id, teamlandlord_id, teamguest_id, date) {
+          this.id = id;
+          this.teamlandlord_id = teamlandlord_id;
+          this.teamguest_id = teamguest_id;
+          this.date = date;
+          this.progress = false;
+          this.completed = false;
+        }
+      }
+      //Connecting real team objects to text from drag and drop championship creation
+      FinalListOfMatches = [];
+      for (let i = 0; i < filteredListOfMatches.length; i++) {
+        var homeTeam = "";
+        var awayTeam = "";
+        var week = filteredListOfMatches[i].week;
+        for (let j = 0; j < teams.length; j++) {
+          if (filteredListOfMatches[i].homeTeam === teams[j].name) {
+            homeTeam = teams[j];
+          }
+          if (filteredListOfMatches[i].awayTeam === teams[j].name) {
+            awayTeam = teams[j];
+          }
+        }
+        //Creating Match object from teams
+        FinalListOfMatches.push(
+          new FinalMatch(
+            FinalListOfMatches.length + 1,
+            homeTeam.id,
+            awayTeam.id,
+            `Week ${week}`
+          )
+        ); //id might need to be changed
+      }
+      //Instead of console.log -> Pass all FinalListOfMatches elements into the db
+      console.log(FinalListOfMatches);
+    });
 };
