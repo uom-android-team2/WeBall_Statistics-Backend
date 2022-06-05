@@ -14,13 +14,20 @@ $playerService = new PlayerService("player", $mysqli);
 if($_SERVER['REQUEST_METHOD'] == "GET"){
     $data = "";
     $id = "";
+    $teamName = "";
+
     if(isset($_GET["id"]) ){
         $id = test_input($_GET["id"]);
+    }
+    if(isset($_GET["team"]) ){
+        $teamName = test_input($_GET["team"]);
     }
     
 
     if($id){
         $data = $playerService->findPlayerById($id);
+    }else if($teamName){
+        $data = $playerService->findByTeamName($teamName);
     }else{
         $data = $playerService->findAllPlayers();
     }

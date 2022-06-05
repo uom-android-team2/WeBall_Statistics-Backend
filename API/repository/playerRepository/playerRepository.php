@@ -144,6 +144,22 @@
                 echo 'Message: ' .$e->getMessage();
             }
         }
+
+        public function findByTeamName($team){
+            $data = array();
+            try {
+                $sql = "SELECT * FROM `$this->table` WHERE `team` = '$team'"; 
+                $result = $this->mysqli->query($sql);
+                while($row = $result->fetch_assoc()) {
+                    $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
+                    array_push($data, $player);
+                }
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+            return $data;
+        }
+
         public function count(){
 
         }
