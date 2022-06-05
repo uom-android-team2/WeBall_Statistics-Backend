@@ -8,15 +8,20 @@
     $password = $_POST['password'];
 
 
-    $sql =  "SELECT `username`, `password` FROM `users` WHERE `username` = $username AND `password` = $password";
+   $sql =  "SELECT `username`, `password` FROM `users` WHERE `username` = $username";
 
-    $result = mysqli_query($mysqli, $sql);
-
+     $result = mysqli_query($mysqli, $sql);
 
     if ($row = mysqli_fetch_array($result)) { 
-      
-      echo "true";
-       
+
+      $passwordHash = $row['password'];
+
+     if(password_verify($password, $passwordHash)){
+        echo 'true';
+      }else{
+         echo 'false';
+      }
+
     }else{
        echo "false";
     }
