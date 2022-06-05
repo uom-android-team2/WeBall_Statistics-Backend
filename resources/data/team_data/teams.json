@@ -1,212 +1,152 @@
 [
   {
-    "teamId": 1610612737,
-    "abbreviation": "ATL",
-    "teamName": "Atlanta Hawks",
-    "simpleName": "Hawks",
-    "location": "Atlanta"
+    "id": 1610612737,
+    "name": "Atlanta Hawks",
+    "city": "Atlanta"
   },
   {
-    "teamId": 1610612738,
-    "abbreviation": "BOS",
-    "teamName": "Boston Celtics",
-    "simpleName": "Celtics",
-    "location": "Boston"
+    "id": 1610612738,
+    "name": "Boston Celtics",
+    "city": "Boston"
   },
   {
-    "teamId": 1610612751,
-    "abbreviation": "BKN",
-    "teamName": "Brooklyn Nets",
-    "simpleName": "Nets",
-    "location": "Brooklyn"
+    "id": 1610612751,
+    "name": "Brooklyn Nets",
+    "city": "Brooklyn"
   },
   {
-    "teamId": 1610612766,
-    "abbreviation": "CHA",
-    "teamName": "Charlotte Hornets",
-    "simpleName": "Hornets",
-    "location": "Charlotte"
+    "id": 1610612766,
+    "name": "Charlotte Hornets",
+    "city": "Charlotte"
   },
   {
-    "teamId": 1610612741,
-    "abbreviation": "CHI",
-    "teamName": "Chicago Bulls",
-    "simpleName": "Bulls",
-    "location": "Chicago"
+    "id": 1610612741,
+    "name": "Chicago Bulls",
+    "city": "Chicago"
   },
   {
-    "teamId": 1610612739,
-    "abbreviation": "CLE",
-    "teamName": "Cleveland Cavaliers",
-    "simpleName": "Cavaliers",
-    "location": "Cleveland"
+    "id": 1610612739,
+    "name": "Cleveland Cavaliers",
+    "city": "Cleveland"
   },
   {
-    "teamId": 1610612742,
-    "abbreviation": "DAL",
-    "teamName": "Dallas Mavericks",
-    "simpleName": "Mavericks",
-    "location": "Dallas"
+    "id": 1610612742,
+    "name": "Dallas Mavericks",
+    "city": "Dallas"
   },
   {
-    "teamId": 1610612743,
-    "abbreviation": "DEN",
-    "teamName": "Denver Nuggets",
-    "simpleName": "Nuggets",
-    "location": "Denver"
+    "id": 1610612743,
+    "name": "Denver Nuggets",
+    "city": "Denver"
   },
   {
-    "teamId": 1610612765,
-    "abbreviation": "DET",
-    "teamName": "Detroit Pistons",
-    "simpleName": "Pistons",
-    "location": "Detroit"
+    "id": 1610612765,
+    "name": "Detroit Pistons",
+    "city": "Detroit"
   },
   {
-    "teamId": 1610612744,
-    "abbreviation": "GSW",
-    "teamName": "Golden State Warriors",
-    "simpleName": "Warriors",
-    "location": "Golden State"
+    "id": 1610612744,
+    "name": "Golden State Warriors",
+    "city": "Golden State"
   },
   {
-    "teamId": 1610612745,
-    "abbreviation": "HOU",
-    "teamName": "Houston Rockets",
-    "simpleName": "Rockets",
-    "location": "Houston"
+    "id": 1610612745,
+    "name": "Houston Rockets",
+    "city": "Houston"
   },
   {
-    "teamId": 1610612754,
-    "abbreviation": "IND",
-    "teamName": "Indiana Pacers",
-    "simpleName": "Pacers",
-    "location": "Indiana"
+    "id": 1610612754,
+    "name": "Indiana Pacers",
+    "city": "Indiana"
   },
   {
-    "teamId": 1610612746,
-    "abbreviation": "LAC",
-    "teamName": "Los Angeles Clippers",
-    "simpleName": "Clippers",
-    "location": "Los Angeles"
+    "id": 1610612746,
+    "name": "Los Angeles Clippers",
+    "city": "Los Angeles"
   },
   {
-    "teamId": 1610612747,
-    "abbreviation": "LAL",
-    "teamName": "Los Angeles Lakers",
-    "simpleName": "Lakers",
-    "location": "Los Angeles"
+    "id": 1610612747,
+    "name": "Los Angeles Lakers",
+    "city": "Los Angeles"
   },
   {
-    "teamId": 1610612763,
-    "abbreviation": "MEM",
-    "teamName": "Memphis Grizzlies",
-    "simpleName": "Grizzlies",
-    "location": "Memphis"
+    "id": 1610612763,
+    "name": "Memphis Grizzlies",
+    "city": "Memphis"
   },
   {
-    "teamId": 1610612748,
-    "abbreviation": "MIA",
-    "teamName": "Miami Heat",
-    "simpleName": "Heat",
-    "location": "Miami"
+    "id": 1610612748,
+    "name": "Miami Heat",
+    "city": "Miami"
   },
   {
-    "teamId": 1610612749,
-    "abbreviation": "MIL",
-    "teamName": "Milwaukee Bucks",
-    "simpleName": "Bucks",
-    "location": "Milwaukee"
+    "id": 1610612749,
+    "name": "Milwaukee Bucks",
+    "city": "Milwaukee"
   },
   {
-    "teamId": 1610612750,
-    "abbreviation": "MIN",
-    "teamName": "Minnesota Timberwolves",
-    "simpleName": "Timberwolves",
-    "location": "Minnesota"
+    "id": 1610612750,
+    "name": "Minnesota Timberwolves",
+    "city": "Minnesota"
   },
   {
-    "teamId": 1610612740,
-    "abbreviation": "NOP",
-    "teamName": "New Orleans Pelicans",
-    "simpleName": "Pelicans",
-    "location": "New Orleans"
+    "id": 1610612740,
+    "name": "New Orleans Pelicans",
+    "city": "New Orleans"
   },
   {
-    "teamId": 1610612752,
-    "abbreviation": "NYK",
-    "teamName": "New York Knicks",
-    "simpleName": "Knicks",
-    "location": "New York"
+    "id": 1610612752,
+    "name": "New York Knicks",
+    "city": "New York"
   },
   {
-    "teamId": 1610612760,
-    "abbreviation": "OKC",
-    "teamName": "Oklahoma City Thunder",
-    "simpleName": "Thunder",
-    "location": "Oklahoma City"
+    "id": 1610612760,
+    "name": "Oklahoma City Thunder",
+    "city": "Oklahoma City"
   },
   {
-    "teamId": 1610612753,
-    "abbreviation": "ORL",
-    "teamName": "Orlando Magic",
-    "simpleName": "Magic",
-    "location": "Orlando"
+    "id": 1610612753,
+    "name": "Orlando Magic",
+    "city": "Orlando"
   },
   {
-    "teamId": 1610612755,
-    "abbreviation": "PHI",
-    "teamName": "Philadelphia 76ers",
-    "simpleName": "76ers",
-    "location": "Philadelphia"
+    "id": 1610612755,
+    "name": "Philadelphia 76ers",
+    "city": "Philadelphia"
   },
   {
-    "teamId": 1610612756,
-    "abbreviation": "PHX",
-    "teamName": "Phoenix Suns",
-    "simpleName": "Suns",
-    "location": "Phoenix"
+    "id": 1610612756,
+    "name": "Phoenix Suns",
+    "city": "Phoenix"
   },
   {
-    "teamId": 1610612757,
-    "abbreviation": "POR",
-    "teamName": "Portland Trail Blazers",
-    "simpleName": "Trail Blazers",
-    "location": "Portland"
+    "id": 1610612757,
+    "name": "Portland Trail Blazers",
+    "city": "Portland"
   },
   {
-    "teamId": 1610612758,
-    "abbreviation": "SAC",
-    "teamName": "Sacramento Kings",
-    "simpleName": "Kings",
-    "location": "Sacramento"
+    "id": 1610612758,
+    "name": "Sacramento Kings",
+    "city": "Sacramento"
   },
   {
-    "teamId": 1610612759,
-    "abbreviation": "SAS",
-    "teamName": "San Antonio Spurs",
-    "simpleName": "Spurs",
-    "location": "San Antonio"
+    "id": 1610612759,
+    "name": "San Antonio Spurs",
+    "city": "San Antonio"
   },
   {
-    "teamId": 1610612761,
-    "abbreviation": "TOR",
-    "teamName": "Toronto Raptors",
-    "simpleName": "Raptors",
-    "location": "Toronto"
+    "id": 1610612761,
+    "name": "Toronto Raptors",
+    "city": "Toronto"
   },
   {
-    "teamId": 1610612762,
-    "abbreviation": "UTA",
-    "teamName": "Utah Jazz",
-    "simpleName": "Jazz",
-    "location": "Utah"
+    "id": 1610612762,
+    "name": "Utah Jazz",
+    "city": "Utah"
   },
   {
-    "teamId": 1610612764,
-    "abbreviation": "WAS",
-    "teamName": "Washington Wizards",
-    "simpleName": "Wizards",
-    "location": "Washington"
+    "id": 1610612764,
+    "name": "Washington Wizards",
+    "city": "Washington"
   }
 ]
