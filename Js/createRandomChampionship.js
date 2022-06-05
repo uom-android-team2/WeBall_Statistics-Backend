@@ -239,6 +239,41 @@ const start = (teams) => {
         }
       };
 
+      createPlayerStatisticsTable = async (team, matchId) => {
+        const res = await fetch(
+          `http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}`
+        );
+
+        const data = await res.json();
+
+        data.forEach(async (player) => {
+          const playerStatistics = {
+            match_id: matchId,
+            player_id: player.id,
+            successful_effort: "0",
+            total_effort: "0",
+            successful_freethrow: "0",
+            total_freethrow: "0",
+            successful_twopointer: "0",
+            total_twopointer: "0",
+            successful_threepointer: "0",
+            total_threepointer: "0",
+            steal: "0",
+            assist: "0",
+            block: "0",
+            rebound: "0",
+            foul: "0",
+            turnover: "0",
+            minutes: null,
+          };
+
+          await postToDb(
+            playerStatistics,
+            "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php"
+          );
+        });
+      };
+
       const createStatisticsTable = async () => {
         const res = await fetch(
           "http://localhost/WeBall_Statistics-Backend/API/match.php"
@@ -294,6 +329,10 @@ const start = (teams) => {
             team2Statistic,
             "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
           );
+
+          await createPlayerStatisticsTable(match.teamguest_name, match.id);
+
+          await createPlayerStatisticsTable(match.teamlandlord_name, match.id);
         });
       };
 
