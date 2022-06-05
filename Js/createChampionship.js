@@ -1,4 +1,4 @@
-fetch("http://localhost/WeBall_Backend/API/team.php")
+fetch("http://localhost/WeBall_Statistics-Backend/API/team.php")
   .then((response) => response.json())
   .then((result) => {
     teams = result.map((team) => {
