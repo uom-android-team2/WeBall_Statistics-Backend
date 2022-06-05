@@ -265,5 +265,90 @@ const start = (teams) => {
       }
       //Instead of console.log -> Pass all FinalListOfMatches elements into the db
       console.log(FinalListOfMatches);
+
+      const postToDb = async (data, url) => {
+        try {
+          const res = await fetch(url, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      const createStatisticsTable = async () => {
+        const res = await fetch(
+          "http://localhost/WeBall_Statistics-Backend/API/match.php"
+        );
+
+        const data = await res.json();
+
+        data.forEach(async (match) => {
+          const team1Statistic = {
+            match_id: match.id,
+            team_id: match.teamlandlord_id,
+            successful_effort: "0",
+            total_effort: "0",
+            successful_freethrow: "0",
+            total_freethrow: "0",
+            succesful_twopointer: "0",
+            total_twopointer: "0",
+            succesful_threepointer: "0",
+            total_threepointer: "0",
+            steal: "0",
+            assist: "0",
+            block: "0",
+            rebound: "0",
+            foul: "0",
+            turnover: "0",
+          };
+
+          const team2Statistic = {
+            match_id: match.id,
+            team_id: match.teamguest_id,
+            successful_effort: "0",
+            total_effort: "0",
+            successful_freethrow: "0",
+            total_freethrow: "0",
+            succesful_twopointer: "0",
+            total_twopointer: "0",
+            succesful_threepointer: "0",
+            total_threepointer: "0",
+            steal: "0",
+            assist: "0",
+            block: "0",
+            rebound: "0",
+            foul: "0",
+            turnover: "0",
+          };
+
+          await postToDb(
+            team1Statistic,
+            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
+          );
+
+          await postToDb(
+            team2Statistic,
+            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
+          );
+        });
+      };
+
+      const insertMatches = async () => {
+        FinalListOfMatches.forEach(async (m) => {
+          await postToDb(
+            m,
+            "http://localhost/WeBall_Statistics-Backend/API/match.php"
+          );
+        });
+        await createStatisticsTable();
+      };
+
+      insertMatches();
     });
 };
