@@ -247,15 +247,21 @@ const start = (teams) => {
             awayTeam = teams[j];
           }
         }
+        let dateTemp = new Date();
         //Creating Match object from teams
         FinalListOfMatches.push(
           new FinalMatch(
             FinalListOfMatches.length + 1,
             homeTeam.id,
             awayTeam.id,
-            `Week ${week}`
+            dateTemp.setFullYear(
+              dateTemp.getFullYear(),
+              dateTemp.getMonth(),
+              dateTemp.getDay() + (week - 1) * 7
+            )
           )
         ); //id might need to be changed
+        dateTemp = new Date();
       }
       //Instead of console.log -> Pass all FinalListOfMatches elements into the db
       console.log(FinalListOfMatches);
