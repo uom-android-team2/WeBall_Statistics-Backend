@@ -1,2727 +1,2182 @@
 [
   {
     "name": "Precious",
-    "surname": "Achiuwa",
-    "team": 1610612748
+    "surname": "Achiuwa"
   },
   {
     "name": "Jaylen",
-    "surname": "Adams",
-    "team": 0
+    "surname": "Adams"
   },
   {
     "name": "Steven",
-    "surname": "Adams",
-    "team": 1610612740
+    "surname": "Adams"
   },
   {
     "name": "Bam",
-    "surname": "Adebayo",
-    "team": 1610612748
+    "surname": "Adebayo"
   },
   {
     "name": "LaMarcus",
-    "surname": "Aldridge",
-    "team": 0
+    "surname": "Aldridge"
   },
   {
     "name": "Ty-Shon",
-    "surname": "Alexander",
-    "team": 1610612756
+    "surname": "Alexander"
   },
   {
     "name": "Nickeil",
-    "surname": "Alexander-Walker",
-    "team": 1610612740
+    "surname": "Alexander-Walker"
   },
   {
     "name": "Grayson",
-    "surname": "Allen",
-    "team": 1610612763
+    "surname": "Allen"
   },
   {
     "name": "Jarrett",
-    "surname": "Allen",
-    "team": 1610612739
+    "surname": "Allen"
   },
   {
     "name": "Al-Farouq",
-    "surname": "Aminu",
-    "team": 1610612741
+    "surname": "Aminu"
   },
   {
     "name": "Kyle",
-    "surname": "Anderson",
-    "team": 1610612763
+    "surname": "Anderson"
   },
   {
     "name": "Giannis",
-    "surname": "Antetokounmpo",
-    "team": 1610612749
+    "surname": "Antetokounmpo"
   },
   {
     "name": "Kostas",
-    "surname": "Antetokounmpo",
-    "team": 1610612747
+    "surname": "Antetokounmpo"
   },
   {
     "name": "Thanasis",
-    "surname": "Antetokounmpo",
-    "team": 1610612749
+    "surname": "Antetokounmpo"
   },
   {
     "name": "Carmelo",
-    "surname": "Anthony",
-    "team": 1610612757
+    "surname": "Anthony"
   },
   {
     "name": "Cole",
-    "surname": "Anthony",
-    "team": 1610612753
+    "surname": "Anthony"
   },
   {
     "name": "OG",
-    "surname": "Anunoby",
-    "team": 1610612761
+    "surname": "Anunoby"
   },
   {
     "name": "Ryan",
-    "surname": "Arcidiacono",
-    "team": 1610612741
+    "surname": "Arcidiacono"
   },
   {
     "name": "Trevor",
-    "surname": "Ariza",
-    "team": 1610612748
+    "surname": "Ariza"
   },
   {
     "name": "D.J.",
-    "surname": "Augustin",
-    "team": 1610612745
+    "surname": "Augustin"
   },
   {
     "name": "Deni",
-    "surname": "Avdija",
-    "team": 1610612764
+    "surname": "Avdija"
   },
   {
     "name": "Deandre",
-    "surname": "Ayton",
-    "team": 1610612756
+    "surname": "Ayton"
   },
   {
     "name": "Udoka",
-    "surname": "Azubuike",
-    "team": 1610612762
+    "surname": "Azubuike"
   },
   {
     "name": "Dwayne",
-    "surname": "Bacon",
-    "team": 1610612753
+    "surname": "Bacon"
   },
   {
     "name": "Marvin",
-    "surname": "Bagley III",
-    "team": 1610612758
+    "surname": "Bagley III"
   },
   {
     "name": "LaMelo",
-    "surname": "Ball",
-    "team": 1610612766
+    "surname": "Ball"
   },
   {
     "name": "Lonzo",
-    "surname": "Ball",
-    "team": 1610612740
+    "surname": "Ball"
   },
   {
     "name": "Mo",
-    "surname": "Bamba",
-    "team": 1610612753
+    "surname": "Bamba"
   },
   {
     "name": "Desmond",
-    "surname": "Bane",
-    "team": 1610612763
+    "surname": "Bane"
   },
   {
     "name": "Harrison",
-    "surname": "Barnes",
-    "team": 1610612758
+    "surname": "Barnes"
   },
   {
     "name": "RJ",
-    "surname": "Barrett",
-    "team": 1610612752
+    "surname": "Barrett"
   },
   {
     "name": "Will",
-    "surname": "Barton",
-    "team": 1610612743
+    "surname": "Barton"
   },
   {
     "name": "Keita",
-    "surname": "Bates-Diop",
-    "team": 1610612759
+    "surname": "Bates-Diop"
   },
   {
     "name": "Nicolas",
-    "surname": "Batum",
-    "team": 1610612746
+    "surname": "Batum"
   },
   {
     "name": "Aron",
-    "surname": "Baynes",
-    "team": 1610612761
+    "surname": "Baynes"
   },
   {
     "name": "Kent",
-    "surname": "Bazemore",
-    "team": 1610612744
+    "surname": "Bazemore"
   },
   {
     "name": "Darius",
-    "surname": "Bazley",
-    "team": 1610612760
+    "surname": "Bazley"
   },
   {
     "name": "Bradley",
-    "surname": "Beal",
-    "team": 1610612764
+    "surname": "Beal"
   },
   {
     "name": "Malik",
-    "surname": "Beasley",
-    "team": 1610612750
+    "surname": "Beasley"
   },
   {
     "name": "Jordan",
-    "surname": "Bell",
-    "team": 1610612744
+    "surname": "Bell"
   },
   {
     "name": "DeAndre'",
-    "surname": "Bembry",
-    "team": 1610612761
+    "surname": "Bembry"
   },
   {
     "name": "Davis",
-    "surname": "Bertans",
-    "team": 1610612764
+    "surname": "Bertans"
   },
   {
     "name": "Patrick",
-    "surname": "Beverley",
-    "team": 1610612746
+    "surname": "Beverley"
   },
   {
     "name": "Saddiq",
-    "surname": "Bey",
-    "team": 1610612765
+    "surname": "Bey"
   },
   {
     "name": "Tyler",
-    "surname": "Bey",
-    "team": 1610612742
+    "surname": "Bey"
   },
   {
     "name": "Khem",
-    "surname": "Birch",
-    "team": 1610612761
+    "surname": "Birch"
   },
   {
     "name": "Goga",
-    "surname": "Bitadze",
-    "team": 1610612754
+    "surname": "Bitadze"
   },
   {
     "name": "Bismack",
-    "surname": "Biyombo",
-    "team": 1610612766
+    "surname": "Biyombo"
   },
   {
     "name": "Nemanja",
-    "surname": "Bjelica",
-    "team": 1610612748
+    "surname": "Bjelica"
   },
   {
     "name": "Eric",
-    "surname": "Bledsoe",
-    "team": 1610612740
+    "surname": "Bledsoe"
   },
   {
     "name": "Keljin",
-    "surname": "Blevins",
-    "team": 1610612757
+    "surname": "Blevins"
   },
   {
     "name": "Bogdan",
-    "surname": "Bogdanovic",
-    "team": 1610612737
+    "surname": "Bogdanovic"
   },
   {
     "name": "Bojan",
-    "surname": "Bogdanovic",
-    "team": 1610612762
+    "surname": "Bogdanovic"
   },
   {
     "name": "Bol",
-    "surname": "Bol",
-    "team": 1610612743
+    "surname": "Bol"
   },
   {
     "name": "Marques",
-    "surname": "Bolden",
-    "team": 0
+    "surname": "Bolden"
   },
   {
     "name": "Jordan",
-    "surname": "Bone",
-    "team": 0
+    "surname": "Bone"
   },
   {
     "name": "Isaac",
-    "surname": "Bonga",
-    "team": 1610612764
+    "surname": "Bonga"
   },
   {
     "name": "Devin",
-    "surname": "Booker",
-    "team": 1610612756
+    "surname": "Booker"
   },
   {
     "name": "Chris",
-    "surname": "Boucher",
-    "team": 1610612761
+    "surname": "Boucher"
   },
   {
     "name": "Brian",
-    "surname": "Bowen II",
-    "team": 0
+    "surname": "Bowen II"
   },
   {
     "name": "Avery",
-    "surname": "Bradley",
-    "team": 1610612745
+    "surname": "Bradley"
   },
   {
     "name": "Tony",
-    "surname": "Bradley",
-    "team": 1610612760
+    "surname": "Bradley"
   },
   {
     "name": "Jarrell",
-    "surname": "Brantley",
-    "team": 1610612762
+    "surname": "Brantley"
   },
   {
     "name": "Ignas",
-    "surname": "Brazdeikis",
-    "team": 1610612753
+    "surname": "Brazdeikis"
   },
   {
     "name": "Mikal",
-    "surname": "Bridges",
-    "team": 1610612756
+    "surname": "Bridges"
   },
   {
     "name": "Miles",
-    "surname": "Bridges",
-    "team": 1610612766
+    "surname": "Bridges"
   },
   {
     "name": "Amida",
-    "surname": "Brimah",
-    "team": 1610612754
+    "surname": "Brimah"
   },
   {
     "name": "Oshae",
-    "surname": "Brissett",
-    "team": 1610612754
+    "surname": "Brissett"
   },
   {
     "name": "Malcolm",
-    "surname": "Brogdon",
-    "team": 1610612754
+    "surname": "Brogdon"
   },
   {
     "name": "Armoni",
-    "surname": "Brooks",
-    "team": 1610612745
+    "surname": "Brooks"
   },
   {
     "name": "Dillon",
-    "surname": "Brooks",
-    "team": 1610612763
+    "surname": "Brooks"
   },
   {
     "name": "Bruce",
-    "surname": "Brown",
-    "team": 1610612751
+    "surname": "Brown"
   },
   {
     "name": "Jaylen",
-    "surname": "Brown",
-    "team": 1610612738
+    "surname": "Brown"
   },
   {
     "name": "Moses",
-    "surname": "Brown",
-    "team": 1610612760
+    "surname": "Brown"
   },
   {
     "name": "Sterling",
-    "surname": "Brown",
-    "team": 1610612745
+    "surname": "Brown"
   },
   {
     "name": "Charlie",
-    "surname": "Brown Jr.",
-    "team": 1610612760
+    "surname": "Brown Jr."
   },
   {
     "name": "Troy",
-    "surname": "Brown Jr.",
-    "team": 1610612741
+    "surname": "Brown Jr."
   },
   {
     "name": "Jalen",
-    "surname": "Brunson",
-    "team": 1610612742
+    "surname": "Brunson"
   },
   {
     "name": "Elijah",
-    "surname": "Bryant",
-    "team": 1610612749
+    "surname": "Bryant"
   },
   {
     "name": "Thomas",
-    "surname": "Bryant",
-    "team": 1610612764
+    "surname": "Bryant"
   },
   {
     "name": "Reggie",
-    "surname": "Bullock",
-    "team": 1610612752
+    "surname": "Bullock"
   },
   {
     "name": "Trey",
-    "surname": "Burke",
-    "team": 1610612742
+    "surname": "Burke"
   },
   {
     "name": "Alec",
-    "surname": "Burks",
-    "team": 1610612752
+    "surname": "Burks"
   },
   {
     "name": "Jimmy",
-    "surname": "Butler",
-    "team": 1610612748
+    "surname": "Butler"
   },
   {
     "name": "Bruno",
-    "surname": "Caboclo",
-    "team": 0
+    "surname": "Caboclo"
   },
   {
     "name": "Devontae",
-    "surname": "Cacok",
-    "team": 1610612747
+    "surname": "Cacok"
   },
   {
     "name": "Kentavious",
-    "surname": "Caldwell-Pope",
-    "team": 1610612747
+    "surname": "Caldwell-Pope"
   },
   {
     "name": "Facundo",
-    "surname": "Campazzo",
-    "team": 1610612743
+    "surname": "Campazzo"
   },
   {
     "name": "Vlatko",
-    "surname": "Cancar",
-    "team": 1610612743
+    "surname": "Cancar"
   },
   {
     "name": "Devin",
-    "surname": "Cannady",
-    "team": 0
+    "surname": "Cannady"
   },
   {
     "name": "Clint",
-    "surname": "Capela",
-    "team": 1610612737
+    "surname": "Capela"
   },
   {
     "name": "Vernon",
-    "surname": "Carey Jr.",
-    "team": 1610612766
+    "surname": "Carey Jr."
   },
   {
     "name": "Jevon",
-    "surname": "Carter",
-    "team": 1610612756
+    "surname": "Carter"
   },
   {
     "name": "Wendell",
-    "surname": "Carter Jr.",
-    "team": 1610612753
+    "surname": "Carter Jr."
   },
   {
     "name": "Michael",
-    "surname": "Carter-Williams",
-    "team": 1610612753
+    "surname": "Carter-Williams"
   },
   {
     "name": "Alex",
-    "surname": "Caruso",
-    "team": 1610612747
+    "surname": "Caruso"
   },
   {
     "name": "Willie",
-    "surname": "Cauley-Stein",
-    "team": 1610612742
+    "surname": "Cauley-Stein"
   },
   {
     "name": "Chris",
-    "surname": "Chiozza",
-    "team": 1610612751
+    "surname": "Chiozza"
   },
   {
     "name": "Marquese",
-    "surname": "Chriss",
-    "team": 0
+    "surname": "Chriss"
   },
   {
     "name": "Gary",
-    "surname": "Clark",
-    "team": 1610612755
+    "surname": "Clark"
   },
   {
     "name": "Brandon",
-    "surname": "Clarke",
-    "team": 1610612763
+    "surname": "Clarke"
   },
   {
     "name": "Jordan",
-    "surname": "Clarkson",
-    "team": 1610612762
+    "surname": "Clarkson"
   },
   {
     "name": "Nicolas",
-    "surname": "Claxton",
-    "team": 1610612751
+    "surname": "Claxton"
   },
   {
     "name": "Amir",
-    "surname": "Coffey",
-    "team": 1610612746
+    "surname": "Coffey"
   },
   {
     "name": "John",
-    "surname": "Collins",
-    "team": 1610612737
+    "surname": "Collins"
   },
   {
     "name": "Zach",
-    "surname": "Collins",
-    "team": 1610612757
+    "surname": "Collins"
   },
   {
     "name": "Mike",
-    "surname": "Conley",
-    "team": 1610612762
+    "surname": "Conley"
   },
   {
     "name": "Pat",
-    "surname": "Connaughton",
-    "team": 1610612749
+    "surname": "Connaughton"
   },
   {
     "name": "Quinn",
-    "surname": "Cook",
-    "team": 0
+    "surname": "Cook"
   },
   {
     "name": "Tyler",
-    "surname": "Cook",
-    "team": 1610612765
+    "surname": "Cook"
   },
   {
     "name": "DeMarcus",
-    "surname": "Cousins",
-    "team": 1610612746
+    "surname": "Cousins"
   },
   {
     "name": "Robert",
-    "surname": "Covington",
-    "team": 1610612757
+    "surname": "Covington"
   },
   {
     "name": "Torrey",
-    "surname": "Craig",
-    "team": 1610612756
+    "surname": "Craig"
   },
   {
     "name": "Jae",
-    "surname": "Crowder",
-    "team": 1610612756
+    "surname": "Crowder"
   },
   {
     "name": "Jarrett",
-    "surname": "Culver",
-    "team": 1610612750
+    "surname": "Culver"
   },
   {
     "name": "Seth",
-    "surname": "Curry",
-    "team": 1610612755
+    "surname": "Curry"
   },
   {
     "name": "Stephen",
-    "surname": "Curry",
-    "team": 1610612744
+    "surname": "Curry"
   },
   {
     "name": "Nate",
-    "surname": "Darling",
-    "team": 1610612766
+    "surname": "Darling"
   },
   {
     "name": "Anthony",
-    "surname": "Davis",
-    "team": 1610612747
+    "surname": "Davis"
   },
   {
     "name": "Ed",
-    "surname": "Davis",
-    "team": 1610612750
+    "surname": "Davis"
   },
   {
     "name": "Terence",
-    "surname": "Davis",
-    "team": 1610612758
+    "surname": "Davis"
   },
   {
     "name": "DeMar",
-    "surname": "DeRozan",
-    "team": 1610612759
+    "surname": "DeRozan"
   },
   {
     "name": "Gabriel",
-    "surname": "Deck",
-    "team": 1610612760
+    "surname": "Deck"
   },
   {
     "name": "Dewayne",
-    "surname": "Dedmon",
-    "team": 1610612748
+    "surname": "Dedmon"
   },
   {
     "name": "Matthew",
-    "surname": "Dellavedova",
-    "team": 1610612739
+    "surname": "Dellavedova"
   },
   {
     "name": "Donte",
-    "surname": "DiVincenzo",
-    "team": 1610612749
+    "surname": "DiVincenzo"
   },
   {
     "name": "Mamadi",
-    "surname": "Diakite",
-    "team": 1610612749
+    "surname": "Diakite"
   },
   {
     "name": "Hamidou",
-    "surname": "Diallo",
-    "team": 1610612765
+    "surname": "Diallo"
   },
   {
     "name": "Gorgui",
-    "surname": "Dieng",
-    "team": 1610612759
+    "surname": "Dieng"
   },
   {
     "name": "Spencer",
-    "surname": "Dinwiddie",
-    "team": 1610612751
+    "surname": "Dinwiddie"
   },
   {
     "name": "Luka",
-    "surname": "Doncic",
-    "team": 1610612742
+    "surname": "Doncic"
   },
   {
     "name": "Luguentz",
-    "surname": "Dort",
-    "team": 1610612760
+    "surname": "Dort"
   },
   {
     "name": "Damyean",
-    "surname": "Dotson",
-    "team": 1610612739
+    "surname": "Dotson"
   },
   {
     "name": "Devon",
-    "surname": "Dotson",
-    "team": 1610612741
+    "surname": "Dotson"
   },
   {
     "name": "Sekou",
-    "surname": "Doumbouya",
-    "team": 1610612765
+    "surname": "Doumbouya"
   },
   {
     "name": "PJ",
-    "surname": "Dozier",
-    "team": 1610612743
+    "surname": "Dozier"
   },
   {
     "name": "Goran",
-    "surname": "Dragic",
-    "team": 1610612748
+    "surname": "Dragic"
   },
   {
     "name": "Andre",
-    "surname": "Drummond",
-    "team": 1610612747
+    "surname": "Drummond"
   },
   {
     "name": "Jared",
-    "surname": "Dudley",
-    "team": 1610612747
+    "surname": "Dudley"
   },
   {
     "name": "Kris",
-    "surname": "Dunn",
-    "team": 1610612737
+    "surname": "Dunn"
   },
   {
     "name": "Kevin",
-    "surname": "Durant",
-    "team": 1610612751
+    "surname": "Durant"
   },
   {
     "name": "Anthony",
-    "surname": "Edwards",
-    "team": 1610612750
+    "surname": "Edwards"
   },
   {
     "name": "Carsen",
-    "surname": "Edwards",
-    "team": 1610612738
+    "surname": "Edwards"
   },
   {
     "name": "CJ",
-    "surname": "Elleby",
-    "team": 1610612757
+    "surname": "Elleby"
   },
   {
     "name": "Henry",
-    "surname": "Ellenson",
-    "team": 0
+    "surname": "Ellenson"
   },
   {
     "name": "Wayne",
-    "surname": "Ellington",
-    "team": 1610612765
+    "surname": "Ellington"
   },
   {
     "name": "Joel",
-    "surname": "Embiid",
-    "team": 1610612755
+    "surname": "Embiid"
   },
   {
     "name": "James",
-    "surname": "Ennis III",
-    "team": 1610612753
+    "surname": "Ennis III"
   },
   {
     "name": "Drew",
-    "surname": "Eubanks",
-    "team": 1610612759
+    "surname": "Eubanks"
   },
   {
     "name": "Dante",
-    "surname": "Exum",
-    "team": 1610612745
+    "surname": "Exum"
   },
   {
     "name": "Tacko",
-    "surname": "Fall",
-    "team": 1610612738
+    "surname": "Fall"
   },
   {
     "name": "Derrick",
-    "surname": "Favors",
-    "team": 1610612762
+    "surname": "Favors"
   },
   {
     "name": "Cristiano",
-    "surname": "Felicio",
-    "team": 1610612741
+    "surname": "Felicio"
   },
   {
     "name": "Terrance",
-    "surname": "Ferguson",
-    "team": 0
+    "surname": "Ferguson"
   },
   {
     "name": "Bruno",
-    "surname": "Fernando",
-    "team": 1610612737
+    "surname": "Fernando"
   },
   {
     "name": "Yogi",
-    "surname": "Ferrell",
-    "team": 1610612746
+    "surname": "Ferrell"
   },
   {
     "name": "Dorian",
-    "surname": "Finney-Smith",
-    "team": 1610612742
+    "surname": "Finney-Smith"
   },
   {
     "name": "Malik",
-    "surname": "Fitts",
-    "team": 0
+    "surname": "Fitts"
   },
   {
     "name": "Malachi",
-    "surname": "Flynn",
-    "team": 1610612761
+    "surname": "Flynn"
   },
   {
     "name": "Bryn",
-    "surname": "Forbes",
-    "team": 1610612749
+    "surname": "Forbes"
   },
   {
     "name": "Trent",
-    "surname": "Forrest",
-    "team": 1610612762
+    "surname": "Forrest"
   },
   {
     "name": "Evan",
-    "surname": "Fournier",
-    "team": 1610612738
+    "surname": "Fournier"
   },
   {
     "name": "De'Aaron",
-    "surname": "Fox",
-    "team": 1610612758
+    "surname": "Fox"
   },
   {
     "name": "Robert",
-    "surname": "Franks",
-    "team": 0
+    "surname": "Franks"
   },
   {
     "name": "Tim",
-    "surname": "Frazier",
-    "team": 1610612763
+    "surname": "Frazier"
   },
   {
     "name": "Markelle",
-    "surname": "Fultz",
-    "team": 1610612753
+    "surname": "Fultz"
   },
   {
     "name": "Wenyen",
-    "surname": "Gabriel",
-    "team": 1610612740
+    "surname": "Gabriel"
   },
   {
     "name": "Daniel",
-    "surname": "Gafford",
-    "team": 1610612764
+    "surname": "Gafford"
   },
   {
     "name": "Danilo",
-    "surname": "Gallinari",
-    "team": 1610612737
+    "surname": "Gallinari"
   },
   {
     "name": "Langston",
-    "surname": "Galloway",
-    "team": 1610612756
+    "surname": "Galloway"
   },
   {
     "name": "Darius",
-    "surname": "Garland",
-    "team": 1610612739
+    "surname": "Garland"
   },
   {
     "name": "Marc",
-    "surname": "Gasol",
-    "team": 1610612747
+    "surname": "Gasol"
   },
   {
     "name": "Rudy",
-    "surname": "Gay",
-    "team": 1610612759
+    "surname": "Gay"
   },
   {
     "name": "Paul",
-    "surname": "George",
-    "team": 1610612746
+    "surname": "George"
   },
   {
     "name": "Taj",
-    "surname": "Gibson",
-    "team": 1610612752
+    "surname": "Gibson"
   },
   {
     "name": "Harry",
-    "surname": "Giles III",
-    "team": 1610612757
+    "surname": "Giles III"
   },
   {
     "name": "Shai",
-    "surname": "Gilgeous-Alexander",
-    "team": 1610612760
+    "surname": "Gilgeous-Alexander"
   },
   {
     "name": "Anthony",
-    "surname": "Gill",
-    "team": 1610612764
+    "surname": "Gill"
   },
   {
     "name": "Freddie",
-    "surname": "Gillespie",
-    "team": 1610612761
+    "surname": "Gillespie"
   },
   {
     "name": "Rudy",
-    "surname": "Gobert",
-    "team": 1610612762
+    "surname": "Gobert"
   },
   {
     "name": "Brandon",
-    "surname": "Goodwin",
-    "team": 1610612737
+    "surname": "Goodwin"
   },
   {
     "name": "Aaron",
-    "surname": "Gordon",
-    "team": 1610612743
+    "surname": "Gordon"
   },
   {
     "name": "Eric",
-    "surname": "Gordon",
-    "team": 1610612745
+    "surname": "Gordon"
   },
   {
     "name": "Devonte'",
-    "surname": "Graham",
-    "team": 1610612766
+    "surname": "Graham"
   },
   {
     "name": "Jerami",
-    "surname": "Grant",
-    "team": 1610612765
+    "surname": "Grant"
   },
   {
     "name": "Danny",
-    "surname": "Green",
-    "team": 1610612755
+    "surname": "Green"
   },
   {
     "name": "Draymond",
-    "surname": "Green",
-    "team": 1610612744
+    "surname": "Green"
   },
   {
     "name": "JaMychal",
-    "surname": "Green",
-    "team": 1610612743
+    "surname": "Green"
   },
   {
     "name": "Javonte",
-    "surname": "Green",
-    "team": 1610612741
+    "surname": "Green"
   },
   {
     "name": "Jeff",
-    "surname": "Green",
-    "team": 1610612751
+    "surname": "Green"
   },
   {
     "name": "Josh",
-    "surname": "Green",
-    "team": 1610612742
+    "surname": "Green"
   },
   {
     "name": "Blake",
-    "surname": "Griffin",
-    "team": 1610612751
+    "surname": "Griffin"
   },
   {
     "name": "Kyle",
-    "surname": "Guy",
-    "team": 1610612758
+    "surname": "Guy"
   },
   {
     "name": "Rui",
-    "surname": "Hachimura",
-    "team": 1610612764
+    "surname": "Hachimura"
   },
   {
     "name": "Ashton",
-    "surname": "Hagans",
-    "team": 0
+    "surname": "Hagans"
   },
   {
     "name": "Tyrese",
-    "surname": "Haliburton",
-    "team": 1610612758
+    "surname": "Haliburton"
   },
   {
     "name": "Donta",
-    "surname": "Hall",
-    "team": 1610612753
+    "surname": "Hall"
   },
   {
     "name": "Josh",
-    "surname": "Hall",
-    "team": 1610612760
+    "surname": "Hall"
   },
   {
     "name": "R.J.",
-    "surname": "Hampton",
-    "team": 1610612753
+    "surname": "Hampton"
   },
   {
     "name": "Tim",
-    "surname": "Hardaway Jr.",
-    "team": 1610612742
+    "surname": "Hardaway Jr."
   },
   {
     "name": "James",
-    "surname": "Harden",
-    "team": 1610612751
+    "surname": "Harden"
   },
   {
     "name": "Maurice",
-    "surname": "Harkless",
-    "team": 1610612758
+    "surname": "Harkless"
   },
   {
     "name": "Jared",
-    "surname": "Harper",
-    "team": 1610612752
+    "surname": "Harper"
   },
   {
     "name": "Montrezl",
-    "surname": "Harrell",
-    "team": 1610612747
+    "surname": "Harrell"
   },
   {
     "name": "Gary",
-    "surname": "Harris",
-    "team": 1610612753
+    "surname": "Harris"
   },
   {
     "name": "Jalen",
-    "surname": "Harris",
-    "team": 1610612761
+    "surname": "Harris"
   },
   {
     "name": "Joe",
-    "surname": "Harris",
-    "team": 1610612751
+    "surname": "Harris"
   },
   {
     "name": "Tobias",
-    "surname": "Harris",
-    "team": 1610612755
+    "surname": "Harris"
   },
   {
     "name": "Shaquille",
-    "surname": "Harrison",
-    "team": 1610612743
+    "surname": "Harrison"
   },
   {
     "name": "Josh",
-    "surname": "Hart",
-    "team": 1610612740
+    "surname": "Hart"
   },
   {
     "name": "Isaiah",
-    "surname": "Hartenstein",
-    "team": 1610612739
+    "surname": "Hartenstein"
   },
   {
     "name": "Udonis",
-    "surname": "Haslem",
-    "team": 1610612748
+    "surname": "Haslem"
   },
   {
     "name": "Jaxson",
-    "surname": "Hayes",
-    "team": 1610612740
+    "surname": "Hayes"
   },
   {
     "name": "Killian",
-    "surname": "Hayes",
-    "team": 1610612765
+    "surname": "Hayes"
   },
   {
     "name": "Gordon",
-    "surname": "Hayward",
-    "team": 1610612766
+    "surname": "Hayward"
   },
   {
     "name": "Juancho",
-    "surname": "Hernangomez",
-    "team": 1610612750
+    "surname": "Hernangomez"
   },
   {
     "name": "Willy",
-    "surname": "Hernangomez",
-    "team": 1610612740
+    "surname": "Hernangomez"
   },
   {
     "name": "Tyler",
-    "surname": "Herro",
-    "team": 1610612748
+    "surname": "Herro"
   },
   {
     "name": "Buddy",
-    "surname": "Hield",
-    "team": 1610612758
+    "surname": "Hield"
   },
   {
     "name": "George",
-    "surname": "Hill",
-    "team": 1610612755
+    "surname": "Hill"
   },
   {
     "name": "Solomon",
-    "surname": "Hill",
-    "team": 1610612737
+    "surname": "Hill"
   },
   {
     "name": "Nate",
-    "surname": "Hinton",
-    "team": 1610612742
+    "surname": "Hinton"
   },
   {
     "name": "Jaylen",
-    "surname": "Hoard",
-    "team": 1610612760
+    "surname": "Hoard"
   },
   {
     "name": "Aaron",
-    "surname": "Holiday",
-    "team": 1610612754
+    "surname": "Holiday"
   },
   {
     "name": "Jrue",
-    "surname": "Holiday",
-    "team": 1610612749
+    "surname": "Holiday"
   },
   {
     "name": "Justin",
-    "surname": "Holiday",
-    "team": 1610612754
+    "surname": "Holiday"
   },
   {
     "name": "Rondae",
-    "surname": "Hollis-Jefferson",
-    "team": 1610612757
+    "surname": "Hollis-Jefferson"
   },
   {
     "name": "Richaun",
-    "surname": "Holmes",
-    "team": 1610612758
+    "surname": "Holmes"
   },
   {
     "name": "Rodney",
-    "surname": "Hood",
-    "team": 1610612761
+    "surname": "Hood"
   },
   {
     "name": "Al",
-    "surname": "Horford",
-    "team": 1610612760
+    "surname": "Horford"
   },
   {
     "name": "Talen",
-    "surname": "Horton-Tucker",
-    "team": 1610612747
+    "surname": "Horton-Tucker"
   },
   {
     "name": "Danuel",
-    "surname": "House Jr.",
-    "team": 1610612745
+    "surname": "House Jr."
   },
   {
     "name": "Dwight",
-    "surname": "Howard",
-    "team": 1610612755
+    "surname": "Howard"
   },
   {
     "name": "Markus",
-    "surname": "Howard",
-    "team": 1610612743
+    "surname": "Howard"
   },
   {
     "name": "Kevin",
-    "surname": "Huerter",
-    "team": 1610612737
+    "surname": "Huerter"
   },
   {
     "name": "Elijah",
-    "surname": "Hughes",
-    "team": 1610612762
+    "surname": "Hughes"
   },
   {
     "name": "De'Andre",
-    "surname": "Hunter",
-    "team": 1610612737
+    "surname": "Hunter"
   },
   {
     "name": "Chandler",
-    "surname": "Hutchison",
-    "team": 1610612764
+    "surname": "Hutchison"
   },
   {
     "name": "Serge",
-    "surname": "Ibaka",
-    "team": 1610612746
+    "surname": "Ibaka"
   },
   {
     "name": "Andre",
-    "surname": "Iguodala",
-    "team": 1610612748
+    "surname": "Iguodala"
   },
   {
     "name": "Ersan",
-    "surname": "Ilyasova",
-    "team": 1610612762
+    "surname": "Ilyasova"
   },
   {
     "name": "Joe",
-    "surname": "Ingles",
-    "team": 1610612762
+    "surname": "Ingles"
   },
   {
     "name": "Brandon",
-    "surname": "Ingram",
-    "team": 1610612740
+    "surname": "Ingram"
   },
   {
     "name": "Kyrie",
-    "surname": "Irving",
-    "team": 1610612751
+    "surname": "Irving"
   },
   {
     "name": "Jonathan",
-    "surname": "Isaac",
-    "team": 1610612753
+    "surname": "Isaac"
   },
   {
     "name": "Wes",
-    "surname": "Iwundu",
-    "team": 1610612740
+    "surname": "Iwundu"
   },
   {
     "name": "Frank",
-    "surname": "Jackson",
-    "team": 1610612765
+    "surname": "Jackson"
   },
   {
     "name": "Josh",
-    "surname": "Jackson",
-    "team": 1610612765
+    "surname": "Jackson"
   },
   {
     "name": "Justin",
-    "surname": "Jackson",
-    "team": 1610612749
+    "surname": "Jackson"
   },
   {
     "name": "Reggie",
-    "surname": "Jackson",
-    "team": 1610612746
+    "surname": "Jackson"
   },
   {
     "name": "Jaren",
-    "surname": "Jackson Jr.",
-    "team": 1610612763
+    "surname": "Jackson Jr."
   },
   {
     "name": "Justin",
-    "surname": "James",
-    "team": 1610612758
+    "surname": "James"
   },
   {
     "name": "LeBron",
-    "surname": "James",
-    "team": 1610612747
+    "surname": "James"
   },
   {
     "name": "Mike",
-    "surname": "James",
-    "team": 1610612751
+    "surname": "James"
   },
   {
     "name": "DaQuan",
-    "surname": "Jeffries",
-    "team": 0
+    "surname": "Jeffries"
   },
   {
     "name": "Ty",
-    "surname": "Jerome",
-    "team": 1610612760
+    "surname": "Jerome"
   },
   {
     "name": "Isaiah",
-    "surname": "Joe",
-    "team": 1610612755
+    "surname": "Joe"
   },
   {
     "name": "Alize",
-    "surname": "Johnson",
-    "team": 1610612751
+    "surname": "Johnson"
   },
   {
     "name": "Cameron",
-    "surname": "Johnson",
-    "team": 1610612756
+    "surname": "Johnson"
   },
   {
     "name": "James",
-    "surname": "Johnson",
-    "team": 1610612740
+    "surname": "Johnson"
   },
   {
     "name": "Keldon",
-    "surname": "Johnson",
-    "team": 1610612759
+    "surname": "Johnson"
   },
   {
     "name": "Stanley",
-    "surname": "Johnson",
-    "team": 1610612761
+    "surname": "Johnson"
   },
   {
     "name": "Tyler",
-    "surname": "Johnson",
-    "team": 1610612751
+    "surname": "Johnson"
   },
   {
     "name": "Nikola",
-    "surname": "Jokic",
-    "team": 1610612743
+    "surname": "Jokic"
   },
   {
     "name": "Damian",
-    "surname": "Jones",
-    "team": 1610612758
+    "surname": "Jones"
   },
   {
     "name": "Mason",
-    "surname": "Jones",
-    "team": 0
+    "surname": "Jones"
   },
   {
     "name": "Tre",
-    "surname": "Jones",
-    "team": 1610612759
+    "surname": "Jones"
   },
   {
     "name": "Tyus",
-    "surname": "Jones",
-    "team": 1610612763
+    "surname": "Jones"
   },
   {
     "name": "Derrick",
-    "surname": "Jones Jr.",
-    "team": 1610612757
+    "surname": "Jones Jr."
   },
   {
     "name": "DeAndre",
-    "surname": "Jordan",
-    "team": 1610612751
+    "surname": "Jordan"
   },
   {
     "name": "Cory",
-    "surname": "Joseph",
-    "team": 1610612765
+    "surname": "Joseph"
   },
   {
     "name": "Mfiondu",
-    "surname": "Kabengele",
-    "team": 1610612739
+    "surname": "Kabengele"
   },
   {
     "name": "Frank",
-    "surname": "Kaminsky",
-    "team": 1610612756
+    "surname": "Kaminsky"
   },
   {
     "name": "Enes",
-    "surname": "Kanter",
-    "team": 1610612757
+    "surname": "Kanter"
   },
   {
     "name": "Luke",
-    "surname": "Kennard",
-    "team": 1610612746
+    "surname": "Kennard"
   },
   {
     "name": "Louis",
-    "surname": "King",
-    "team": 1610612758
+    "surname": "King"
   },
   {
     "name": "Maxi",
-    "surname": "Kleber",
-    "team": 1610612742
+    "surname": "Kleber"
   },
   {
     "name": "Nathan",
-    "surname": "Knight",
-    "team": 1610612737
+    "surname": "Knight"
   },
   {
     "name": "Kevin",
-    "surname": "Knox II",
-    "team": 1610612752
+    "surname": "Knox II"
   },
   {
     "name": "John",
-    "surname": "Konchar",
-    "team": 1610612763
+    "surname": "Konchar"
   },
   {
     "name": "Furkan",
-    "surname": "Korkmaz",
-    "team": 1610612755
+    "surname": "Korkmaz"
   },
   {
     "name": "Luke",
-    "surname": "Kornet",
-    "team": 1610612738
+    "surname": "Kornet"
   },
   {
     "name": "Rodions",
-    "surname": "Kurucs",
-    "team": 0
+    "surname": "Kurucs"
   },
   {
     "name": "Kyle",
-    "surname": "Kuzma",
-    "team": 1610612747
+    "surname": "Kuzma"
   },
   {
     "name": "Zach",
-    "surname": "LaVine",
-    "team": 1610612741
+    "surname": "LaVine"
   },
   {
     "name": "Anthony",
-    "surname": "Lamb",
-    "team": 1610612745
+    "surname": "Lamb"
   },
   {
     "name": "Jeremy",
-    "surname": "Lamb",
-    "team": 1610612754
+    "surname": "Lamb"
   },
   {
     "name": "Romeo",
-    "surname": "Langford",
-    "team": 1610612738
+    "surname": "Langford"
   },
   {
     "name": "Jake",
-    "surname": "Layman",
-    "team": 1610612750
+    "surname": "Layman"
   },
   {
     "name": "Caris",
-    "surname": "LeVert",
-    "team": 1610612754
+    "surname": "LeVert"
   },
   {
     "name": "T.J.",
-    "surname": "Leaf",
-    "team": 1610612757
+    "surname": "Leaf"
   },
   {
     "name": "Jalen",
-    "surname": "Lecque",
-    "team": 0
+    "surname": "Lecque"
   },
   {
     "name": "Damion",
-    "surname": "Lee",
-    "team": 1610612744
+    "surname": "Lee"
   },
   {
     "name": "Saben",
-    "surname": "Lee",
-    "team": 1610612765
+    "surname": "Lee"
   },
   {
     "name": "Alex",
-    "surname": "Len",
-    "team": 1610612764
+    "surname": "Len"
   },
   {
     "name": "Kawhi",
-    "surname": "Leonard",
-    "team": 1610612746
+    "surname": "Leonard"
   },
   {
     "name": "Meyers",
-    "surname": "Leonard",
-    "team": 0
+    "surname": "Leonard"
   },
   {
     "name": "Kira",
-    "surname": "Lewis Jr.",
-    "team": 1610612740
+    "surname": "Lewis Jr."
   },
   {
     "name": "Damian",
-    "surname": "Lillard",
-    "team": 1610612757
+    "surname": "Lillard"
   },
   {
     "name": "Nassir",
-    "surname": "Little",
-    "team": 1610612757
+    "surname": "Little"
   },
   {
     "name": "Kevon",
-    "surname": "Looney",
-    "team": 1610612744
+    "surname": "Looney"
   },
   {
     "name": "Brook",
-    "surname": "Lopez",
-    "team": 1610612749
+    "surname": "Lopez"
   },
   {
     "name": "Robin",
-    "surname": "Lopez",
-    "team": 1610612764
+    "surname": "Lopez"
   },
   {
     "name": "Didi",
-    "surname": "Louzada",
-    "team": 1610612740
+    "surname": "Louzada"
   },
   {
     "name": "Kevin",
-    "surname": "Love",
-    "team": 1610612739
+    "surname": "Love"
   },
   {
     "name": "Kyle",
-    "surname": "Lowry",
-    "team": 1610612761
+    "surname": "Lowry"
   },
   {
     "name": "Timothe",
-    "surname": "Luwawu-Cabarrot",
-    "team": 1610612751
+    "surname": "Luwawu-Cabarrot"
   },
   {
     "name": "Trey",
-    "surname": "Lyles",
-    "team": 1610612759
+    "surname": "Lyles"
   },
   {
     "name": "Will",
-    "surname": "Magnay",
-    "team": 0
+    "surname": "Magnay"
   },
   {
     "name": "Thon",
-    "surname": "Maker",
-    "team": 0
+    "surname": "Maker"
   },
   {
     "name": "Theo",
-    "surname": "Maledon",
-    "team": 1610612760
+    "surname": "Maledon"
   },
   {
     "name": "Karim",
-    "surname": "Mane",
-    "team": 0
+    "surname": "Mane"
   },
   {
     "name": "Terance",
-    "surname": "Mann",
-    "team": 1610612746
+    "surname": "Mann"
   },
   {
     "name": "Nico",
-    "surname": "Mannion",
-    "team": 1610612744
+    "surname": "Mannion"
   },
   {
     "name": "Boban",
-    "surname": "Marjanovic",
-    "team": 1610612742
+    "surname": "Marjanovic"
   },
   {
     "name": "Lauri",
-    "surname": "Markkanen",
-    "team": 1610612741
+    "surname": "Markkanen"
   },
   {
     "name": "Naji",
-    "surname": "Marshall",
-    "team": 1610612740
+    "surname": "Marshall"
   },
   {
     "name": "Caleb",
-    "surname": "Martin",
-    "team": 1610612766
+    "surname": "Martin"
   },
   {
     "name": "Cody",
-    "surname": "Martin",
-    "team": 1610612766
+    "surname": "Martin"
   },
   {
     "name": "Jeremiah",
-    "surname": "Martin",
-    "team": 1610612739
+    "surname": "Martin"
   },
   {
     "name": "Kelan",
-    "surname": "Martin",
-    "team": 1610612754
+    "surname": "Martin"
   },
   {
     "name": "Kenyon",
-    "surname": "Martin Jr.",
-    "team": 1610612745
+    "surname": "Martin Jr."
   },
   {
     "name": "Frank",
-    "surname": "Mason",
-    "team": 0
+    "surname": "Mason"
   },
   {
     "name": "Garrison",
-    "surname": "Mathews",
-    "team": 1610612764
+    "surname": "Mathews"
   },
   {
     "name": "Dakota",
-    "surname": "Mathias",
-    "team": 0
+    "surname": "Mathias"
   },
   {
     "name": "Wesley",
-    "surname": "Matthews",
-    "team": 1610612747
+    "surname": "Matthews"
   },
   {
     "name": "Tyrese",
-    "surname": "Maxey",
-    "team": 1610612755
+    "surname": "Maxey"
   },
   {
     "name": "Skylar",
-    "surname": "Mays",
-    "team": 1610612737
+    "surname": "Mays"
   },
   {
     "name": "Patrick",
-    "surname": "McCaw",
-    "team": 0
+    "surname": "McCaw"
   },
   {
     "name": "CJ",
-    "surname": "McCollum",
-    "team": 1610612757
+    "surname": "McCollum"
   },
   {
     "name": "T.J.",
-    "surname": "McConnell",
-    "team": 1610612754
+    "surname": "McConnell"
   },
   {
     "name": "Jaden",
-    "surname": "McDaniels",
-    "team": 1610612750
+    "surname": "McDaniels"
   },
   {
     "name": "Jalen",
-    "surname": "McDaniels",
-    "team": 1610612766
+    "surname": "McDaniels"
   },
   {
     "name": "Doug",
-    "surname": "McDermott",
-    "team": 1610612754
+    "surname": "McDermott"
   },
   {
     "name": "Sean",
-    "surname": "McDermott",
-    "team": 1610612763
+    "surname": "McDermott"
   },
   {
     "name": "JaVale",
-    "surname": "McGee",
-    "team": 1610612743
+    "surname": "McGee"
   },
   {
     "name": "Rodney",
-    "surname": "McGruder",
-    "team": 1610612765
+    "surname": "McGruder"
   },
   {
     "name": "Alfonzo",
-    "surname": "McKinnie",
-    "team": 1610612747
+    "surname": "McKinnie"
   },
   {
     "name": "Jordan",
-    "surname": "McLaughlin",
-    "team": 1610612750
+    "surname": "McLaughlin"
   },
   {
     "name": "Ben",
-    "surname": "McLemore",
-    "team": 1610612747
+    "surname": "McLemore"
   },
   {
     "name": "Nicolo",
-    "surname": "Melli",
-    "team": 1610612742
+    "surname": "Melli"
   },
   {
     "name": "De'Anthony",
-    "surname": "Melton",
-    "team": 1610612763
+    "surname": "Melton"
   },
   {
     "name": "Sam",
-    "surname": "Merrill",
-    "team": 1610612749
+    "surname": "Merrill"
   },
   {
     "name": "Chimezie",
-    "surname": "Metu",
-    "team": 1610612758
+    "surname": "Metu"
   },
   {
     "name": "Khris",
-    "surname": "Middleton",
-    "team": 1610612749
+    "surname": "Middleton"
   },
   {
     "name": "Darius",
-    "surname": "Miller",
-    "team": 0
+    "surname": "Miller"
   },
   {
     "name": "Patty",
-    "surname": "Mills",
-    "team": 1610612759
+    "surname": "Mills"
   },
   {
     "name": "Paul",
-    "surname": "Millsap",
-    "team": 1610612743
+    "surname": "Millsap"
   },
   {
     "name": "Shake",
-    "surname": "Milton",
-    "team": 1610612755
+    "surname": "Milton"
   },
   {
     "name": "Donovan",
-    "surname": "Mitchell",
-    "team": 1610612762
+    "surname": "Mitchell"
   },
   {
     "name": "Adam",
-    "surname": "Mokoka",
-    "team": 1610612741
+    "surname": "Mokoka"
   },
   {
     "name": "Malik",
-    "surname": "Monk",
-    "team": 1610612766
+    "surname": "Monk"
   },
   {
     "name": "E'Twaun",
-    "surname": "Moore",
-    "team": 1610612756
+    "surname": "Moore"
   },
   {
     "name": "Ja",
-    "surname": "Morant",
-    "team": 1610612763
+    "surname": "Morant"
   },
   {
     "name": "Juwan",
-    "surname": "Morgan",
-    "team": 1610612762
+    "surname": "Morgan"
   },
   {
     "name": "Markieff",
-    "surname": "Morris",
-    "team": 1610612747
+    "surname": "Morris"
   },
   {
     "name": "Monte",
-    "surname": "Morris",
-    "team": 1610612743
+    "surname": "Morris"
   },
   {
     "name": "Marcus",
-    "surname": "Morris Sr.",
-    "team": 1610612746
+    "surname": "Morris Sr."
   },
   {
     "name": "Mychal",
-    "surname": "Mulder",
-    "team": 1610612744
+    "surname": "Mulder"
   },
   {
     "name": "Dejounte",
-    "surname": "Murray",
-    "team": 1610612759
+    "surname": "Murray"
   },
   {
     "name": "Jamal",
-    "surname": "Murray",
-    "team": 1610612743
+    "surname": "Murray"
   },
   {
     "name": "Mike",
-    "surname": "Muscala",
-    "team": 1610612760
+    "surname": "Muscala"
   },
   {
     "name": "Svi",
-    "surname": "Mykhailiuk",
-    "team": 1610612760
+    "surname": "Mykhailiuk"
   },
   {
     "name": "Abdel",
-    "surname": "Nader",
-    "team": 1610612756
+    "surname": "Nader"
   },
   {
     "name": "Larry",
-    "surname": "Nance Jr.",
-    "team": 1610612739
+    "surname": "Nance Jr."
   },
   {
     "name": "Aaron",
-    "surname": "Nesmith",
-    "team": 1610612738
+    "surname": "Nesmith"
   },
   {
     "name": "Raul",
-    "surname": "Neto",
-    "team": 1610612764
+    "surname": "Neto"
   },
   {
     "name": "Georges",
-    "surname": "Niang",
-    "team": 1610612762
+    "surname": "Niang"
   },
   {
     "name": "Zeke",
-    "surname": "Nnaji",
-    "team": 1610612743
+    "surname": "Nnaji"
   },
   {
     "name": "Nerlens",
-    "surname": "Noel",
-    "team": 1610612752
+    "surname": "Noel"
   },
   {
     "name": "Jaylen",
-    "surname": "Nowell",
-    "team": 1610612750
+    "surname": "Nowell"
   },
   {
     "name": "Frank",
-    "surname": "Ntilikina",
-    "team": 1610612752
+    "surname": "Ntilikina"
   },
   {
     "name": "Kendrick",
-    "surname": "Nunn",
-    "team": 1610612748
+    "surname": "Nunn"
   },
   {
     "name": "James",
-    "surname": "Nunnally",
-    "team": 1610612740
+    "surname": "Nunnally"
   },
   {
     "name": "Jusuf",
-    "surname": "Nurkic",
-    "team": 1610612757
+    "surname": "Nurkic"
   },
   {
     "name": "David",
-    "surname": "Nwaba",
-    "team": 1610612745
+    "surname": "Nwaba"
   },
   {
     "name": "Jordan",
-    "surname": "Nwora",
-    "team": 1610612749
+    "surname": "Nwora"
   },
   {
     "name": "Royce",
-    "surname": "O'Neale",
-    "team": 1610612762
+    "surname": "O'Neale"
   },
   {
     "name": "Semi",
-    "surname": "Ojeleye",
-    "team": 1610612738
+    "surname": "Ojeleye"
   },
   {
     "name": "Jahlil",
-    "surname": "Okafor",
-    "team": 1610612765
+    "surname": "Okafor"
   },
   {
     "name": "Chuma",
-    "surname": "Okeke",
-    "team": 1610612753
+    "surname": "Okeke"
   },
   {
     "name": "Josh",
-    "surname": "Okogie",
-    "team": 1610612750
+    "surname": "Okogie"
   },
   {
     "name": "Onyeka",
-    "surname": "Okongwu",
-    "team": 1610612737
+    "surname": "Okongwu"
   },
   {
     "name": "Isaac",
-    "surname": "Okoro",
-    "team": 1610612739
+    "surname": "Okoro"
   },
   {
     "name": "KZ",
-    "surname": "Okpala",
-    "team": 1610612748
+    "surname": "Okpala"
   },
   {
     "name": "Victor",
-    "surname": "Oladipo",
-    "team": 1610612748
+    "surname": "Oladipo"
   },
   {
     "name": "Cameron",
-    "surname": "Oliver",
-    "team": 1610612745
+    "surname": "Oliver"
   },
   {
     "name": "Kelly",
-    "surname": "Olynyk",
-    "team": 1610612745
+    "surname": "Olynyk"
   },
   {
     "name": "Miye",
-    "surname": "Oni",
-    "team": 1610612762
+    "surname": "Oni"
   },
   {
     "name": "Cedi",
-    "surname": "Osman",
-    "team": 1610612739
+    "surname": "Osman"
   },
   {
     "name": "Daniel",
-    "surname": "Oturu",
-    "team": 1610612746
+    "surname": "Oturu"
   },
   {
     "name": "Kelly",
-    "surname": "Oubre Jr.",
-    "team": 1610612744
+    "surname": "Oubre Jr."
   },
   {
     "name": "Jabari",
-    "surname": "Parker",
-    "team": 1610612738
+    "surname": "Parker"
   },
   {
     "name": "Eric",
-    "surname": "Paschall",
-    "team": 1610612744
+    "surname": "Paschall"
   },
   {
     "name": "Anzejs",
-    "surname": "Pasecniks",
-    "team": 0
+    "surname": "Pasecniks"
   },
   {
     "name": "Patrick",
-    "surname": "Patterson",
-    "team": 1610612746
+    "surname": "Patterson"
   },
   {
     "name": "Justin",
-    "surname": "Patton",
-    "team": 0
+    "surname": "Patton"
   },
   {
     "name": "Chris",
-    "surname": "Paul",
-    "team": 1610612756
+    "surname": "Paul"
   },
   {
     "name": "Cameron",
-    "surname": "Payne",
-    "team": 1610612756
+    "surname": "Payne"
   },
   {
     "name": "Elfrid",
-    "surname": "Payton",
-    "team": 1610612752
+    "surname": "Payton"
   },
   {
     "name": "Gary",
-    "surname": "Payton II",
-    "team": 0
+    "surname": "Payton II"
   },
   {
     "name": "Norvel",
-    "surname": "Pelle",
-    "team": 1610612752
+    "surname": "Pelle"
   },
   {
     "name": "Reggie",
-    "surname": "Perry",
-    "team": 1610612751
+    "surname": "Perry"
   },
   {
     "name": "Theo",
-    "surname": "Pinson",
-    "team": 1610612752
+    "surname": "Pinson"
   },
   {
     "name": "Mason",
-    "surname": "Plumlee",
-    "team": 1610612765
+    "surname": "Plumlee"
   },
   {
     "name": "Jakob",
-    "surname": "Poeltl",
-    "team": 1610612759
+    "surname": "Poeltl"
   },
   {
     "name": "Vincent",
-    "surname": "Poirier",
-    "team": 0
+    "surname": "Poirier"
   },
   {
     "name": "Aleksej",
-    "surname": "Pokusevski",
-    "team": 1610612760
+    "surname": "Pokusevski"
   },
   {
     "name": "Jordan",
-    "surname": "Poole",
-    "team": 1610612744
+    "surname": "Poole"
   },
   {
     "name": "Jontay",
-    "surname": "Porter",
-    "team": 1610612763
+    "surname": "Porter"
   },
   {
     "name": "Kevin",
-    "surname": "Porter Jr.",
-    "team": 1610612745
+    "surname": "Porter Jr."
   },
   {
     "name": "Michael",
-    "surname": "Porter Jr.",
-    "team": 1610612743
+    "surname": "Porter Jr."
   },
   {
     "name": "Otto",
-    "surname": "Porter Jr.",
-    "team": 1610612753
+    "surname": "Porter Jr."
   },
   {
     "name": "Bobby",
-    "surname": "Portis",
-    "team": 1610612749
+    "surname": "Portis"
   },
   {
     "name": "Kristaps",
-    "surname": "Porzingis",
-    "team": 1610612742
+    "surname": "Porzingis"
   },
   {
     "name": "Dwight",
-    "surname": "Powell",
-    "team": 1610612742
+    "surname": "Powell"
   },
   {
     "name": "Norman",
-    "surname": "Powell",
-    "team": 1610612757
+    "surname": "Powell"
   },
   {
     "name": "Taurean",
-    "surname": "Prince",
-    "team": 1610612739
+    "surname": "Prince"
   },
   {
     "name": "Payton",
-    "surname": "Pritchard",
-    "team": 1610612738
+    "surname": "Pritchard"
   },
   {
     "name": "Immanuel",
-    "surname": "Quickley",
-    "team": 1610612752
+    "surname": "Quickley"
   },
   {
     "name": "Jahmi'us",
-    "surname": "Ramsey",
-    "team": 1610612758
+    "surname": "Ramsey"
   },
   {
     "name": "Chasson",
-    "surname": "Randle",
-    "team": 1610612753
+    "surname": "Randle"
   },
   {
     "name": "Julius",
-    "surname": "Randle",
-    "team": 1610612752
+    "surname": "Randle"
   },
   {
     "name": "Cam",
-    "surname": "Reddish",
-    "team": 1610612737
+    "surname": "Reddish"
   },
   {
     "name": "JJ",
-    "surname": "Redick",
-    "team": 1610612742
+    "surname": "Redick"
   },
   {
     "name": "Paul",
-    "surname": "Reed",
-    "team": 1610612755
+    "surname": "Reed"
   },
   {
     "name": "Naz",
-    "surname": "Reid",
-    "team": 1610612750
+    "surname": "Reid"
   },
   {
     "name": "Cameron",
-    "surname": "Reynolds",
-    "team": 1610612745
+    "surname": "Reynolds"
   },
   {
     "name": "Nick",
-    "surname": "Richards",
-    "team": 1610612766
+    "surname": "Richards"
   },
   {
     "name": "Josh",
-    "surname": "Richardson",
-    "team": 1610612742
+    "surname": "Richardson"
   },
   {
     "name": "Grant",
-    "surname": "Riller",
-    "team": 1610612766
+    "surname": "Riller"
   },
   {
     "name": "Austin",
-    "surname": "Rivers",
-    "team": 1610612743
+    "surname": "Rivers"
   },
   {
     "name": "Andre",
-    "surname": "Roberson",
-    "team": 0
+    "surname": "Roberson"
   },
   {
     "name": "Duncan",
-    "surname": "Robinson",
-    "team": 1610612748
+    "surname": "Robinson"
   },
   {
     "name": "Jerome",
-    "surname": "Robinson",
-    "team": 0
+    "surname": "Robinson"
   },
   {
     "name": "Justin",
-    "surname": "Robinson",
-    "team": 0
+    "surname": "Robinson"
   },
   {
     "name": "Mitchell",
-    "surname": "Robinson",
-    "team": 1610612752
+    "surname": "Robinson"
   },
   {
     "name": "Glenn",
-    "surname": "Robinson III",
-    "team": 0
+    "surname": "Robinson III"
   },
   {
     "name": "Isaiah",
-    "surname": "Roby",
-    "team": 1610612760
+    "surname": "Roby"
   },
   {
     "name": "Rajon",
-    "surname": "Rondo",
-    "team": 1610612746
+    "surname": "Rondo"
   },
   {
     "name": "Derrick",
-    "surname": "Rose",
-    "team": 1610612752
+    "surname": "Rose"
   },
   {
     "name": "Terrence",
-    "surname": "Ross",
-    "team": 1610612753
+    "surname": "Ross"
   },
   {
     "name": "Terry",
-    "surname": "Rozier",
-    "team": 1610612766
+    "surname": "Rozier"
   },
   {
     "name": "Ricky",
-    "surname": "Rubio",
-    "team": 1610612750
+    "surname": "Rubio"
   },
   {
     "name": "D'Angelo",
-    "surname": "Russell",
-    "team": 1610612750
+    "surname": "Russell"
   },
   {
     "name": "Domantas",
-    "surname": "Sabonis",
-    "team": 1610612754
+    "surname": "Sabonis"
   },
   {
     "name": "Luka",
-    "surname": "Samanic",
-    "team": 1610612759
+    "surname": "Samanic"
   },
   {
     "name": "JaKarr",
-    "surname": "Sampson",
-    "team": 1610612754
+    "surname": "Sampson"
   },
   {
     "name": "Dario",
-    "surname": "Saric",
-    "team": 1610612756
+    "surname": "Saric"
   },
   {
     "name": "Tomas",
-    "surname": "Satoransky",
-    "team": 1610612741
+    "surname": "Satoransky"
   },
   {
     "name": "Dennis",
-    "surname": "Schroder",
-    "team": 1610612747
+    "surname": "Schroder"
   },
   {
     "name": "Mike",
-    "surname": "Scott",
-    "team": 1610612755
+    "surname": "Scott"
   },
   {
     "name": "Jay",
-    "surname": "Scrubb",
-    "team": 1610612746
+    "surname": "Scrubb"
   },
   {
     "name": "Collin",
-    "surname": "Sexton",
-    "team": 1610612739
+    "surname": "Sexton"
   },
   {
     "name": "Landry",
-    "surname": "Shamet",
-    "team": 1610612751
+    "surname": "Shamet"
   },
   {
     "name": "Iman",
-    "surname": "Shumpert",
-    "team": 0
+    "surname": "Shumpert"
   },
   {
     "name": "Pascal",
-    "surname": "Siakam",
-    "team": 1610612761
+    "surname": "Siakam"
   },
   {
     "name": "Chris",
-    "surname": "Silva",
-    "team": 0
+    "surname": "Silva"
   },
   {
     "name": "Ben",
-    "surname": "Simmons",
-    "team": 1610612755
+    "surname": "Simmons"
   },
   {
     "name": "Anfernee",
-    "surname": "Simons",
-    "team": 1610612757
+    "surname": "Simons"
   },
   {
     "name": "Deividas",
-    "surname": "Sirvydis",
-    "team": 1610612765
+    "surname": "Sirvydis"
   },
   {
     "name": "Alen",
-    "surname": "Smailagic",
-    "team": 1610612744
+    "surname": "Smailagic"
   },
   {
     "name": "Marcus",
-    "surname": "Smart",
-    "team": 1610612738
+    "surname": "Smart"
   },
   {
     "name": "Ish",
-    "surname": "Smith",
-    "team": 1610612764
+    "surname": "Smith"
   },
   {
     "name": "Jalen",
-    "surname": "Smith",
-    "team": 1610612756
+    "surname": "Smith"
   },
   {
     "name": "Dennis",
-    "surname": "Smith Jr.",
-    "team": 1610612765
+    "surname": "Smith Jr."
   },
   {
     "name": "Tony",
-    "surname": "Snell",
-    "team": 1610612737
+    "surname": "Snell"
   },
   {
     "name": "Ray",
-    "surname": "Spalding",
-    "team": 0
+    "surname": "Spalding"
   },
   {
     "name": "Cassius",
-    "surname": "Stanley",
-    "team": 1610612754
+    "surname": "Stanley"
   },
   {
     "name": "Lamar",
-    "surname": "Stevens",
-    "team": 1610612739
+    "surname": "Stevens"
   },
   {
     "name": "Isaiah",
-    "surname": "Stewart",
-    "team": 1610612765
+    "surname": "Stewart"
   },
   {
     "name": "Max",
-    "surname": "Strus",
-    "team": 1610612748
+    "surname": "Strus"
   },
   {
     "name": "Edmond",
-    "surname": "Sumner",
-    "team": 1610612754
+    "surname": "Sumner"
   },
   {
     "name": "Jae'Sean",
-    "surname": "Tate",
-    "team": 1610612745
+    "surname": "Tate"
   },
   {
     "name": "Jayson",
-    "surname": "Tatum",
-    "team": 1610612738
+    "surname": "Tatum"
   },
   {
     "name": "Jeff",
-    "surname": "Teague",
-    "team": 1610612749
+    "surname": "Teague"
   },
   {
     "name": "Garrett",
-    "surname": "Temple",
-    "team": 1610612741
+    "surname": "Temple"
   },
   {
     "name": "Tyrell",
-    "surname": "Terry",
-    "team": 1610612742
+    "surname": "Terry"
   },
   {
     "name": "Daniel",
-    "surname": "Theis",
-    "team": 1610612741
+    "surname": "Theis"
   },
   {
     "name": "Brodric",
-    "surname": "Thomas",
-    "team": 1610612739
+    "surname": "Thomas"
   },
   {
     "name": "Isaiah",
-    "surname": "Thomas",
-    "team": 0
+    "surname": "Thomas"
   },
   {
     "name": "Khyri",
-    "surname": "Thomas",
-    "team": 1610612745
+    "surname": "Thomas"
   },
   {
     "name": "Matt",
-    "surname": "Thomas",
-    "team": 1610612762
+    "surname": "Thomas"
   },
   {
     "name": "Klay",
-    "surname": "Thompson",
-    "team": 1610612744
+    "surname": "Thompson"
   },
   {
     "name": "Tristan",
-    "surname": "Thompson",
-    "team": 1610612738
+    "surname": "Thompson"
   },
   {
     "name": "Sindarius",
-    "surname": "Thornwell",
-    "team": 1610612753
+    "surname": "Thornwell"
   },
   {
     "name": "Matisse",
-    "surname": "Thybulle",
-    "team": 1610612755
+    "surname": "Thybulle"
   },
   {
     "name": "Killian",
-    "surname": "Tillie",
-    "team": 1610612763
+    "surname": "Tillie"
   },
   {
     "name": "Xavier",
-    "surname": "Tillman",
-    "team": 1610612763
+    "surname": "Tillman"
   },
   {
     "name": "Anthony",
-    "surname": "Tolliver",
-    "team": 1610612755
+    "surname": "Tolliver"
   },
   {
     "name": "Obi",
-    "surname": "Toppin",
-    "team": 1610612752
+    "surname": "Toppin"
   },
   {
     "name": "Juan",
-    "surname": "Toscano-Anderson",
-    "team": 1610612744
+    "surname": "Toscano-Anderson"
   },
   {
     "name": "Axel",
-    "surname": "Toupane",
-    "team": 1610612749
+    "surname": "Toupane"
   },
   {
     "name": "Karl-Anthony",
-    "surname": "Towns",
-    "team": 1610612750
+    "surname": "Towns"
   },
   {
     "name": "Gary",
-    "surname": "Trent Jr.",
-    "team": 1610612761
+    "surname": "Trent Jr."
   },
   {
     "name": "P.J.",
-    "surname": "Tucker",
-    "team": 1610612749
+    "surname": "Tucker"
   },
   {
     "name": "Rayjon",
-    "surname": "Tucker",
-    "team": 1610612755
+    "surname": "Tucker"
   },
   {
     "name": "Myles",
-    "surname": "Turner",
-    "team": 1610612754
+    "surname": "Turner"
   },
   {
     "name": "Jonas",
-    "surname": "Valanciunas",
-    "team": 1610612763
+    "surname": "Valanciunas"
   },
   {
     "name": "Denzel",
-    "surname": "Valentine",
-    "team": 1610612741
+    "surname": "Valentine"
   },
   {
     "name": "Fred",
-    "surname": "VanVleet",
-    "team": 1610612761
+    "surname": "VanVleet"
   },
   {
     "name": "Jarred",
-    "surname": "Vanderbilt",
-    "team": 1610612750
+    "surname": "Vanderbilt"
   },
   {
     "name": "Anderson",
-    "surname": "Varejao",
-    "team": 1610612739
+    "surname": "Varejao"
   },
   {
     "name": "Devin",
-    "surname": "Vassell",
-    "team": 1610612759
+    "surname": "Vassell"
   },
   {
     "name": "Luca",
-    "surname": "Vildoza",
-    "team": 1610612752
+    "surname": "Vildoza"
   },
   {
     "name": "Gabe",
-    "surname": "Vincent",
-    "team": 1610612748
+    "surname": "Vincent"
   },
   {
     "name": "Noah",
-    "surname": "Vonleh",
-    "team": 0
+    "surname": "Vonleh"
   },
   {
     "name": "Nikola",
-    "surname": "Vucevic",
-    "team": 1610612741
+    "surname": "Vucevic"
   },
   {
     "name": "Dean",
-    "surname": "Wade",
-    "team": 1610612739
+    "surname": "Wade"
   },
   {
     "name": "Moritz",
-    "surname": "Wagner",
-    "team": 1610612753
+    "surname": "Wagner"
   },
   {
     "name": "Kemba",
-    "surname": "Walker",
-    "team": 1610612738
+    "surname": "Walker"
   },
   {
     "name": "Lonnie",
-    "surname": "Walker IV",
-    "team": 1610612759
+    "surname": "Walker IV"
   },
   {
     "name": "John",
-    "surname": "Wall",
-    "team": 1610612745
+    "surname": "Wall"
   },
   {
     "name": "Brad",
-    "surname": "Wanamaker",
-    "team": 1610612766
+    "surname": "Wanamaker"
   },
   {
     "name": "T.J.",
-    "surname": "Warren",
-    "team": 1610612754
+    "surname": "Warren"
   },
   {
     "name": "P.J.",
-    "surname": "Washington",
-    "team": 1610612766
+    "surname": "Washington"
   },
   {
     "name": "Yuta",
-    "surname": "Watanabe",
-    "team": 1610612761
+    "surname": "Watanabe"
   },
   {
     "name": "Tremont",
-    "surname": "Waters",
-    "team": 1610612738
+    "surname": "Waters"
   },
   {
     "name": "Paul",
-    "surname": "Watson",
-    "team": 1610612761
+    "surname": "Watson"
   },
   {
     "name": "Quinndary",
-    "surname": "Weatherspoon",
-    "team": 1610612759
+    "surname": "Weatherspoon"
   },
   {
     "name": "Russell",
-    "surname": "Westbrook",
-    "team": 1610612764
+    "surname": "Westbrook"
   },
   {
     "name": "Coby",
-    "surname": "White",
-    "team": 1610612741
+    "surname": "White"
   },
   {
     "name": "Derrick",
-    "surname": "White",
-    "team": 1610612759
+    "surname": "White"
   },
   {
     "name": "Hassan",
-    "surname": "Whiteside",
-    "team": 1610612758
+    "surname": "Whiteside"
   },
   {
     "name": "Greg",
-    "surname": "Whittington",
-    "team": 0
+    "surname": "Whittington"
   },
   {
     "name": "Andrew",
-    "surname": "Wiggins",
-    "team": 1610612744
+    "surname": "Wiggins"
   },
   {
     "name": "Grant",
-    "surname": "Williams",
-    "team": 1610612738
+    "surname": "Williams"
   },
   {
     "name": "Kenrich",
-    "surname": "Williams",
-    "team": 1610612760
+    "surname": "Williams"
   },
   {
     "name": "Lou",
-    "surname": "Williams",
-    "team": 1610612737
+    "surname": "Williams"
   },
   {
     "name": "Patrick",
-    "surname": "Williams",
-    "team": 1610612741
+    "surname": "Williams"
   },
   {
     "name": "Robert",
-    "surname": "Williams III",
-    "team": 1610612738
+    "surname": "Williams III"
   },
   {
     "name": "Zion",
-    "surname": "Williamson",
-    "team": 1610612740
+    "surname": "Williamson"
   },
   {
     "name": "D.J.",
-    "surname": "Wilson",
-    "team": 1610612745
+    "surname": "Wilson"
   },
   {
     "name": "Dylan",
-    "surname": "Windler",
-    "team": 1610612739
+    "surname": "Windler"
   },
   {
     "name": "Justise",
-    "surname": "Winslow",
-    "team": 1610612763
+    "surname": "Winslow"
   },
   {
     "name": "Cassius",
-    "surname": "Winston",
-    "team": 1610612764
+    "surname": "Winston"
   },
   {
     "name": "James",
-    "surname": "Wiseman",
-    "team": 1610612744
+    "surname": "Wiseman"
   },
   {
     "name": "Christian",
-    "surname": "Wood",
-    "team": 1610612745
+    "surname": "Wood"
   },
   {
     "name": "Robert",
-    "surname": "Woodard II",
-    "team": 1610612758
+    "surname": "Woodard II"
   },
   {
     "name": "Delon",
-    "surname": "Wright",
-    "team": 1610612758
+    "surname": "Wright"
   },
   {
     "name": "Thaddeus",
-    "surname": "Young",
-    "team": 1610612741
+    "surname": "Young"
   },
   {
     "name": "Trae",
-    "surname": "Young",
-    "team": 1610612737
+    "surname": "Young"
   },
   {
     "name": "Omer",
-    "surname": "Yurtseven",
-    "team": 1610612748
+    "surname": "Yurtseven"
   },
   {
     "name": "Cody",
-    "surname": "Zeller",
-    "team": 1610612766
+    "surname": "Zeller"
   },
   {
     "name": "Ivica",
-    "surname": "Zubac",
-    "team": 1610612746
+    "surname": "Zubac"
   }
 ]

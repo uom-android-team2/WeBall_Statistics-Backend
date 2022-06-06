@@ -1,151 +1,121 @@
 [
   {
-    "id": 1610612737,
     "name": "Atlanta Hawks",
     "city": "Atlanta"
   },
   {
-    "id": 1610612738,
     "name": "Boston Celtics",
     "city": "Boston"
   },
   {
-    "id": 1610612751,
     "name": "Brooklyn Nets",
     "city": "Brooklyn"
   },
   {
-    "id": 1610612766,
     "name": "Charlotte Hornets",
     "city": "Charlotte"
   },
   {
-    "id": 1610612741,
     "name": "Chicago Bulls",
     "city": "Chicago"
   },
   {
-    "id": 1610612739,
     "name": "Cleveland Cavaliers",
     "city": "Cleveland"
   },
   {
-    "id": 1610612742,
     "name": "Dallas Mavericks",
     "city": "Dallas"
   },
   {
-    "id": 1610612743,
     "name": "Denver Nuggets",
     "city": "Denver"
   },
   {
-    "id": 1610612765,
     "name": "Detroit Pistons",
     "city": "Detroit"
   },
   {
-    "id": 1610612744,
     "name": "Golden State Warriors",
     "city": "Golden State"
   },
   {
-    "id": 1610612745,
     "name": "Houston Rockets",
     "city": "Houston"
   },
   {
-    "id": 1610612754,
     "name": "Indiana Pacers",
     "city": "Indiana"
   },
   {
-    "id": 1610612746,
     "name": "Los Angeles Clippers",
     "city": "Los Angeles"
   },
   {
-    "id": 1610612747,
     "name": "Los Angeles Lakers",
     "city": "Los Angeles"
   },
   {
-    "id": 1610612763,
     "name": "Memphis Grizzlies",
     "city": "Memphis"
   },
   {
-    "id": 1610612748,
     "name": "Miami Heat",
     "city": "Miami"
   },
   {
-    "id": 1610612749,
     "name": "Milwaukee Bucks",
     "city": "Milwaukee"
   },
   {
-    "id": 1610612750,
     "name": "Minnesota Timberwolves",
     "city": "Minnesota"
   },
   {
-    "id": 1610612740,
     "name": "New Orleans Pelicans",
     "city": "New Orleans"
   },
   {
-    "id": 1610612752,
     "name": "New York Knicks",
     "city": "New York"
   },
   {
-    "id": 1610612760,
     "name": "Oklahoma City Thunder",
     "city": "Oklahoma City"
   },
   {
-    "id": 1610612753,
     "name": "Orlando Magic",
     "city": "Orlando"
   },
   {
-    "id": 1610612755,
     "name": "Philadelphia 76ers",
     "city": "Philadelphia"
   },
   {
-    "id": 1610612756,
     "name": "Phoenix Suns",
     "city": "Phoenix"
   },
   {
-    "id": 1610612757,
     "name": "Portland Trail Blazers",
     "city": "Portland"
   },
   {
-    "id": 1610612758,
     "name": "Sacramento Kings",
     "city": "Sacramento"
   },
   {
-    "id": 1610612759,
     "name": "San Antonio Spurs",
     "city": "San Antonio"
   },
   {
-    "id": 1610612761,
     "name": "Toronto Raptors",
     "city": "Toronto"
   },
   {
-    "id": 1610612762,
     "name": "Utah Jazz",
     "city": "Utah"
   },
   {
-    "id": 1610612764,
     "name": "Washington Wizards",
     "city": "Washington"
   }

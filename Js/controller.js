@@ -11,12 +11,12 @@ const controlData = function () {
   loadData(DATA_PLAYERS_PATH).then(function (dataArr) {
     dataArr.forEach(async function (player) {
       const playerObj = {
-        //as id will have the default auto increment
+        //as "id" will have the default auto increment
         name: player.name,
         surname: player.surname,
         number: Math.floor(Math.random() * 100), //0 - 99
         position: "Undefined",
-        team: player.team, //team id
+        team: Math.floor(Math.random() * 25) + 1, //team id (1 - 25) cause we got 25 teams
         photo: "Undefined",
       };
       await postToDB(playerObj, PLAYER_API_PATH);
@@ -26,7 +26,7 @@ const controlData = function () {
   loadData(DATA_TEAMS_PATH).then(function (dataArr) {
     dataArr.forEach(async function (team) {
       const teamObj = {
-        id: team.id, // 10 digits id
+        //as "id" will have the default auto increment (1 - 25)
         name: team.name,
         city: team.city,
         badge: "Undefined",
@@ -34,6 +34,8 @@ const controlData = function () {
       await postToDB(teamObj, TEAM_API_PATH);
     });
   });
+
+  alert("Successful registration of data in the database!");
 };
 
 btnLoadData.addEventListener("click", function (evt) {
