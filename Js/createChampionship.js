@@ -254,11 +254,7 @@ const start = (teams) => {
             FinalListOfMatches.length + 1,
             homeTeam.id,
             awayTeam.id,
-            dateTemp.setFullYear(
-              dateTemp.getFullYear(),
-              dateTemp.getMonth(),
-              dateTemp.getDay() + (week - 1) * 7
-            )
+            week
           )
         ); //id might need to be changed
         dateTemp = new Date();
