@@ -35,7 +35,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
         <br>
         <br>
-        <a class="btn btn-success" id="btn-load-data" title="Generate teams and players for DB from easy from JSON">Load data from JSON</a>
+        <a class="btn btn-success" id="btn-load-data" title="Generate teams and players for DB, easy, from JSON">Load data from JSON</a>
     </p>
 </body>
 </html>
