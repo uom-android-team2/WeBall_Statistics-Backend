@@ -13,7 +13,7 @@ const controlData = function () {
         surname: player.surname,
         number: Math.floor(Math.random() * 100), //0 - 99
         position: "Undefined",
-        team: Math.floor(Math.random() * 25) + 1, //team id (1 - 25) cause we got 25 teams
+        team: Math.floor(Math.random() * 8) + 1, //team id (1 - 8) cause we got 8 teams
         photo: "Undefined",
       };
       await postToDB(playerObj, PATH.PLAYER_API_PATH);
@@ -23,7 +23,7 @@ const controlData = function () {
   loadData(PATH.DATA_TEAMS_PATH).then(function (dataArr) {
     dataArr.forEach(async function (team) {
       const teamObj = {
-        //as "id" will have the default auto increment (1 - 25)
+        //as "id" will have the default auto increment (1 - 8)
         name: team.name,
         city: team.city,
         badge: "Undefined",
