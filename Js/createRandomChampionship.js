@@ -139,6 +139,7 @@ const start = (teams) => {
        `
     );
     document.getElementById("create-button").classList.add("hidden");
+    document.getElementById("button-div").classList.add("hidden");
   }
 
   //not enought teams code goes below
@@ -151,6 +152,7 @@ const start = (teams) => {
        `
     );
     document.getElementById("create-button").classList.add("hidden");
+    document.getElementById("button-div").classList.add("hidden");
   }
 
   document
