@@ -9,9 +9,9 @@
         public $total_effort;
         public $successful_freethrow;
         public $total_freethrow;
-        public $succesful_twopointer;
+        public $successful_twopointer;
         public $total_twopointer;
-        public $succesful_threepointer;
+        public $successful_threepointer;
         public $total_threepointer;
         public $steal;
         public $assist;
@@ -21,7 +21,7 @@
         public $turnover;
 
         
-        public function __construct($match_id, $team_id, $successful_effort, $total_effort, $successful_freethrow, $total_freethrow, $succesful_twopointer, $total_twopointer, $succesful_threepointer, $total_threepointer, $steal, $assist, $block, $rebound, $foul, $turnover)
+        public function __construct($match_id, $team_id, $successful_effort, $total_effort, $successful_freethrow, $total_freethrow, $successful_twopointer, $total_twopointer, $successful_threepointer, $total_threepointer, $steal, $assist, $block, $rebound, $foul, $turnover)
         {
             $this->match_id = $match_id;
             $this->team_id = $team_id;
@@ -29,9 +29,9 @@
             $this->total_effort = $total_effort;
             $this->successful_freethrow = $successful_freethrow;
             $this->total_freethrow = $total_freethrow;
-            $this->succesful_twopointer = $succesful_twopointer;
+            $this->successful_twopointer = $successful_twopointer;
             $this->total_twopointer = $total_twopointer;
-            $this->succesful_threepointer = $succesful_threepointer;
+            $this->successful_threepointer = $successful_threepointer;
             $this->total_threepointer = $total_threepointer;
             $this->steal = $steal;
             $this->assist = $assist;
@@ -51,9 +51,9 @@
             echo "total_effort: " . $this->total_effort . " ";
             echo "successful_freethrow: " . $this->successful_freethrow . " ";
             echo "total_freethrow: " . $this->total_freethrow . " ";
-            echo "succesful_twopointer: " . $this->succesful_twopointer . " ";
+            echo "successful_twopointer: " . $this->successful_twopointer . " ";
             echo "total_twopointer: " . $this->total_twopointer . " ";
-            echo "succesful_threepointer: " . $this->succesful_threepointer . " ";
+            echo "successful_threepointer: " . $this->successful_threepointer . " ";
             echo "total_threepointer: " . $this->total_threepointer . " ";
             echo "steal: " . $this->steal . " ";
             echo "assist: " . $this->assist . " ";

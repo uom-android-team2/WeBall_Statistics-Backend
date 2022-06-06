@@ -45,7 +45,7 @@
                 $sql = "SELECT * FROM $this->table";
                 $result = $this->mysqli->query($sql);
                 while($row = $result->fetch_assoc()){
-                    $teamLiveStatistics[] = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['succesful_twopointer'], $row['total_twopointer'], $row['succesful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
+                    $teamLiveStatistics[] = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['successful_twopointer'], $row['total_twopointer'], $row['successful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
                 }   
             }catch(Exception $e){
                 echo 'Message: ' .$e->getMessage();
@@ -75,7 +75,7 @@
         public function save($entity){
             try {
                //sql insert teamLiveStatistics
-                $sql = "INSERT INTO `$this->table` (`match_id`, `team_id`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `succesful_twopointer`, `total_twopointer`, `succesful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`) VALUES ('$entity->match_id', '$entity->team_id', '$entity->successful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->succesful_twopointer', '$entity->total_twopointer', '$entity->succesful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover')";
+                $sql = "INSERT INTO `$this->table` (`match_id`, `team_id`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `successful_twopointer`, `total_twopointer`, `successful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`) VALUES ('$entity->match_id', '$entity->team_id', '$entity->successful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->succesful_twopointer', '$entity->total_twopointer', '$entity->succesful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover')";
                 $result = $this->mysqli->query($sql);
                 return $this->findAll();
             }catch(Exception $e){
