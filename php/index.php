@@ -20,7 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <style>
         body{ font: 14px sans-serif; text-align: center; }
     </style>
-    <script src="../Js/loadFromJSON.js" defer></script>
+    <script type="module" src="../Js/controller.js"></script>
 </head>
 <body>
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to WeBall-Statistics admin dashboard.</h1>
@@ -35,7 +35,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
         <br>
         <br>
-        <a href="" class="btn btn-success" title="Generate teams and players for DB from easy from JSON">Load data from JSON</a>
+        <a class="btn btn-success" id="btn-load-data" title="Generate teams and players for DB from easy from JSON">Load data from JSON</a>
     </p>
 </body>
 </html>
