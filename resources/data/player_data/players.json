@@ -1,7 +1,9 @@
 [
   {
     "name": "Precious",
-    "surname": "Achiuwa"
+    "surname": "Achiuwa",
+    "position": "POINT_GUARD",
+    "photo": "precious-achiuwa.jpeg"
   },
   {
     "name": "Jaylen",

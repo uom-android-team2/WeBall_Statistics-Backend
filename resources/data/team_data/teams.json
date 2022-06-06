@@ -1,7 +1,8 @@
 [
   {
     "name": "Atlanta Hawks",
-    "city": "Atlanta"
+    "city": "Atlanta",
+    "badge": "atlanta-hawks.png"
   },
   {
     "name": "Boston Celtics",

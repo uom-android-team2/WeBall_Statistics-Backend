@@ -12,9 +12,9 @@ const controlData = function () {
         name: player.name,
         surname: player.surname,
         number: Math.floor(Math.random() * 100), //0 - 99
-        position: "Undefined",
+        position: player.position,
         team: Math.floor(Math.random() * 8) + 1, //team id (1 - 8) cause we got 8 teams
-        photo: "Undefined",
+        photo: player.photo,
       };
       await postToDB(playerObj, PATH.PLAYER_API_PATH);
     });
@@ -26,7 +26,7 @@ const controlData = function () {
         //as "id" will have the default auto increment (1 - 8)
         name: team.name,
         city: team.city,
-        badge: "Undefined",
+        badge: team.badge,
       };
       await postToDB(teamObj, PATH.TEAM_API_PATH);
     });

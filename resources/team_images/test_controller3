@@ -1,9 +1,0 @@
-control {
-   initialize 
-   check-sys
-   thermo < 10 : switch-on heat 
-   thermo > 40 : switch-on cold 
-   check-sys
-   thermo > 50 : switch-on cold
-   check-sys
-}
