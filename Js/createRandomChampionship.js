@@ -1,3 +1,5 @@
+import { postToDB as postToDb } from "./Services/storeToDB.js";
+
 fetch("http://localhost/WeBall_Statistics-Backend/API/team.php")
   .then((response) => response.json())
   .then((result) => {
@@ -91,10 +93,7 @@ const start = (teams) => {
   const allPossibleMatchesId = new Set();
 
   const putIdInSet = function (stringId) {
-    if (
-      !allPossibleMatchesId.has(stringId) &&
-      !allPossibleMatchesId.has(revertId(stringId))
-    ) {
+    if (!allPossibleMatchesId.has(stringId) && !allPossibleMatchesId.has(revertId(stringId))) {
       allPossibleMatchesId.add(stringId);
     }
   };
@@ -125,9 +124,7 @@ const start = (teams) => {
   //console.log(championship);
   //   console.log(championship);
   const no_teams_section = document.getElementById("no-teams-section");
-  const not_enough_teams_section = document.getElementById(
-    "not-enough-teams-section"
-  );
+  const not_enough_teams_section = document.getElementById("not-enough-teams-section");
 
   //no teams -> Works
   if (teams.length === 0) {
@@ -153,199 +150,152 @@ const start = (teams) => {
     document.getElementById("create-button").classList.add("hidden");
   }
 
-  document
-    .getElementById("create-button")
-    .addEventListener("click", function () {
-      //This function handles all actions that need to be done once the done button is clicked by the admin
-      alert(
-        `Congrats! You just randomly created a ${
-          teams.length - 1
-        }-week championship. 
+  document.getElementById("create-button").addEventListener("click", function () {
+    //This function handles all actions that need to be done once the done button is clicked by the admin
+    alert(
+      `Congrats! You just randomly created a ${teams.length - 1}-week championship. 
     Check the app for results!`
-      );
+    );
 
-      class FinalMatch {
-        id;
-        teamlandlord_id;
-        teamguest_id;
-        date;
-        progress;
-        completed;
-        constructor(id, teamlandlord_id, teamguest_id, date) {
-          this.id = id;
-          this.teamlandlord_id = teamlandlord_id;
-          this.teamguest_id = teamguest_id;
-          this.date = date;
-          this.progress = false;
-          this.completed = false;
-        }
+    class FinalMatch {
+      id;
+      teamlandlord_id;
+      teamguest_id;
+      date;
+      progress;
+      completed;
+      constructor(id, teamlandlord_id, teamguest_id, date) {
+        this.id = id;
+        this.teamlandlord_id = teamlandlord_id;
+        this.teamguest_id = teamguest_id;
+        this.date = date;
+        this.progress = false;
+        this.completed = false;
       }
-      //Connecting real team objects to text from drag and drop championship creation
-      FinalListOfMatches = [];
-      for (let i = 0; i < championship.length; i++) {
-        var homeTeam = "";
-        var awayTeam = "";
-        var week = championship[i].getNumber();
-        for (let j = 0; j < championship[i].getListOfMatches().length; j++) {
-          var [key, value] = championship[i]
-            .getListOfMatches()
-            [j].getGame()
-            .entries();
-          var [team1, team2] = key[0].split("-");
-          //console.log(team1, team2);
-          for (let z = 0; z < teamObjects.length; z++) {
-            if (team1 === teamObjects[z].name) {
-              homeTeam = teamObjects[z];
-              //console.log(homeTeam);
-            }
-            if (team2 === teamObjects[z].name) {
-              awayTeam = teamObjects[z];
-              //console.log(awayTeam);
-            }
+    }
+    //Connecting real team objects to text from drag and drop championship creation
+    FinalListOfMatches = [];
+    for (let i = 0; i < championship.length; i++) {
+      var homeTeam = "";
+      var awayTeam = "";
+      var week = championship[i].getNumber();
+      for (let j = 0; j < championship[i].getListOfMatches().length; j++) {
+        var [key, value] = championship[i].getListOfMatches()[j].getGame().entries();
+        var [team1, team2] = key[0].split("-");
+        //console.log(team1, team2);
+        for (let z = 0; z < teamObjects.length; z++) {
+          if (team1 === teamObjects[z].name) {
+            homeTeam = teamObjects[z];
+            //console.log(homeTeam);
           }
-          //Creating Match object from teams
-          let dateTemp = new Date();
-
-          FinalListOfMatches.push(
-            new FinalMatch(
-              FinalListOfMatches.length + 1,
-              homeTeam.id,
-              awayTeam.id,
-              dateTemp.setFullYear(
-                dateTemp.getFullYear(),
-                dateTemp.getMonth(),
-                dateTemp.getDay() + (week - 1) * 7
-              )
-            )
-          ); //id might need to be changed
-          dateTemp = new Date();
+          if (team2 === teamObjects[z].name) {
+            awayTeam = teamObjects[z];
+            //console.log(awayTeam);
+          }
         }
+        //Creating Match object from teams
+        let dateTemp = new Date();
+
+        FinalListOfMatches.push(
+          new FinalMatch(FinalListOfMatches.length + 1, homeTeam.id, awayTeam.id, dateTemp.setFullYear(dateTemp.getFullYear(), dateTemp.getMonth(), dateTemp.getDay() + (week - 1) * 7))
+        ); //id might need to be changed
+        dateTemp = new Date();
       }
-      //Instead of console.log -> Pass all FinalListOfMatches elements into the db
-      console.log(FinalListOfMatches);
+    }
+    //Instead of console.log -> Pass all FinalListOfMatches elements into the db
+    console.log(FinalListOfMatches);
 
-      const postToDb = async (data, url) => {
-        try {
-          const res = await fetch(url, {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
-        } catch (error) {
-          console.log(error);
-        }
-      };
+    createPlayerStatisticsTable = async (team, matchId) => {
+      const res = await fetch(`http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}`);
 
-      createPlayerStatisticsTable = async (team, matchId) => {
-        const res = await fetch(
-          `http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}`
-        );
+      const data = await res.json();
 
-        const data = await res.json();
+      data.forEach(async (player) => {
+        const playerStatistics = {
+          match_id: matchId,
+          player_id: player.id,
+          successful_effort: "0",
+          total_effort: "0",
+          successful_freethrow: "0",
+          total_freethrow: "0",
+          successful_twopointer: "0",
+          total_twopointer: "0",
+          successful_threepointer: "0",
+          total_threepointer: "0",
+          steal: "0",
+          assist: "0",
+          block: "0",
+          rebound: "0",
+          foul: "0",
+          turnover: "0",
+          minutes: null,
+        };
 
-        data.forEach(async (player) => {
-          const playerStatistics = {
-            match_id: matchId,
-            player_id: player.id,
-            successful_effort: "0",
-            total_effort: "0",
-            successful_freethrow: "0",
-            total_freethrow: "0",
-            successful_twopointer: "0",
-            total_twopointer: "0",
-            successful_threepointer: "0",
-            total_threepointer: "0",
-            steal: "0",
-            assist: "0",
-            block: "0",
-            rebound: "0",
-            foul: "0",
-            turnover: "0",
-            minutes: null,
-          };
+        await postToDb(playerStatistics, "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php");
+      });
+    };
 
-          await postToDb(
-            playerStatistics,
-            "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php"
-          );
-        });
-      };
+    const createStatisticsTable = async () => {
+      const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/match.php");
 
-      const createStatisticsTable = async () => {
-        const res = await fetch(
-          "http://localhost/WeBall_Statistics-Backend/API/match.php"
-        );
+      const data = await res.json();
 
-        const data = await res.json();
+      data.forEach(async (match) => {
+        const team1Statistic = {
+          match_id: match.id,
+          team_id: match.teamlandlord_id,
+          successful_effort: "0",
+          total_effort: "0",
+          successful_freethrow: "0",
+          total_freethrow: "0",
+          succesful_twopointer: "0",
+          total_twopointer: "0",
+          succesful_threepointer: "0",
+          total_threepointer: "0",
+          steal: "0",
+          assist: "0",
+          block: "0",
+          rebound: "0",
+          foul: "0",
+          turnover: "0",
+        };
 
-        data.forEach(async (match) => {
-          const team1Statistic = {
-            match_id: match.id,
-            team_id: match.teamlandlord_id,
-            successful_effort: "0",
-            total_effort: "0",
-            successful_freethrow: "0",
-            total_freethrow: "0",
-            succesful_twopointer: "0",
-            total_twopointer: "0",
-            succesful_threepointer: "0",
-            total_threepointer: "0",
-            steal: "0",
-            assist: "0",
-            block: "0",
-            rebound: "0",
-            foul: "0",
-            turnover: "0",
-          };
+        const team2Statistic = {
+          match_id: match.id,
+          team_id: match.teamguest_id,
+          successful_effort: "0",
+          total_effort: "0",
+          successful_freethrow: "0",
+          total_freethrow: "0",
+          succesful_twopointer: "0",
+          total_twopointer: "0",
+          succesful_threepointer: "0",
+          total_threepointer: "0",
+          steal: "0",
+          assist: "0",
+          block: "0",
+          rebound: "0",
+          foul: "0",
+          turnover: "0",
+        };
 
-          const team2Statistic = {
-            match_id: match.id,
-            team_id: match.teamguest_id,
-            successful_effort: "0",
-            total_effort: "0",
-            successful_freethrow: "0",
-            total_freethrow: "0",
-            succesful_twopointer: "0",
-            total_twopointer: "0",
-            succesful_threepointer: "0",
-            total_threepointer: "0",
-            steal: "0",
-            assist: "0",
-            block: "0",
-            rebound: "0",
-            foul: "0",
-            turnover: "0",
-          };
+        await postToDb(team1Statistic, "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php");
 
-          await postToDb(
-            team1Statistic,
-            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
-          );
+        await postToDb(team2Statistic, "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php");
 
-          await postToDb(
-            team2Statistic,
-            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
-          );
+        await createPlayerStatisticsTable(match.teamguest_name, match.id);
 
-          await createPlayerStatisticsTable(match.teamguest_name, match.id);
+        await createPlayerStatisticsTable(match.teamlandlord_name, match.id);
+      });
+    };
 
-          await createPlayerStatisticsTable(match.teamlandlord_name, match.id);
-        });
-      };
+    const insertMatches = async () => {
+      FinalListOfMatches.forEach(async (m) => {
+        await postToDb(m, "http://localhost/WeBall_Statistics-Backend/API/match.php");
+      });
+      await createStatisticsTable();
+    };
 
-      const insertMatches = async () => {
-        FinalListOfMatches.forEach(async (m) => {
-          await postToDb(
-            m,
-            "http://localhost/WeBall_Statistics-Backend/API/match.php"
-          );
-        });
-        await createStatisticsTable();
-      };
-
-      insertMatches();
-    });
+    insertMatches();
+  });
 };
