@@ -11,7 +11,7 @@ const controlData = function () {
   loadData(DATA_PLAYERS_PATH).then(function (dataArr) {
     dataArr.forEach(async function (player) {
       const playerObj = {
-        id: player.id,
+        //as id will have the default auto increment
         name: player.name,
         surname: player.surname,
         number: Math.floor(Math.random() * 100), //0 - 99
@@ -26,7 +26,7 @@ const controlData = function () {
   loadData(DATA_TEAMS_PATH).then(function (dataArr) {
     dataArr.forEach(async function (team) {
       const teamObj = {
-        id: team.id,
+        id: team.id, // 10 digits id
         name: team.name,
         city: team.city,
         badge: "Undefined",
