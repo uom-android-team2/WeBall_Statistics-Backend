@@ -82,7 +82,7 @@ $sql = "CREATE TABLE IF NOT EXISTS championship.`match`(
     `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `teamlandlord_id`int(12) UNSIGNED NOT NULL,
     `teamguest_id`int(12) UNSIGNED NOT NULL,
-    `date`date NOT NULL,
+    `date`int(12) UNSIGNED NOT NULL,
     `progress`BIT(1) NOT NULL,
     `completed`BIT(1) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -112,7 +112,7 @@ $sql = " CREATE TABLE IF NOT EXISTS championship.`player_championship_statistics
     `rebound` int UNSIGNED NOT NULL,
     `foul` int UNSIGNED NOT NULL,
     `turnover`int UNSIGNED NOT NULL,
-    `minutes`datetime NOT NULL
+    `minutes`float UNSIGNED NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ";
 
@@ -140,7 +140,7 @@ $sql = "CREATE TABLE IF NOT EXISTS championship.`player_live_statistics`(
     `rebound` int UNSIGNED NOT NULL,
     `foul` int UNSIGNED NOT NULL,
     `turnover`int UNSIGNED NOT NULL,
-    `minutes`datetime NOT NULL
+    `minutes`float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ";
 
