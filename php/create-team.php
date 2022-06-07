@@ -169,9 +169,10 @@
           <?php
               $sql = "SELECT * FROM team";
               if($result = $mysqli->query($sql)){
+                $index = 0;
                   while($row = $result->fetch_array()){
                     echo "<tr>";
-                      echo "<th scope='row'>1</th>";
+                      echo "<th scope='row'>$index</th>";
                       echo "<td>$row[id]</td>";
                       echo "<td>$row[name]</td>";
                       echo "<td>$row[city]</td>";
@@ -183,6 +184,7 @@
                         />";
                       echo "</td>";
                     echo "</tr>";
+                    $index = $index + 1;
                   }
                   if($result->num_rows < 1){
                     $no_teams_text = "There are no teams in the database";
