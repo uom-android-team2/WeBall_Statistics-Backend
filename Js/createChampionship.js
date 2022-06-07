@@ -302,7 +302,7 @@ const start = (teams) => {
             rebound: "0",
             foul: "0",
             turnover: "0",
-            minutes: null,
+            minutes: 0,
           };
 
           await postToDb(
