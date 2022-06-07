@@ -6,30 +6,37 @@
   },
   {
     "name": "Boston Celtics",
-    "city": "Boston"
+    "city": "Boston",
+    "badge": "Boston-Celtics.png"
   },
   {
     "name": "Brooklyn Nets",
-    "city": "Brooklyn"
+    "city": "Brooklyn",
+    "badge": "Brooklyn-Nets.png"
   },
   {
     "name": "Charlotte Hornets",
-    "city": "Charlotte"
+    "city": "Charlotte",
+    "badge": "Charlotte-Hornets.png"
   },
   {
     "name": "Chicago Bulls",
-    "city": "Chicago"
+    "city": "Chicago",
+    "badge": "Chicago-Bulls.png"
   },
   {
     "name": "Cleveland Cavaliers",
-    "city": "Cleveland"
+    "city": "Cleveland",
+    "badge": "Cleveland-Cavaliers.png"
   },
   {
     "name": "Dallas Mavericks",
-    "city": "Dallas"
+    "city": "Dallas",
+    "badge": "Dallas-Mavericks.png"
   },
   {
     "name": "Denver Nuggets",
-    "city": "Denver"
+    "city": "Denver",
+    "badge": "Denver-Nuggets.png"
   }
 ]
