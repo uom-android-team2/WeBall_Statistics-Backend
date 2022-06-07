@@ -1,5 +1,4 @@
 [
-  //1
   {
     "name": "Precious",
     "surname": "Achiuwa",
@@ -34,7 +33,6 @@
     "position": "CENTER",
     "photo": "BamAdebayo.png"
   },
-  //2
   {
     "name": "LaMelo",
     "surname": "Ball",
@@ -69,7 +67,6 @@
     "position": "CENTER",
     "photo": "StevenAdams.png"
   },
-  //3
   {
     "name": "Alex",
     "surname": "Caruso",
@@ -103,7 +100,6 @@
     "position": "CENTER",
     "photo": "AndreDrummond.png"
   },
-  //4
   {
     "name": "Tyler",
     "surname": "Herro",
@@ -138,7 +134,6 @@
     "position": "CENTER",
     "photo": "AntonyDavis.png"
   },
-  //5
   {
     "name": "Ryan",
     "surname": "Arcidiacono",
@@ -173,7 +168,6 @@
     "position": "CENTER",
     "photo": "LamarcusAldridge.png"
   },
-  //6
   {
     "name": "Udoka",
     "surname": "Azubuike",
@@ -208,7 +202,6 @@
     "position": "SHOOTING_GUARD",
     "photo": "DonovanMitchell.png"
   },
-  //7
   {
     "name": "Mo",
     "surname": "Bamba",
@@ -243,12 +236,11 @@
     "position": "SMALL_FORWARD",
     "photo": "KeitaBates-Diop.png"
   },
-  //8
   {
     "name": "Nicolas",
     "surname": "Batum",
     "position": "SHOOTING_GUARD",
-    "photo": "NicolsBatum.png"
+    "photo": "NicolasBatum.png"
   },
   {
     "name": "Aaron",
