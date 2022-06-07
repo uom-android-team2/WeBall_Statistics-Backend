@@ -1,164 +1,279 @@
 [
+  //1
   {
     "name": "Precious",
     "surname": "Achiuwa",
     "position": "POINT_GUARD",
     "photo": "precious-achiuwa.jpeg"
   },
+
   {
-    "name": "Jaylen",
-    "surname": "Adams"
+    "name": "Stephen",
+    "surname": "Curry",
+    "position": "SHOOTING_GUARD",
+    "photo": "Stephen-Curry.png"
   },
-  {
-    "name": "Steven",
-    "surname": "Adams"
-  },
-  {
-    "name": "Bam",
-    "surname": "Adebayo"
-  },
-  {
-    "name": "LaMarcus",
-    "surname": "Aldridge"
-  },
-  {
-    "name": "Ty-Shon",
-    "surname": "Alexander"
-  },
-  {
-    "name": "Nickeil",
-    "surname": "Alexander-Walker"
-  },
-  {
-    "name": "Grayson",
-    "surname": "Allen"
-  },
-  {
-    "name": "Jarrett",
-    "surname": "Allen"
-  },
-  {
-    "name": "Al-Farouq",
-    "surname": "Aminu"
-  },
-  {
-    "name": "Kyle",
-    "surname": "Anderson"
-  },
-  {
-    "name": "Giannis",
-    "surname": "Antetokounmpo"
-  },
-  {
-    "name": "Kostas",
-    "surname": "Antetokounmpo"
-  },
-  {
-    "name": "Thanasis",
-    "surname": "Antetokounmpo"
-  },
-  {
-    "name": "Carmelo",
-    "surname": "Anthony"
-  },
-  {
-    "name": "Cole",
-    "surname": "Anthony"
-  },
+
   {
     "name": "OG",
-    "surname": "Anunoby"
+    "surname": "Anunoby",
+    "position": "SMALL_FORWARD",
+    "photo": "OgAnunoby.png"
   },
+
   {
-    "name": "Ryan",
-    "surname": "Arcidiacono"
+    "name": "Carmelo",
+    "surname": "Antony",
+    "position": "POWER_FORWARD",
+    "photo": "CarmeloAntony.png"
   },
+
   {
-    "name": "Trevor",
-    "surname": "Ariza"
+    "name": "Bam",
+    "surname": "Adebayo",
+    "position": "CENTER",
+    "photo": "BamAdebayo.png"
   },
-  {
-    "name": "D.J.",
-    "surname": "Augustin"
-  },
-  {
-    "name": "Deni",
-    "surname": "Avdija"
-  },
-  {
-    "name": "Deandre",
-    "surname": "Ayton"
-  },
-  {
-    "name": "Udoka",
-    "surname": "Azubuike"
-  },
-  {
-    "name": "Dwayne",
-    "surname": "Bacon"
-  },
-  {
-    "name": "Marvin",
-    "surname": "Bagley III"
-  },
+  //2
   {
     "name": "LaMelo",
-    "surname": "Ball"
+    "surname": "Ball",
+    "position": "POINT_GUARD",
+    "photo": "LameloBall.png"
   },
+
   {
-    "name": "Lonzo",
-    "surname": "Ball"
+    "name": "Klay",
+    "surname": "Thompson",
+    "position": "SHOOTING_GUARD",
+    "photo": "KlayThompson.png"
   },
+
   {
-    "name": "Mo",
-    "surname": "Bamba"
+    "name": "Giannis",
+    "surname": "Antetokoumpo",
+    "position": "SMALL_FORWARD",
+    "photo": "GiannisAntetokoumpo.png"
   },
-  {
-    "name": "Desmond",
-    "surname": "Bane"
-  },
+
   {
     "name": "Harrison",
-    "surname": "Barnes"
+    "surname": "Barnes",
+    "position": "POWER_FORWARD",
+    "photo": "HarrisonBarnes.png"
   },
+
+  {
+    "name": "Steven",
+    "surname": "Adams",
+    "position": "CENTER",
+    "photo": "StevenAdams.png"
+  },
+  //3
+  {
+    "name": "Alex",
+    "surname": "Caruso",
+    "position": "POINT_GUARD",
+    "photo": "AlexCaruso.png"
+  },
+
+  {
+    "name": "Damian",
+    "surname": "Lillard",
+    "position": "SHOOTING_GUARD",
+    "photo": "DamianLillard.png"
+  },
+  {
+    "name": "Tobias",
+    "surname": "Harris",
+    "position": "SMALL_FORWARD",
+    "photo": "TobiasHarris.png"
+  },
+
+  {
+    "name": "Lebron",
+    "surname": "James",
+    "position": "POWER_FORWARD",
+    "photo": "LebronJames.png"
+  },
+
+  {
+    "name": "Andre",
+    "surname": "Drummond",
+    "position": "CENTER",
+    "photo": "AndreDrummond.png"
+  },
+  //4
+  {
+    "name": "Tyler",
+    "surname": "Herro",
+    "position": "POINT_GUARD",
+    "photo": "TylerHerro.png"
+  },
+
+  {
+    "name": "Ja",
+    "surname": "Morant",
+    "position": "SHOOTING_GUARD",
+    "photo": "JaMorant.png"
+  },
+
+  {
+    "name": "Thanasis",
+    "surname": "antetokoumpo",
+    "position": "SMALL_FORWARD",
+    "photo": "ThanasisAntetokoumpo.png"
+  },
+
+  {
+    "name": "Gary",
+    "surname": "Clark",
+    "position": "POWER_FORWARD",
+    "photo": "GaryClark.png"
+  },
+
+  {
+    "name": "Antony",
+    "surname": "Davis",
+    "position": "CENTER",
+    "photo": "AntonyDavis.png"
+  },
+  //5
+  {
+    "name": "Ryan",
+    "surname": "Arcidiacono",
+    "position": "POINT_GUARD",
+    "photo": "RyanArcidiacono.png"
+  },
+
+  {
+    "name": "James",
+    "surname": "Harden",
+    "position": "SHOOTING_GUARD",
+    "photo": "JamesHarden.png"
+  },
+
+  {
+    "name": "Draymond",
+    "surname": "Green",
+    "position": "SMALL_FORWARD",
+    "photo": "DraymondGreen.png"
+  },
+
+  {
+    "name": "Deni",
+    "surname": "Avdija",
+    "position": "POWER_FORWARD",
+    "photo": "DeniAvdija.png"
+  },
+
+  {
+    "name": "LaMarcus",
+    "surname": "Aldridge",
+    "position": "CENTER",
+    "photo": "LamarcusAldridge.png"
+  },
+  //6
+  {
+    "name": "Udoka",
+    "surname": "Azubuike",
+    "position": "CENTER",
+    "photo": "UdokaAzubuike.png"
+  },
+
+  {
+    "name": "Antony",
+    "surname": "Edwards",
+    "position": "POINT_GUARD",
+    "photo": "AntonyEdwards.png"
+  },
+
+  {
+    "name": "Marvin",
+    "surname": "Bagley III",
+    "position": "SMALL_FORWARD",
+    "photo": "MarvinBagley.png"
+  },
+
+  {
+    "name": "Blake",
+    "surname": "Griffin",
+    "position": "POWER_FORWARD",
+    "photo": "BlakeGriffin.png"
+  },
+
+  {
+    "name": "Donovan",
+    "surname": "Mitchell",
+    "position": "SHOOTING_GUARD",
+    "photo": "DonovanMitchell.png"
+  },
+  //7
+  {
+    "name": "Mo",
+    "surname": "Bamba",
+    "position": "CENTER",
+    "photo": "MoBamba.png"
+  },
+
+  {
+    "name": "Desmond",
+    "surname": "Bane",
+    "position": "POINT_GUARD",
+    "photo": "DesmondBane.png"
+  },
+
   {
     "name": "RJ",
-    "surname": "Barrett"
+    "surname": "Barrett",
+    "position": "POWER_FORWARD",
+    "photo": "RJbarrett.png"
   },
+
   {
     "name": "Will",
-    "surname": "Barton"
+    "surname": "Barton",
+    "position": "SHOOTING_GUARD",
+    "photo": "WillBarton.png"
   },
+
   {
     "name": "Keita",
-    "surname": "Bates-Diop"
+    "surname": "Bates-Diop",
+    "position": "SMALL_FORWARD",
+    "photo": "KeitaBates-Diop.png"
   },
+  //8
   {
     "name": "Nicolas",
-    "surname": "Batum"
+    "surname": "Batum",
+    "position": "SHOOTING_GUARD",
+    "photo": "NicolsBatum.png"
   },
   {
-    "name": "Aron",
-    "surname": "Baynes"
+    "name": "Aaron",
+    "surname": "Gordon",
+    "position": "POWER_FORWARD",
+    "photo": "AaronGordon.png"
   },
+
   {
     "name": "Kent",
-    "surname": "Bazemore"
-  },
-  {
-    "name": "Darius",
-    "surname": "Bazley"
+    "surname": "Bazemore",
+    "position": "SMALL_FORWARD",
+    "photo": "KateBazemore.png"
   },
   {
     "name": "Bradley",
-    "surname": "Beal"
+    "surname": "Beal",
+    "position": "POINT_GUARD",
+    "photo": "BradleyBeal.png"
   },
+
   {
-    "name": "Malik",
-    "surname": "Beasley"
-  },
-  {
-    "name": "Jordan",
-    "surname": "Bell"
+    "name": "Al",
+    "surname": "Horford",
+    "position": "CENTER",
+    "photo": "AlHorford.png"
   }
 ]
