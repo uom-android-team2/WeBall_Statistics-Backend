@@ -70,7 +70,7 @@
             //Check if player with this id found
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                return $row["surename"];
+                return $row["surname"];
             }
             return null;
         }
