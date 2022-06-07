@@ -13,7 +13,7 @@ const controlData = function () {
         surname: player.surname,
         number: Math.floor(Math.random() * 100), //0 - 99
         position: player.position,
-        team: Math.floor(Math.random() * 8) + 1, //team id (1 - 8) cause we got 8 teams
+        team: player.team,
         photo: player.photo,
       };
       await postToDB(playerObj, PATH.PLAYER_API_PATH);

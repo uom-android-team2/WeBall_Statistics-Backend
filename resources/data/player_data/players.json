@@ -3,6 +3,7 @@
     "name": "Precious",
     "surname": "Achiuwa",
     "position": "POINT_GUARD",
+    "team": "Atlanta Hawks",
     "photo": "precious-achiuwa.png"
   },
 
@@ -10,6 +11,7 @@
     "name": "Stephen",
     "surname": "Curry",
     "position": "SHOOTING_GUARD",
+    "team": "Atlanta Hawks",
     "photo": "Stephen-Curry.png"
   },
 
@@ -17,6 +19,7 @@
     "name": "OG",
     "surname": "Anunoby",
     "position": "SMALL_FORWARD",
+    "team": "Atlanta Hawks",
     "photo": "OgAnunoby.png"
   },
 
@@ -24,6 +27,7 @@
     "name": "Carmelo",
     "surname": "Antony",
     "position": "POWER_FORWARD",
+    "team": "Atlanta Hawks",
     "photo": "CarmeloAntony.png"
   },
 
@@ -31,12 +35,14 @@
     "name": "Bam",
     "surname": "Adebayo",
     "position": "CENTER",
+    "team": "Atlanta Hawks",
     "photo": "BamAdebayo.png"
   },
   {
     "name": "LaMelo",
     "surname": "Ball",
     "position": "POINT_GUARD",
+    "team": "Boston Celtics",
     "photo": "LameloBall.png"
   },
 
@@ -44,6 +50,7 @@
     "name": "Klay",
     "surname": "Thompson",
     "position": "SHOOTING_GUARD",
+    "team": "Boston Celtics",
     "photo": "KlayThompson.png"
   },
 
@@ -51,6 +58,7 @@
     "name": "Giannis",
     "surname": "Antetokoumpo",
     "position": "SMALL_FORWARD",
+    "team": "Boston Celtics",
     "photo": "GiannisAntetokoumpo.png"
   },
 
@@ -58,6 +66,7 @@
     "name": "Harrison",
     "surname": "Barnes",
     "position": "POWER_FORWARD",
+    "team": "Boston Celtics",
     "photo": "HarrisonBarnes.png"
   },
 
@@ -65,12 +74,14 @@
     "name": "Steven",
     "surname": "Adams",
     "position": "CENTER",
+    "team": "Boston Celtics",
     "photo": "StevenAdams.png"
   },
   {
     "name": "Alex",
     "surname": "Caruso",
     "position": "POINT_GUARD",
+    "team": "Brooklyn Nets",
     "photo": "AlexCaruso.png"
   },
 
@@ -78,12 +89,14 @@
     "name": "Damian",
     "surname": "Lillard",
     "position": "SHOOTING_GUARD",
+    "team": "Brooklyn Nets",
     "photo": "DamianLillard.png"
   },
   {
     "name": "Tobias",
     "surname": "Harris",
     "position": "SMALL_FORWARD",
+    "team": "Brooklyn Nets",
     "photo": "TobiasHarris.png"
   },
 
@@ -91,6 +104,7 @@
     "name": "Lebron",
     "surname": "James",
     "position": "POWER_FORWARD",
+    "team": "Brooklyn Nets",
     "photo": "LebronJames.png"
   },
 
@@ -98,12 +112,14 @@
     "name": "Andre",
     "surname": "Drummond",
     "position": "CENTER",
+    "team": "Brooklyn Nets",
     "photo": "AndreDrummond.png"
   },
   {
     "name": "Tyler",
     "surname": "Herro",
     "position": "POINT_GUARD",
+    "team": "Charlotte Hornets",
     "photo": "TylerHerro.png"
   },
 
@@ -111,6 +127,7 @@
     "name": "Ja",
     "surname": "Morant",
     "position": "SHOOTING_GUARD",
+    "team": "Charlotte Hornets",
     "photo": "JaMorant.png"
   },
 
@@ -118,6 +135,7 @@
     "name": "Thanasis",
     "surname": "antetokoumpo",
     "position": "SMALL_FORWARD",
+    "team": "Charlotte Hornets",
     "photo": "ThanasisAntetokoumpo.png"
   },
 
@@ -125,6 +143,7 @@
     "name": "Gary",
     "surname": "Clark",
     "position": "POWER_FORWARD",
+    "team": "Charlotte Hornets",
     "photo": "GaryClark.png"
   },
 
@@ -132,12 +151,14 @@
     "name": "Antony",
     "surname": "Davis",
     "position": "CENTER",
+    "team": "Charlotte Hornets",
     "photo": "AntonyDavis.png"
   },
   {
     "name": "Ryan",
     "surname": "Arcidiacono",
     "position": "POINT_GUARD",
+    "team": "Chicago Bulls",
     "photo": "RyanArcidiacono.png"
   },
 
@@ -145,6 +166,7 @@
     "name": "James",
     "surname": "Harden",
     "position": "SHOOTING_GUARD",
+    "team": "Chicago Bulls",
     "photo": "JamesHarden.png"
   },
 
@@ -152,6 +174,7 @@
     "name": "Draymond",
     "surname": "Green",
     "position": "SMALL_FORWARD",
+    "team": "Chicago Bulls",
     "photo": "DraymondGreen.png"
   },
 
@@ -159,6 +182,7 @@
     "name": "Deni",
     "surname": "Avdija",
     "position": "POWER_FORWARD",
+    "team": "Chicago Bulls",
     "photo": "DeniAvdija.png"
   },
 
@@ -166,12 +190,14 @@
     "name": "LaMarcus",
     "surname": "Aldridge",
     "position": "CENTER",
+    "team": "Chicago Bulls",
     "photo": "LamarcusAldridge.png"
   },
   {
     "name": "Udoka",
     "surname": "Azubuike",
     "position": "CENTER",
+    "team": "Cleveland Cavaliers",
     "photo": "UdokaAzubuike.png"
   },
 
@@ -179,6 +205,7 @@
     "name": "Antony",
     "surname": "Edwards",
     "position": "POINT_GUARD",
+    "team": "Cleveland Cavaliers",
     "photo": "AntonyEdwards.png"
   },
 
@@ -186,6 +213,7 @@
     "name": "Marvin",
     "surname": "Bagley III",
     "position": "SMALL_FORWARD",
+    "team": "Cleveland Cavaliers",
     "photo": "MarvinBagley.png"
   },
 
@@ -193,6 +221,7 @@
     "name": "Blake",
     "surname": "Griffin",
     "position": "POWER_FORWARD",
+    "team": "Cleveland Cavaliers",
     "photo": "BlakeGriffin.png"
   },
 
@@ -200,12 +229,14 @@
     "name": "Donovan",
     "surname": "Mitchell",
     "position": "SHOOTING_GUARD",
+    "team": "Cleveland Cavaliers",
     "photo": "DonovanMitchell.png"
   },
   {
     "name": "Mo",
     "surname": "Bamba",
     "position": "CENTER",
+    "team": "Dallas Mavericks",
     "photo": "MoBamba.png"
   },
 
@@ -213,6 +244,7 @@
     "name": "Desmond",
     "surname": "Bane",
     "position": "POINT_GUARD",
+    "team": "Dallas Mavericks",
     "photo": "DesmondBane.png"
   },
 
@@ -220,6 +252,7 @@
     "name": "RJ",
     "surname": "Barrett",
     "position": "POWER_FORWARD",
+    "team": "Dallas Mavericks",
     "photo": "RJbarrett.png"
   },
 
@@ -227,6 +260,7 @@
     "name": "Will",
     "surname": "Barton",
     "position": "SHOOTING_GUARD",
+    "team": "Dallas Mavericks",
     "photo": "WillBarton.png"
   },
 
@@ -234,18 +268,21 @@
     "name": "Keita",
     "surname": "Bates-Diop",
     "position": "SMALL_FORWARD",
+    "team": "Dallas Mavericks",
     "photo": "KeitaBates-Diop.png"
   },
   {
     "name": "Nicolas",
     "surname": "Batum",
     "position": "SHOOTING_GUARD",
+    "team": "Denver Nuggets",
     "photo": "NicolasBatum.png"
   },
   {
     "name": "Aaron",
     "surname": "Gordon",
     "position": "POWER_FORWARD",
+    "team": "Denver Nuggets",
     "photo": "AaronGordon.png"
   },
 
@@ -253,12 +290,14 @@
     "name": "Kent",
     "surname": "Bazemore",
     "position": "SMALL_FORWARD",
+    "team": "Denver Nuggets",
     "photo": "KateBazemore.png"
   },
   {
     "name": "Bradley",
     "surname": "Beal",
     "position": "POINT_GUARD",
+    "team": "Denver Nuggets",
     "photo": "BradleyBeal.png"
   },
 
@@ -266,6 +305,7 @@
     "name": "Al",
     "surname": "Horford",
     "position": "CENTER",
+    "team": "Denver Nuggets",
     "photo": "AlHorford.png"
   }
 ]
