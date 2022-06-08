@@ -1,4 +1,4 @@
-fetch("http://localhost/WeBall_Statistics-Backend/API/team.php")
+fetch("http://localhost/WeBall_Statistics-Backend/API/team.php") //fetch("http://localhost/backend/API/team.php")
   .then((response) => response.json())
   .then((result) => {
     teams = result.map((team) => {
@@ -24,7 +24,6 @@ const start = (teams) => {
     "hyphen-exists-section"
   );
 
-  //Works
   if (teams.includes("-")) {
     hyphen_exists_section.insertAdjacentHTML(
       "beforeend",
@@ -39,7 +38,7 @@ const start = (teams) => {
     "not-enough-teams-section"
   );
 
-  //no teams -> Works
+  //no teams
   if (teams.length === 0) {
     no_teams_section.insertAdjacentHTML(
       "beforeend",
@@ -279,7 +278,7 @@ const start = (teams) => {
 
       createPlayerStatisticsTable = async (team, matchId) => {
         const res = await fetch(
-          `http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}`
+          `http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}` //`http://localhost/backend/API/player.php?team=${team}`
         );
 
         const data = await res.json();
@@ -307,14 +306,14 @@ const start = (teams) => {
 
           await postToDb(
             playerStatistics,
-            "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php"
+            "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php" //"http://localhost/backend/API/playerLiveStatistics.php"
           );
         });
       };
 
       const createStatisticsTable = async () => {
         const res = await fetch(
-          "http://localhost/WeBall_Statistics-Backend/API/match.php"
+          "http://localhost/WeBall_Statistics-Backend/API/match.php" //"http://localhost/backend/API/match.php"
         );
 
         const data = await res.json();
@@ -360,12 +359,12 @@ const start = (teams) => {
 
           await postToDb(
             team1Statistic,
-            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
+            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php" //"http://localhost/backend/API/teamLiveStatistics.php"
           );
 
           await postToDb(
             team2Statistic,
-            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
+            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php" //"http://localhost/backend/API/teamLiveStatistics.php"
           );
 
           await createPlayerStatisticsTable(match.teamguest_name, match.id);
@@ -378,7 +377,7 @@ const start = (teams) => {
         FinalListOfMatches.forEach(async (m) => {
           await postToDb(
             m,
-            "http://localhost/WeBall_Statistics-Backend/API/match.php"
+            "http://localhost/WeBall_Statistics-Backend/API/match.php" //"http://localhost/backend/API/match.php"
           );
         });
         await createStatisticsTable();
