@@ -16,12 +16,12 @@
         $matchId = "";
         $teamId = "";
         
-        if(isset($_GET["matchId"])){
-            $matchId = test_input($_GET['matchId']);
+        if(isset($_GET["match_id"])){
+            $matchId = test_input($_GET['match_id']);
         }
 
-        if(isset($_GET["teamId"])){
-            $teamId = test_input($_GET['teamId']);
+        if(isset($_GET["team_id"])){
+            $teamId = test_input($_GET['team_id']);
         }
 
         // check if matchId and teamId are not "" WITH STRCMP
