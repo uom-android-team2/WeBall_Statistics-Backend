@@ -71,7 +71,7 @@
 
         public function save($entity){
             try {
-                $sql = "INSERT INTO `$this->table` (`team_id`, `total_matches`, `win`, `lose`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `successful_twopointer`, `total_twopointer`, `successful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`) VALUES ('$entity->team_id', '$entity->total_matches', '$entity->win', '$entity->lose', '$entity->succesful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->succesful_twopointer', '$entity->total_twopointer', '$entity->succesful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover')";
+                $sql = "INSERT INTO `$this->table` (`team_id`, `total_matches`, `win`, `lose`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `successful_twopointer`, `total_twopointer`, `successful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`) VALUES ('$entity->team_id', '$entity->total_matches', '$entity->win', '$entity->lose', '$entity->successful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->successful_twopointer', '$entity->total_twopointer', '$entity->successful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover')";
                 $result = $this->mysqli->query($sql);
                 return $this->findAll();
             }catch(Exception $e){
@@ -91,13 +91,13 @@
                 $total_matches = $teamStatsCompletedFound->total_matches;
                 $win = $teamStatsCompletedFound->win;
                 $lose = $teamStatsCompletedFound->lose;
-                $succesful_effort = $teamStatsCompletedFound->succesful_effort;
+                $successful_effort = $teamStatsCompletedFound->successful_effort;
                 $total_effort = $teamStatsCompletedFound->total_effort;
                 $successful_freethrow = $teamStatsCompletedFound->successful_freethrow;
                 $total_freethrow = $teamStatsCompletedFound->total_freethrow;
-                $succesful_twopointer = $teamStatsCompletedFound->succesful_twopointer;
+                $successful_twopointer = $teamStatsCompletedFound->successful_twopointer;
                 $total_twopointer = $teamStatsCompletedFound->total_twopointer;
-                $succesful_threepointer = $teamStatsCompletedFound->succesful_threepointer;
+                $successful_threepointer = $teamStatsCompletedFound->successful_threepointer;
                 $total_threepointer = $teamStatsCompletedFound->total_threepointer;
                 $steal = $teamStatsCompletedFound->steal;
                 $assist = $teamStatsCompletedFound->assist;
@@ -122,8 +122,8 @@
                     $lose = $entity->lose;
                 }
 
-                if(property_exists($entity, 'successful_effort') && strcmp($entity->succesful_effort, "") !== 0 && strcmp($succesful_effort, $entity->succesful_effort) !== 0){
-                    $succesful_effort = $entity->succesful_effort;
+                if(property_exists($entity, 'successful_effort') && strcmp($entity->successful_effort, "") !== 0 && strcmp($successful_effort, $entity->successful_effort) !== 0){
+                    $successful_effort = $entity->successful_effort;
                 }
 
                 if(property_exists($entity, 'total_effort') && strcmp($entity->total_effort, "") !== 0 && strcmp($total_effort, $entity->total_effort) !== 0){
@@ -138,16 +138,16 @@
                     $total_freethrow = $entity->total_freethrow;
                 }
 
-                if(property_exists($entity, 'successful_twopointer') && strcmp($entity->succesful_twopointer, "") !== 0 && strcmp($succesful_twopointer, $entity->succesful_twopointer) !== 0){
-                    $succesful_twopointer = $entity->succesful_twopointer;
+                if(property_exists($entity, 'successful_twopointer') && strcmp($entity->successful_twopointer, "") !== 0 && strcmp($successful_twopointer, $entity->successful_twopointer) !== 0){
+                    $successful_twopointer = $entity->successful_twopointer;
                 }
 
                 if(property_exists($entity, 'total_twopointer') && strcmp($entity->total_twopointer, "") !== 0 && strcmp($total_twopointer, $entity->total_twopointer) !== 0){
                     $total_twopointer = $entity->total_twopointer;
                 }
 
-                if(property_exists($entity, 'successful_threepointer') && strcmp($entity->succesful_threepointer, "") !== 0 && strcmp($succesful_threepointer, $entity->succesful_threepointer) !== 0){
-                    $succesful_threepointer = $entity->succesful_threepointer;
+                if(property_exists($entity, 'successful_threepointer') && strcmp($entity->successful_threepointer, "") !== 0 && strcmp($successful_threepointer, $entity->successful_threepointer) !== 0){
+                    $successful_threepointer = $entity->successful_threepointer;
                 }
 
                 if(property_exists($entity, 'total_threepointer') && strcmp($entity->total_threepointer, "") !== 0 && strcmp($total_threepointer, $entity->total_threepointer) !== 0){
@@ -178,7 +178,7 @@
                     $turnover = $entity->turnover;
                 }
                 
-                $sql = "UPDATE `$this->table` SET total_matches = '$total_matches', win = '$win', lose = '$lose', successful_effort = '$succesful_effort', total_effort = '$total_effort', successful_freethrow = '$successful_freethrow', total_freethrow = '$total_freethrow', successful_twopointer = '$succesful_twopointer', total_twopointer = '$total_twopointer', successful_threepointer = '$succesful_threepointer', total_threepointer = '$total_threepointer', steal = '$steal', assist = '$assist', block = '$block', rebound = '$rebound', foul = '$foul', turnover = '$turnover' WHERE team_id = '$team_id'";
+                $sql = "UPDATE `$this->table` SET total_matches = '$total_matches', win = '$win', lose = '$lose', successful_effort = '$successful_effort', total_effort = '$total_effort', successful_freethrow = '$successful_freethrow', total_freethrow = '$total_freethrow', successful_twopointer = '$successful_twopointer', total_twopointer = '$total_twopointer', successful_threepointer = '$successful_threepointer', total_threepointer = '$total_threepointer', steal = '$steal', assist = '$assist', block = '$block', rebound = '$rebound', foul = '$foul', turnover = '$turnover' WHERE team_id = '$team_id'";
                 $result = $this->mysqli->query($sql);
                 
                 return $this->findById($teamStatsCompletedFound->team_id);
