@@ -36,6 +36,10 @@
         public function findByTeamName($teamName){
             return $this->playerRepository->findByTeamName($teamName);
         }
+        
+        public function findByName($name){
+            return $this->playerRepository->findByName($name);
+        }
 
     }
 ?>

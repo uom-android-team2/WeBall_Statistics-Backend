@@ -55,6 +55,24 @@
             return $player;
 
         }
+
+        public function findByName($name){
+            $player = null;
+            try{
+                $sql = "SELECT * FROM `$this->table` WHERE `name` = '$name'";
+                $result = $this->mysqli->query($sql);
+                $row = $result->fetch_assoc();
+                if($result->num_rows > 0){
+                    $player = new Player($row["id"], $row["name"], $row["surname"], $row["number"], $row["position"], $row["team"], $row["photo"]);
+                }
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+
+            return $player;
+   
+        }
+
         public function findAll(){
             $data = array();
             try {

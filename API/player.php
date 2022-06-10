@@ -15,7 +15,12 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
     $data = "";
     $id = "";
     $teamName = "";
+    $name = "";
 
+   
+    if(isset($_GET["name"]) ){
+        $name = test_input($_GET["name"]);
+    }
     if(isset($_GET["id"]) ){
         $id = test_input($_GET["id"]);
     }
@@ -28,6 +33,8 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
         $data = $playerService->findPlayerById($id);
     }else if($teamName){
         $data = $playerService->findByTeamName($teamName);
+    }else if($name){
+        $data = $playerService->findByName($name);
     }else{
         $data = $playerService->findAllPlayers();
     }
