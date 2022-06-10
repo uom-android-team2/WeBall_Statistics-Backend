@@ -8,6 +8,7 @@
       exit;
   }
 
+  require_once "../API/models/teamStatisticsCompleted.php";
   require_once "config.php";
   $mysqli->select_db("championship");
 
@@ -57,7 +58,34 @@
         
           // Now let's move the uploaded image into the folder: image
           if (move_uploaded_file($tempname, $folder.$filename)) {
-          
+            $res = file_get_contents("http://localhost/WeBall_Statistics-Backend/API/team.php?name=$name");
+            $object = json_decode($res);
+            $teamStats = new TeamStatisticsCompleted($object->id, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, $mysqli);
+
+            // API URL
+            $url = "http://localhost/WeBall_Statistics-Backend/API/teamStatisticsCompleted.php";
+
+            // Create a new cURL resource
+            $ch = curl_init($url);
+
+            $payload = json_encode($teamStats);
+            
+            // Attach encoded JSON string to the POST fields
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+            // Set the content type to application/json
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+
+            // Return response instead of outputting
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            // Execute the POST request
+            $result = curl_exec($ch);
+
+            // Close cURL resource
+            curl_close($ch);
+
+
           }else{
             echo "ERROR: Could not able to store the image";
           }
