@@ -19,18 +19,16 @@
         public function findBy2Id($matchId, $team_id){
             $teamLiveStatistics = null;
             try{
-                $sql = "SELECT * FROM $this->table WHERE `match_id` = $matchId AND `team_id` = $team_id";
+                $sql = "SELECT * FROM $this->table WHERE `match_id` = '$matchId' AND `team_id` = '$team_id'";
                 $result = $this->mysqli->query($sql);
                 $row = $result->fetch_assoc();
                 if($result->num_rows > 0){
-                    // create new TeamLiveStatistics object
-                    $teamLiveStatistics = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['succesful_twopointer'], $row['total_twopointer'], $row['succesful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
+                    $teamLiveStatistics = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['successful_twopointer'], $row['total_twopointer'], $row['successful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
                 }
                 
             }catch(Exception $e){
                 echo 'Message: ' .$e->getMessage();
             }
-            
             return $teamLiveStatistics;
         }
 
@@ -75,7 +73,7 @@
         public function save($entity){
             try {
                //sql insert teamLiveStatistics
-                $sql = "INSERT INTO `$this->table` (`match_id`, `team_id`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `successful_twopointer`, `total_twopointer`, `successful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`) VALUES ('$entity->match_id', '$entity->team_id', '$entity->successful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->succesful_twopointer', '$entity->total_twopointer', '$entity->succesful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover')";
+                $sql = "INSERT INTO `$this->table` (`match_id`, `team_id`, `successful_effort`, `total_effort`, `successful_freethrow`, `total_freethrow`, `successful_twopointer`, `total_twopointer`, `successful_threepointer`, `total_threepointer`, `steal`, `assist`, `block`, `rebound`, `foul`, `turnover`) VALUES ('$entity->match_id', '$entity->team_id', '$entity->successful_effort', '$entity->total_effort', '$entity->successful_freethrow', '$entity->total_freethrow', '$entity->successful_twopointer', '$entity->total_twopointer', '$entity->successful_threepointer', '$entity->total_threepointer', '$entity->steal', '$entity->assist', '$entity->block', '$entity->rebound', '$entity->foul', '$entity->turnover')";
                 $result = $this->mysqli->query($sql);
                 return $this->findAll();
             }catch(Exception $e){
@@ -98,9 +96,9 @@
                 $total_effort = $entity->total_effort;
                 $successful_freethrow = $entity->successful_freethrow;
                 $total_freethrow = $entity->total_freethrow;
-                $succesful_twopointer = $entity->succesful_twopointer;
+                $successful_twopointer = $entity->successful_twopointer;
                 $total_twopointer = $entity->total_twopointer;
-                $succesful_threepointer = $entity->succesful_threepointer;
+                $successful_threepointer = $entity->successful_threepointer;
                 $total_threepointer = $entity->total_threepointer;
                 $steal = $entity->steal;
                 $assist = $entity->assist;
@@ -168,8 +166,9 @@
                 }
 
                // sql query for update teamLivestatistics
-                $sql = "UPDATE `$this->table` SET successful_effort = '$successful_effort', total_effort = '$total_effort', successful_freethrow = '$successful_freethrow', total_freethrow = '$total_freethrow', succesful_twopointer = '$succesful_twopointer', total_twopointer = '$total_twopointer', succesful_threepointer = '$succesful_threepointer', total_threepointer = '$total_threepointer', steal = '$steal', assist = '$assist', block = '$block', rebound = '$rebound', foul = '$foul', turnover = '$turnover' WHERE match_id = '$entity->match_id' AND team_id = '$entity->team_id'";
-                $result = $this->mysqli->query($sql);
+                $sql = "UPDATE `$this->table` SET successful_effort = '$successful_effort', total_effort = '$total_effort', successful_freethrow = '$successful_freethrow', total_freethrow = '$total_freethrow', successful_twopointer = '$successful_twopointer', total_twopointer = '$total_twopointer', successful_threepointer = '$successful_threepointer', total_threepointer = '$total_threepointer', steal = '$steal', assist = '$assist', block = '$block', rebound = '$rebound', foul = '$foul', turnover = '$turnover' WHERE match_id = '$entity->match_id' AND team_id = '$entity->team_id'";
+                
+               $result = $this->mysqli->query($sql);
                 
                 return $this->findBy2Id($teamLivestatisticsFound->match_id, $teamLivestatisticsFound->team_id);
     
