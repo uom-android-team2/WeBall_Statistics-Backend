@@ -35,6 +35,11 @@
             return $this->teamRepository->save($entity);
         }
 
+        // findByName
+        public function findTeamByName($name){
+            return $this->teamRepository->findByName($name);
+        }
+
     }
 
 

@@ -27,6 +27,23 @@ class TeamRepository implements CRUDRepository{
         } 
         return $team;
     }
+
+    // findByName
+    public function findByName($name){
+        $team = null;
+        try {
+            $sql = "SELECT * FROM `$this->table` WHERE `name` = '$name'";
+            $result = $this->mysqli->query($sql);
+            $row = $result->fetch_assoc();
+            if($result->num_rows > 0){
+                $team = new team($row["id"], $row["name"], $row["city"], $row["badge"]);
+            }
+        }catch(Exception $e){
+            echo 'Message: ' .$e->getMessage();
+        } 
+        return $team;
+    }
+
     
     public function findAll(){
         $data = array();
