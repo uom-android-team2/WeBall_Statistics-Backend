@@ -123,7 +123,7 @@
         public function findLiveMatches(){
             $data = array();
             try {
-                $sql = "SELECT * FROM `$this->table` WHERE `progress` = '1'";   
+                $sql = "SELECT * FROM `$this->table` WHERE `progress` = '1' AND `completed` = '0'";   
                 $result = $this->mysqli->query($sql);
                 while($row = $result->fetch_assoc()) {
                     $match = new BasketballMatch($row["id"], $row["teamlandlord_id"], $row["teamguest_id"], $row["date"], $row["progress"], $row["completed"], $this->mysqli);
@@ -139,7 +139,7 @@
         public function findCompletedMatches(){
             $data = array();
             try {
-                $sql = "SELECT * FROM `$this->table` WHERE `completed` = '1'";   
+                $sql = "SELECT * FROM `$this->table` WHERE `completed` = '1' and `progress` = '0'";   
                 $result = $this->mysqli->query($sql);
                 while($row = $result->fetch_assoc()) {
                     $match = new BasketballMatch($row["id"], $row["teamlandlord_id"], $row["teamguest_id"], $row["date"], $row["progress"], $row["completed"], $this->mysqli);
@@ -154,7 +154,7 @@
         public function findUpComingMatches(){
             $data = array();
             try {
-                $sql = "SELECT * FROM `$this->table` WHERE `date` > NOW() AND `completed` = '0'";   
+                $sql = "SELECT * FROM `$this->table` WHERE `progress` = '0' AND `completed` = '0'";   
                 $result = $this->mysqli->query($sql);
                 while($row = $result->fetch_assoc()) {
                     $match = new BasketballMatch($row["id"], $row["teamlandlord_id"], $row["teamguest_id"], $row["date"], $row["progress"], $row["completed"], $this->mysqli);

@@ -41,7 +41,6 @@
         if(strcmp($live, "true") === 0){
             $data = $matchService->findLiveMatches();
         }
-
         if(strcmp($completed, "true") === 0){
             $data = $matchService->findCompletedMatches();
         }
