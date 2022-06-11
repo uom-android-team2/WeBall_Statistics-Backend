@@ -1,6 +1,6 @@
 <?php
 
-    include_once "../php/config.php";
+    include_once "../index/config.php";
 
     include "service/playerLiveStatisticsService.php";
     include "utils/validation.php";

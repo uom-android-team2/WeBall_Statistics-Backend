@@ -140,7 +140,7 @@
   <body>
     <header>
         <div id="container">
-            <a id="back" href="index.php" class="btn btn-info">Back</a>
+            <a id="back" href="dashboard.php" class="btn btn-info">Back</a>
             <h1 id="title">Add new player to the championship</h1>
         </div>
         <!--<h5 id="teams-message">No teams available to add players</h5> --> <!-- class="message-hidden" -->

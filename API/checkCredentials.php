@@ -1,6 +1,6 @@
 <?php
 
- require_once "../php/config.php";
+ require_once "../index/config.php";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
 

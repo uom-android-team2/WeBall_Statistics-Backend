@@ -1,6 +1,6 @@
 <?php
-
-    include_once "../php/config.php";
+    
+    require_once "../index/config.php";
     include_once "models/coach.php";
 
     include "service/coachService.php";

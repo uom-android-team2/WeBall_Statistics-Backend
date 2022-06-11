@@ -1,5 +1,10 @@
-<!DOCTYPE html>
+<?php
 
+require_once "initialize.php";
+
+?>
+
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +24,9 @@
                     <img src="photos/logo.png">
                 </a>
                 <ul class="menu">
-                    <li><a href="https://github.com/uom-android-team2">Github</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Admin Login</a></li>
+                    <li><a href="https://github.com/uom-android-team2" target=”_blank”>Github</a></li>
+                    <li><a href="register.php">Register</a></li>
+                    <li><a href="login.php">Admin Login</a></li>
                     <li><a href="https://www.uom.gr/" alt="University" target=”_blank”>
                             <img src="photos/pamak.png">
                         </a></li>

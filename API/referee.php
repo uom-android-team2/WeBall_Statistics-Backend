@@ -1,6 +1,6 @@
 <?php
 
-include_once "../php/config.php";
+include_once "../index/config.php";
 include_once "models/referee.php";
 include_once "service/refereeService.php";
 include_once "utils/validation.php";

@@ -1,6 +1,6 @@
 <?php
 
-    include_once "../php/config.php";
+    require_once "../index/config.php";
     include_once "models/match.php";
 
     include "service/matchService.php";

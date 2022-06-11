@@ -130,7 +130,7 @@
   </head>
   <body>
     <Header id="header">
-      <a id="back" href="index.php" class="btn btn-info">Back</a>
+      <a id="back" href="dashboard.php" class="btn btn-info">Back</a>
       <h1 id="title">Create a team for the championship</h1>
     </Header>
     <section>

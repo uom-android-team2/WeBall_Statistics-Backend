@@ -1,7 +1,6 @@
 <?php
 
-
-include_once "../php/config.php";
+require_once "../index/config.php";
 include_once "models/player.php";
 
 include "service/playerService.php";
