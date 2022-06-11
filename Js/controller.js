@@ -5,8 +5,8 @@ import { postToDB } from "./Services/storeToDB.js";
 const btnLoadData = document.querySelector("#btn-load-data");
 
 const controlData = async function () {
-  await loadData(PATH.DATA_PLAYERS_PATH).then(function (dataArr) {
-    dataArr.forEach(async function (player) {
+  await loadData(PATH.DATA_PLAYERS_PATH).then(async function (dataArr) {
+    await dataArr.forEach(async function (player) {
       const playerObj = {
         //as "id" will have the default auto increment
         name: player.name,
@@ -20,8 +20,8 @@ const controlData = async function () {
     });
   });
 
-  await loadData(PATH.DATA_TEAMS_PATH).then(function (dataArr) {
-    dataArr.forEach(async function (team) {
+  await loadData(PATH.DATA_TEAMS_PATH).then(async function (dataArr) {
+    await dataArr.forEach(async function (team) {
       const teamObj = {
         //as "id" will have the default auto increment (1 - 8)
         name: team.name,
