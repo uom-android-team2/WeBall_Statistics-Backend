@@ -96,8 +96,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="register-login.css">
     <style>
-        body{ font: 14px sans-serif; }
+        body{ font: 14px sans-serif;}
         .wrapper{ width: 360px; padding: 20px; }
         #main{
             display: flex;
@@ -108,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <main id="main">
-        <div class="wrapper">
+        <div class="wrapper" id="login-div">
             <h2>Login</h2>
             <p>Please fill in your credentials to login.</p>
     
