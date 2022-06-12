@@ -2,16 +2,18 @@
   font-family: "Trebuchet MS", sans-serif;
 }
 
+html,
 body {
   background: rgb(31, 86, 115);
-  background-image: url("IMAGE_URL");
-  /* fallback */
   background: linear-gradient(
     70deg,
     rgba(31, 86, 115, 1) 0%,
     rgba(87, 151, 185, 1) 59%,
     rgba(255, 255, 255, 1) 100%
   );
+  background-attachment: fixed;
+  background-size: cover;
+  height: auto;
 }
 
 .box {
@@ -105,6 +107,7 @@ p {
   background-color: rgba(87, 151, 185, 1);
   padding: 25px 25px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .buttons:hover {
@@ -178,7 +181,7 @@ p {
 }
 
 .popup-header {
-  margin-top: -4rem;
+  margin-top: -2rem;
   left: 2rem;
 }
 

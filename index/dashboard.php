@@ -67,13 +67,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             <div class="popup hidden">
                 <button class="close-popup">&times;</button>
-                <h2 class="popup-header">instructions</h2>
+                <h1 class="popup-header">Instructions</h1>
                 <p>
                 <div class="popup-list">
-                    <li>If you are loged in for the first time Create Teams</li>
-                    <li>When you have already created teams is time to Create Players manually or create player
-                        from button json</li>
-                    <li>When you have already created players Create Championship manually or randomlly</li>
+                    <h3>Want to know how to use the WeBall Statistics App correctly?</h3>
+                    <h5>Follow these steps in order.</h5><br>
+                    <ul>
+                        <li><span style="font-weight:bold;">Step 1: </span>Create Teams manually through the "Create Teams" button <span style="font-weight:bold;">OR</span> through the "Load data from JSON" button which creates Teams <span style="font-weight:bold;">AND</span> Players instantlly from a file we created!
+                     </li><br>
+                     <li><span style="font-weight:bold;">Step 2: </span>Create Players manually through the "Create Players" button. <span style="font-weight:bold; font-size:small;">Skip this step if you loaded data from JSON in Step 1.</span>
+                     </li><br>
+                     <li><span style="font-weight:bold;">Step 3: </span>Create the Championship manually through the "Create Championship" button which gives you the opportunity to manually arrange Matches between Teams <span style="font-weight:bold;">OR</span> create the championship randomly with a click of a button though the "Championship Lottery" button.
+                     </li><br>
+                     <li><span style="font-weight:bold;">Step 4: </span>Open the WeBall Statistics App on your android and enjoy!
+                     </li>
+                    </ul> 
                 </div>
 
 
