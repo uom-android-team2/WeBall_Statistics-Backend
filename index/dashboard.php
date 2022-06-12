@@ -60,7 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <a href = "create-random-championship-page.php" class="buttons button-same">Championship Lottery</a>
             </div>
             <div class="buttons-account-json">
-                <button class="buttons button-password">Reset Your Password</button>
+                <a href = "reset-password.php" class="buttons button-password">Reset Your Password</a>
                 <button id = "btn-load-data" class="buttons button-json">Load data from JSON</button>
             </div>
             </p>
