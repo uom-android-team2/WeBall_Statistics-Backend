@@ -4,7 +4,13 @@ import { postToDB } from "./Services/storeToDB.js";
 
 const btnLoadData = document.querySelector("#btn-load-data");
 
-const controlData = async function () {
+const isExistInDB = function (name, array) {
+  return array.some(function (element) {
+    return element.name === name;
+  });
+};
+
+const controlData = async function (teamsInDBArr, playersInDBArr) {
   await loadData(PATH.DATA_PLAYERS_PATH).then(async function (dataArr) {
     await dataArr.forEach(async function (player) {
       const playerObj = {
@@ -16,7 +22,9 @@ const controlData = async function () {
         team: player.team,
         photo: player.photo,
       };
-      await postToDB(playerObj, PATH.PLAYER_API_PATH);
+      if (!isExistInDB(playerObj.name, playersInDBArr)) {
+        await postToDB(playerObj, PATH.PLAYER_API_PATH);
+      }
     });
   });
 
@@ -28,16 +36,16 @@ const controlData = async function () {
         city: team.city,
         badge: team.badge,
       };
-      await postToDB(teamObj, PATH.TEAM_API_PATH);
+      if (!isExistInDB(teamObj.name, teamsInDBArr)) {
+        await postToDB(teamObj, PATH.TEAM_API_PATH);
+      }
     });
   });
   alert("Successful registration of data in the database!");
 };
 
 const createTeamStatisticsTable = async () => {
-  const res = await fetch(
-    "http://localhost/WeBall_Statistics-Backend/API/team.php"
-  );
+  const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/team.php");
 
   const teams = await res.json();
   teams.forEach(async (team) => {
@@ -66,9 +74,7 @@ const createTeamStatisticsTable = async () => {
 };
 
 const createPlayerStatisticsTable = async () => {
-  const res = await fetch(
-    "http://localhost/WeBall_Statistics-Backend/API/player.php"
-  );
+  const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/player.php");
 
   const players = await res.json();
   players.forEach(async (player) => {
@@ -97,7 +103,31 @@ const createPlayerStatisticsTable = async () => {
 
 btnLoadData.addEventListener("click", async function (evt) {
   evt.preventDefault();
-  await controlData();
+  let teamsInDBArr = new Array();
+  let playersInDBArr = new Array();
+  try {
+    await fetch(`${PATH.TEAM_API_PATH}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        teamsInDBArr = data;
+      });
+  } catch (err) {
+    console.error(err);
+  }
+  try {
+    await fetch(`${PATH.PLAYER_API_PATH}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        playersInDBArr = data;
+      });
+  } catch (err) {
+    console.error(err);
+  }
+  await controlData(teamsInDBArr, playersInDBArr);
   await createTeamStatisticsTable();
   await createPlayerStatisticsTable();
 });
