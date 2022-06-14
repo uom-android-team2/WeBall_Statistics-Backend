@@ -61,60 +61,64 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
   }
 };
 
-const createTeamStatisticsTable = async () => {
+const createTeamStatisticsTable = async (teamsInDBArr) => {
   const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/team.php");
 
   const teams = await res.json();
   teams.forEach(async (team) => {
-    const teamCompletedStats = {
-      team_id: team.id,
-      total_matches: "0",
-      win: "0",
-      lose: "0",
-      successful_effort: "0",
-      total_effort: "0",
-      successful_freethrow: "0",
-      total_freethrow: "0",
-      successful_twopointer: "0",
-      total_twopointer: "0",
-      successful_threepointer: "0",
-      total_threepointer: "0",
-      steal: "0",
-      assist: "0",
-      block: "0",
-      rebound: "0",
-      foul: "0",
-      turnover: "0",
-    };
-    await postToDB(teamCompletedStats, PATH.TEAM_COMPLETED_STATISTICS);
+    if (!isTeamExistInDB(team.name, teamsInDBArr)) {
+      const teamCompletedStats = {
+        team_id: team.id,
+        total_matches: "0",
+        win: "0",
+        lose: "0",
+        successful_effort: "0",
+        total_effort: "0",
+        successful_freethrow: "0",
+        total_freethrow: "0",
+        successful_twopointer: "0",
+        total_twopointer: "0",
+        successful_threepointer: "0",
+        total_threepointer: "0",
+        steal: "0",
+        assist: "0",
+        block: "0",
+        rebound: "0",
+        foul: "0",
+        turnover: "0",
+      };
+      await postToDB(teamCompletedStats, PATH.TEAM_COMPLETED_STATISTICS);
+    }
   });
 };
 
-const createPlayerStatisticsTable = async () => {
+const createPlayerStatisticsTable = async (playersInDBArr) => {
   const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/player.php");
 
   const players = await res.json();
   players.forEach(async (player) => {
-    const playerCompletedStats = {
-      player_id: player.id,
-      matches_played: "0",
-      successful_effort: "0",
-      total_effort: "0",
-      successful_freethrow: "0",
-      total_freethrow: "0",
-      successful_twopointer: "0",
-      total_twopointer: "0",
-      successful_threepointer: "0",
-      total_threepointer: "0",
-      steal: "0",
-      assist: "0",
-      block: "0",
-      rebound: "0",
-      foul: "0",
-      turnover: "0",
-      minutes: "0",
-    };
-    await postToDB(playerCompletedStats, PATH.PLAYER_COMPLETED_STATISTICS);
+    if (!isPlayerExistInDB(player.name + player.surname, playersInDBArr)) {
+      const playerCompletedStats = {
+        player_id: player.id,
+        matches_played: "0",
+        successful_effort: "0",
+        total_effort: "0",
+        successful_freethrow: "0",
+        total_freethrow: "0",
+        successful_twopointer: "0",
+        total_twopointer: "0",
+        successful_threepointer: "0",
+        total_threepointer: "0",
+        steal: "0",
+        assist: "0",
+        block: "0",
+        rebound: "0",
+        foul: "0",
+        turnover: "0",
+        minutes: "0",
+      };
+      await postToDB(playerCompletedStats, PATH.PLAYER_COMPLETED_STATISTICS);
+    }
   });
 };
 
@@ -147,6 +151,6 @@ btnLoadData.addEventListener("click", async function (evt) {
   }
 
   await controlData(teamsInDBArr, playersInDBArr);
-  await createTeamStatisticsTable();
-  await createPlayerStatisticsTable();
+  await createTeamStatisticsTable(teamsInDBArr);
+  await createPlayerStatisticsTable(playersInDBArr);
 });
