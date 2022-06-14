@@ -4,7 +4,13 @@ import { postToDB } from "./Services/storeToDB.js";
 
 const btnLoadData = document.querySelector("#btn-load-data");
 
-const isExistInDB = function (name, array) {
+const isPlayerExistInDB = function (fullname, array) {
+  return array.some(function (element) {
+    return element?.name + element?.surname === fullname;
+  });
+};
+
+const isTeamExistInDB = function (name, array) {
   return array.some(function (element) {
     return element.name === name;
   });
@@ -24,7 +30,8 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
         team: player.team,
         photo: player.photo,
       };
-      if (!isExistInDB(playerObj.name, playersInDBArr)) {
+      //Insert only new players that aren't already in DB
+      if (!isPlayerExistInDB(playerObj.name + playerObj.surname, playersInDBArr)) {
         playersAdded++;
         await postToDB(playerObj, PATH.PLAYER_API_PATH);
       }
@@ -39,7 +46,8 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
         city: team.city,
         badge: team.badge,
       };
-      if (!isExistInDB(teamObj.name, teamsInDBArr)) {
+      //Insert only new teams that aren't already in DB
+      if (!isTeamExistInDB(teamObj.name, teamsInDBArr)) {
         teamsAdded++;
         await postToDB(teamObj, PATH.TEAM_API_PATH);
       }
@@ -114,6 +122,7 @@ btnLoadData.addEventListener("click", async function (evt) {
   evt.preventDefault();
   let teamsInDBArr = new Array();
   let playersInDBArr = new Array();
+  //Retrieve the data that exist already in DB for players and teams
   try {
     await fetch(`${PATH.TEAM_API_PATH}`)
       .then(function (response) {
@@ -136,6 +145,7 @@ btnLoadData.addEventListener("click", async function (evt) {
   } catch (err) {
     console.error(err);
   }
+
   await controlData(teamsInDBArr, playersInDBArr);
   await createTeamStatisticsTable();
   await createPlayerStatisticsTable();
