@@ -11,6 +11,8 @@ const isExistInDB = function (name, array) {
 };
 
 const controlData = async function (teamsInDBArr, playersInDBArr) {
+  let teamsAdded = 0;
+  let playersAdded = 0;
   await loadData(PATH.DATA_PLAYERS_PATH).then(async function (dataArr) {
     await dataArr.forEach(async function (player) {
       const playerObj = {
@@ -23,6 +25,7 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
         photo: player.photo,
       };
       if (!isExistInDB(playerObj.name, playersInDBArr)) {
+        playersAdded++;
         await postToDB(playerObj, PATH.PLAYER_API_PATH);
       }
     });
@@ -37,11 +40,17 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
         badge: team.badge,
       };
       if (!isExistInDB(teamObj.name, teamsInDBArr)) {
+        teamsAdded++;
         await postToDB(teamObj, PATH.TEAM_API_PATH);
       }
     });
   });
-  alert("Successful registration of data in the database!");
+
+  if (playersAdded === 0 && teamsAdded === 0) {
+    alert("Teams and Players already added in Database!");
+  } else {
+    alert(`Successful registration of ${teamsAdded} teams and ${playersAdded} players in the database!`);
+  }
 };
 
 const createTeamStatisticsTable = async () => {
