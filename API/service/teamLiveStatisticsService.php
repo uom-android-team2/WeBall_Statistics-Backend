@@ -35,6 +35,10 @@
             return $this->teamLivestatisticsRepository->update($teamLiveStatistics);
         }
 
+        public function findByMatchId($matchId){
+            return $this->teamLivestatisticsRepository->findById($matchId);
+        }
+
        
     }
 

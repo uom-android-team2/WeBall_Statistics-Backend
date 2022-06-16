@@ -27,6 +27,8 @@
         // check if matchId and teamId are not "" WITH STRCMP
         if(strcmp($matchId, "") != 0 && strcmp($teamId, "") != 0){
             $data = $teamLiveStatisticsService->findByMatchIdAndTeamId($matchId, $teamId);
+        }else if(strcmp($matchId, "") != 0){
+            $data = $teamLiveStatisticsService->findByMatchId($matchId);
         }else{
             $data = $teamLiveStatisticsService->findAllTeamLiveStatistics();
         }

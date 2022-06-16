@@ -34,7 +34,22 @@
         }
 
         public function findById($id){
+            
+            $playerLivestatistics = array();
+            try{
+                $sql = "SELECT * FROM $this->table WHERE `match_id` = $id";
+                $result = $this->mysqli->query($sql);
+                while($row = $result->fetch_assoc()){
+                    $player = new PlayerLivestatistics($row["match_id"], $row["player_id"], $row["successful_effort"], $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["successful_twopointer"], $row["total_twopointer"], $row["successful_threepointer"], $row["total_threepointer"], $row["steal"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $row["minutes"]);
+                    array_push($playerLivestatistics, $player);
+                }
                 
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+            
+            return $playerLivestatistics;             
+
         }
         
         public function findAll(){
@@ -44,7 +59,8 @@
                 $sql = "SELECT * FROM $this->table";
                 $result = $this->mysqli->query($sql);
                 while($row = $result->fetch_assoc()){
-                    $playerLivestatistics[] = new PlayerLivestatistics($row["match_id"], $row["player_id"], $row["successful_effort"], $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["successful_twopointer"], $row["total_twopointer"], $row["successful_threepointer"], $row["total_threepointer"], $row["steal"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $row["minutes"]);
+                    $player = new PlayerLivestatistics($row["match_id"], $row["player_id"], $row["successful_effort"], $row["total_effort"], $row["successful_freethrow"], $row["total_freethrow"], $row["successful_twopointer"], $row["total_twopointer"], $row["successful_threepointer"], $row["total_threepointer"], $row["steal"], $row["assist"], $row["block"], $row["rebound"], $row["foul"], $row["turnover"], $row["minutes"]);
+                    array_push($playerLivestatistics, $player);
                 }
                 
             }catch(Exception $e){

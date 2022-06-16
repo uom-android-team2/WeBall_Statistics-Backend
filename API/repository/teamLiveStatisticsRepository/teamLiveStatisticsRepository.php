@@ -33,7 +33,20 @@
         }
 
         public function findById($id){
-            // return null;
+            $teamLiveStatistics = array();
+            try{
+                $sql = "SELECT * FROM $this->table WHERE `match_id` = '$id'";
+                $result = $this->mysqli->query($sql);
+                while($row = $result->fetch_assoc()){
+                    $team = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['successful_twopointer'], $row['total_twopointer'], $row['successful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
+                    array_push($teamLiveStatistics, $team);
+                }   
+            }catch(Exception $e){
+                echo 'Message: ' .$e->getMessage();
+            }
+
+            return $teamLiveStatistics;
+            
         }
         
         public function findAll(){
@@ -43,7 +56,8 @@
                 $sql = "SELECT * FROM $this->table";
                 $result = $this->mysqli->query($sql);
                 while($row = $result->fetch_assoc()){
-                    $teamLiveStatistics[] = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['successful_twopointer'], $row['total_twopointer'], $row['successful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
+                    $team = new TeamLiveStatistics($row['match_id'], $row['team_id'], $row['successful_effort'], $row['total_effort'], $row['successful_freethrow'], $row['total_freethrow'], $row['successful_twopointer'], $row['total_twopointer'], $row['successful_threepointer'], $row['total_threepointer'], $row['steal'], $row['assist'], $row['block'], $row['rebound'], $row['foul'], $row['turnover']);
+                    array_push($teamLiveStatistics, $team);
                 }   
             }catch(Exception $e){
                 echo 'Message: ' .$e->getMessage();

@@ -34,6 +34,10 @@
             return $this->playerLivestatisticsRepository->update($playerLiveStatistics);
         }
 
+        public function findByMatchId($matchId){
+            return $this->playerLivestatisticsRepository->findById($matchId);
+        }
+
 
     }
 
