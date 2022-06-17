@@ -49,7 +49,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         <div>
             <div class="header-user">
-                <h1 class="my-5">Hi, <b> <?php echo htmlspecialchars($_SESSION["username"]); ?> </b>. Welcome to WeBall-Statistics admin dashboard.<h1></h1>
+                <h1 class="my-5">Hi, <b> <?php echo htmlspecialchars($_SESSION["username"]); ?> </b>.Welcome to the WeBall-Statistics admin dashboard.<h1></h1>
             </div>
 
             <p>
