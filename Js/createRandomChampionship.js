@@ -10,7 +10,7 @@ fetch("http://localhost/WeBall_Statistics-Backend/API/team.php")
   })
   .catch((error) => console.log("error", error));
 
-const start = (teams) => {
+const start = async (teams) => {
   //console.log(teamObjects);
 
   class Match {
@@ -134,9 +134,9 @@ const start = (teams) => {
     no_teams_section.insertAdjacentHTML(
       "beforeend",
       `<h2>You currently have not created any teams.</h2>
-        <h4>Head back to the Create Team Page!</h4>
-        <a href="create-team.php" class="btn btn-success"> Create some teams</a>
-       `
+            <h4>Head back to the Create Team Page!</h4>
+            <a href="create-team.php" class="btn btn-success"> Create some teams</a>
+          `
     );
     document.getElementById("create-button").classList.add("hidden");
     document.getElementById("button-div").style.display = "none";
@@ -147,24 +147,18 @@ const start = (teams) => {
     not_enough_teams_section.insertAdjacentHTML(
       "beforeend",
       `<h2>In order to manually create the championship you need 4 or more (even number of teams).</h2>
-        <h4>Head back to the Create Team Page</h4>
-        <a href="create-team.php" class="btn btn-success"> Create some teams</a>
-       `
+            <h4>Head back to the Create Team Page</h4>
+            <a href="create-team.php" class="btn btn-success"> Create some teams</a>
+          `
     );
     document.getElementById("create-button").classList.add("hidden");
     document.getElementById("button-div").style.display = "none";
   }
 
-  document
+  await document
     .getElementById("create-button")
-    .addEventListener("click", function () {
+    .addEventListener("click", async function () {
       //This function handles all actions that need to be done once the done button is clicked by the admin
-      alert(
-        `Congrats! You just randomly created a ${
-          teams.length - 1
-        }-week championship. 
-    Check the app for results!`
-      );
 
       class FinalMatch {
         id;
@@ -244,7 +238,7 @@ const start = (teams) => {
 
         const data = await res.json();
 
-        data.forEach(async (player) => {
+        await data.forEach(async (player) => {
           const playerStatistics = {
             match_id: matchId,
             player_id: player.id,
@@ -279,7 +273,7 @@ const start = (teams) => {
 
         const data = await res.json();
 
-        data.forEach(async (match) => {
+        await data.forEach(async (match) => {
           const team1Statistic = {
             match_id: match.id,
             team_id: match.teamlandlord_id,
@@ -335,7 +329,7 @@ const start = (teams) => {
       };
 
       const insertMatches = async () => {
-        FinalListOfMatches.forEach(async (m) => {
+        await FinalListOfMatches.forEach(async (m) => {
           await postToDb(
             m,
             "http://localhost/WeBall_Statistics-Backend/API/match.php"
@@ -344,6 +338,12 @@ const start = (teams) => {
         await createStatisticsTable();
       };
 
-      insertMatches();
+      await insertMatches();
+      alert(
+        `Congrats! You just randomly created a ${
+          teams.length - 1
+        }-week championship. 
+        Check the app for results!`
+      );
     });
 };
