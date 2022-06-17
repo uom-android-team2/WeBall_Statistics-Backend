@@ -10,118 +10,133 @@ fetch("http://localhost/WeBall_Statistics-Backend/API/team.php")
   })
   .catch((error) => console.log("error", error));
 
-const start = async (teams) => {
-  //console.log(teamObjects);
-
-  class Match {
-    #game = new Map();
-
-    constructor(id, teams) {
-      this.#game.set(id, teams);
-    }
-
-    getGame() {
-      return this.#game;
-    }
-  }
-
-  class Week {
-    #teamsAdded = new Set();
-    #listOfMatches = [];
-    #number;
-    #maxMatches = teams.length / 2;
-
-    constructor(number) {
-      this.#number = number;
-    }
-
-    addTeams(ts) {
-      if (!this.#teamsAdded.has(ts[0]) && !this.#teamsAdded.has(ts[1])) {
-        this.#teamsAdded.add(ts[0]);
-        this.#teamsAdded.add(ts[1]);
-      }
-    }
-
-    addMatch(match) {
-      const [team1, team2] = match.getGame().get(...match.getGame().keys());
-      if (!(this.#teamsAdded.has(team1) || this.#teamsAdded.has(team2))) {
-        this.addTeams([team1, team2]);
-        this.#listOfMatches.push(match);
-      }
-    }
-
-    getListOfMatches() {
-      return this.#listOfMatches;
-    }
-
-    getMaxMatches() {
-      return this.#maxMatches;
-    }
-    getNumber() {
-      return this.#number;
+const start = async (teams, listOfTeams) => {
+  class FinalMatch {
+    id;
+    teamlandlord_id;
+    teamguest_id;
+    date;
+    progress;
+    completed;
+    constructor(id, teamlandlord_id, teamguest_id, date) {
+      this.id = id;
+      this.teamlandlord_id = teamlandlord_id;
+      this.teamguest_id = teamguest_id;
+      this.date = date;
+      this.progress = false;
+      this.completed = false;
     }
   }
+  let listOfPossibleMatches = [];
+  let visited = new Map();
+  let first = true;
+  listOfTeams.forEach((teamLandord) => {
+    listOfTeams.forEach((teamGuest) => {
+      if (first && teamLandord.id !== teamGuest.id) {
+        const match = new FinalMatch(-1, teamLandord.id, teamGuest.id, -1);
+        const pair1 = {
+          teamLandord: teamLandord.id,
+          teamGuest: teamGuest.id,
+        };
+        const pair2 = {
+          teamLandord: teamLandord.id,
+          teamGuest: teamGuest.id,
+        };
+        visited.set(pair1, true);
+        visited.set(pair2, true);
 
-  const allPossibleMatches = [];
-  const tempMatches = [];
+        listOfPossibleMatches.push(match);
+        first = false;
+      } else if (teamLandord.id !== teamGuest.id) {
+        const pair1 = {
+          teamLandord: teamLandord.id,
+          teamGuest: teamGuest.id,
+        };
+        const pair2 = {
+          teamLandord: teamLandord.id,
+          teamGuest: teamGuest.id,
+        };
 
-  for (let i = 0; i < teams.length; i++) {
-    //For each team
+        let unique = true;
 
-    for (let j = 0; j < teams.length; j++) {
-      //For each oppenent
+        for (pair of visited.keys()) {
+          if (pair.teamLandord === teamLandord.id) {
+            if (pair.teamGuest === teamGuest.id) {
+              unique = false;
+            }
+          }
 
-      if (teams[i] !== teams[j]) {
-        //Excluding self
-        const id = teams[i] + "-" + teams[j];
-        tempMatches.push(new Match(id, [i, j]));
-      }
-    }
-  }
-
-  const revertId = function (stringId) {
-    let team1;
-    let team2;
-
-    [team1, team2] = stringId.split("-");
-
-    return `${team2}-${team1}`;
-  };
-
-  const allPossibleMatchesId = new Set();
-
-  const putIdInSet = function (stringId) {
-    if (
-      !allPossibleMatchesId.has(stringId) &&
-      !allPossibleMatchesId.has(revertId(stringId))
-    ) {
-      allPossibleMatchesId.add(stringId);
-    }
-  };
-
-  tempMatches.forEach((tm) => putIdInSet(...tm.getGame().keys()));
-
-  tempMatches.forEach((tm) => {
-    if (allPossibleMatchesId.has(...tm.getGame().keys())) {
-      allPossibleMatches.push(tm);
-    }
-  });
-
-  //   console.log(allPossibleMatches);
-
-  const championship = [];
-
-  for (let i = 0; i < teams.length - 1; i++) {
-    // For all weeks
-    const week = new Week(i + 1);
-    allPossibleMatches.forEach((m) => {
-      if (week.getListOfMatches.length <= week.getMaxMatches()) {
-        week.addMatch(m);
+          if (pair.teamLandord === teamGuest.id) {
+            if (pair.teamGuest === teamLandord.id) {
+              unique = false;
+            }
+          }
+        }
+        if (unique) {
+          const match = new FinalMatch(-1, teamLandord.id, teamGuest.id, -1);
+          visited.set(pair1, true);
+          visited.set(pair2, true);
+          listOfPossibleMatches.push(match);
+        }
       }
     });
+  });
 
-    championship.push(week);
+  visited = new Map();
+  first = true;
+  const finalMaches = [];
+  let count = 0;
+  let week = 1;
+
+  while (listOfPossibleMatches.length > 0) {
+    let index = Math.floor(Math.random() * listOfPossibleMatches.length);
+    console.log(listOfPossibleMatches.length);
+
+    let temp = index + Math.floor(Math.random() * 2);
+    if (Math.floor(Math.random() * 2) === Math.floor(Math.random() * 2)) {
+      if (temp < listOfPossibleMatches.length) {
+        index = temp;
+      }
+    }
+
+    if (first) {
+      first = false;
+      const match = listOfPossibleMatches[index];
+      match.date = week;
+      listOfPossibleMatches.splice(index, 1);
+      finalMaches.push(match);
+      const set = new Set();
+      set.add(match.teamlandlord_id);
+      set.add(match.teamguest_id);
+      visited.set(week, set);
+      count++;
+      continue;
+    } else {
+      const match = listOfPossibleMatches[index];
+      let unique = true;
+      if (
+        visited.get(week).has(match.teamlandlord_id) ||
+        visited.get(week).has(match.teamguest_id)
+      ) {
+        unique = false;
+      }
+      if (unique) {
+        match.date = week;
+        listOfPossibleMatches.splice(index, 1);
+        finalMaches.push(match);
+        count++;
+        visited.get(week).add(match.teamlandlord_id);
+        visited.get(week).add(match.teamguest_id);
+        if (count === 4) {
+          count = 0;
+          week++;
+          visited.set(week, new Set());
+        }
+      }
+    }
   }
+  console.log(finalMaches);
+
   //console.log(championship);
   //   console.log(championship);
   const no_teams_section = document.getElementById("no-teams-section");
@@ -155,195 +170,195 @@ const start = async (teams) => {
     document.getElementById("button-div").style.display = "none";
   }
 
-  await document
-    .getElementById("create-button")
-    .addEventListener("click", async function () {
-      //This function handles all actions that need to be done once the done button is clicked by the admin
+  // await document
+  //   .getElementById("create-button")
+  //   .addEventListener("click", async function () {
+  //     //This function handles all actions that need to be done once the done button is clicked by the admin
 
-      class FinalMatch {
-        id;
-        teamlandlord_id;
-        teamguest_id;
-        date;
-        progress;
-        completed;
-        constructor(id, teamlandlord_id, teamguest_id, date) {
-          this.id = id;
-          this.teamlandlord_id = teamlandlord_id;
-          this.teamguest_id = teamguest_id;
-          this.date = date;
-          this.progress = false;
-          this.completed = false;
-        }
-      }
-      //Connecting real team objects to text from drag and drop championship creation
-      FinalListOfMatches = [];
-      for (let i = 0; i < championship.length; i++) {
-        var homeTeam = "";
-        var awayTeam = "";
-        var week = championship[i].getNumber();
-        for (let j = 0; j < championship[i].getListOfMatches().length; j++) {
-          var [key, value] = championship[i]
-            .getListOfMatches()
-            [j].getGame()
-            .entries();
-          var [team1, team2] = key[0].split("-");
-          //console.log(team1, team2);
-          for (let z = 0; z < teamObjects.length; z++) {
-            if (team1 === teamObjects[z].name) {
-              homeTeam = teamObjects[z];
-              //console.log(homeTeam);
-            }
-            if (team2 === teamObjects[z].name) {
-              awayTeam = teamObjects[z];
-              //console.log(awayTeam);
-            }
-          }
-          //Creating Match object from teams
-          let dateTemp = new Date();
+  //     class FinalMatch {
+  //       id;
+  //       teamlandlord_id;
+  //       teamguest_id;
+  //       date;
+  //       progress;
+  //       completed;
+  //       constructor(id, teamlandlord_id, teamguest_id, date) {
+  //         this.id = id;
+  //         this.teamlandlord_id = teamlandlord_id;
+  //         this.teamguest_id = teamguest_id;
+  //         this.date = date;
+  //         this.progress = false;
+  //         this.completed = false;
+  //       }
+  //     }
+  //     //Connecting real team objects to text from drag and drop championship creation
+  //     FinalListOfMatches = [];
+  //     for (let i = 0; i < championship.length; i++) {
+  //       var homeTeam = "";
+  //       var awayTeam = "";
+  //       var week = championship[i].getNumber();
+  //       for (let j = 0; j < championship[i].getListOfMatches().length; j++) {
+  //         var [key, value] = championship[i]
+  //           .getListOfMatches()
+  //           [j].getGame()
+  //           .entries();
+  //         var [team1, team2] = key[0].split("-");
+  //         //console.log(team1, team2);
+  //         for (let z = 0; z < teamObjects.length; z++) {
+  //           if (team1 === teamObjects[z].name) {
+  //             homeTeam = teamObjects[z];
+  //             //console.log(homeTeam);
+  //           }
+  //           if (team2 === teamObjects[z].name) {
+  //             awayTeam = teamObjects[z];
+  //             //console.log(awayTeam);
+  //           }
+  //         }
+  //         //Creating Match object from teams
+  //         let dateTemp = new Date();
 
-          FinalListOfMatches.push(
-            new FinalMatch(
-              FinalListOfMatches.length + 1,
-              homeTeam.id,
-              awayTeam.id,
-              week
-            )
-          ); //id might need to be changed
-          dateTemp = new Date();
-        }
-      }
-      //Instead of console.log -> Pass all FinalListOfMatches elements into the db
-      console.log(FinalListOfMatches);
+  //         FinalListOfMatches.push(
+  //           new FinalMatch(
+  //             FinalListOfMatches.length + 1,
+  //             homeTeam.id,
+  //             awayTeam.id,
+  //             week
+  //           )
+  //         ); //id might need to be changed
+  //         dateTemp = new Date();
+  //       }
+  //     }
+  //     //Instead of console.log -> Pass all FinalListOfMatches elements into the db
+  //     console.log(FinalListOfMatches);
 
-      const postToDb = async (data, url) => {
-        try {
-          const res = await fetch(url, {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
-        } catch (error) {
-          console.log(error);
-        }
-      };
+  //     const postToDb = async (data, url) => {
+  //       try {
+  //         const res = await fetch(url, {
+  //           method: "POST",
+  //           headers: {
+  //             Accept: "application/json",
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify(data),
+  //         });
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     };
 
-      createPlayerStatisticsTable = async (team, matchId) => {
-        const res = await fetch(
-          `http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}`
-        );
+  //     createPlayerStatisticsTable = async (team, matchId) => {
+  //       const res = await fetch(
+  //         `http://localhost/WeBall_Statistics-Backend/API/player.php?team=${team}`
+  //       );
 
-        const data = await res.json();
+  //       const data = await res.json();
 
-        await data.forEach(async (player) => {
-          const playerStatistics = {
-            match_id: matchId,
-            player_id: player.id,
-            successful_effort: "0",
-            total_effort: "0",
-            successful_freethrow: "0",
-            total_freethrow: "0",
-            successful_twopointer: "0",
-            total_twopointer: "0",
-            successful_threepointer: "0",
-            total_threepointer: "0",
-            steal: "0",
-            assist: "0",
-            block: "0",
-            rebound: "0",
-            foul: "0",
-            turnover: "0",
-            minutes: 0,
-          };
+  //       await data.forEach(async (player) => {
+  //         const playerStatistics = {
+  //           match_id: matchId,
+  //           player_id: player.id,
+  //           successful_effort: "0",
+  //           total_effort: "0",
+  //           successful_freethrow: "0",
+  //           total_freethrow: "0",
+  //           successful_twopointer: "0",
+  //           total_twopointer: "0",
+  //           successful_threepointer: "0",
+  //           total_threepointer: "0",
+  //           steal: "0",
+  //           assist: "0",
+  //           block: "0",
+  //           rebound: "0",
+  //           foul: "0",
+  //           turnover: "0",
+  //           minutes: 0,
+  //         };
 
-          await postToDb(
-            playerStatistics,
-            "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php"
-          );
-        });
-      };
+  //         await postToDb(
+  //           playerStatistics,
+  //           "http://localhost/WeBall_Statistics-Backend/API/playerLiveStatistics.php"
+  //         );
+  //       });
+  //     };
 
-      const createStatisticsTable = async () => {
-        const res = await fetch(
-          "http://localhost/WeBall_Statistics-Backend/API/match.php"
-        );
+  //     const createStatisticsTable = async () => {
+  //       const res = await fetch(
+  //         "http://localhost/WeBall_Statistics-Backend/API/match.php"
+  //       );
 
-        const data = await res.json();
+  //       const data = await res.json();
 
-        await data.forEach(async (match) => {
-          const team1Statistic = {
-            match_id: match.id,
-            team_id: match.teamlandlord_id,
-            successful_effort: "0",
-            total_effort: "0",
-            successful_freethrow: "0",
-            total_freethrow: "0",
-            succesful_twopointer: "0",
-            total_twopointer: "0",
-            succesful_threepointer: "0",
-            total_threepointer: "0",
-            steal: "0",
-            assist: "0",
-            block: "0",
-            rebound: "0",
-            foul: "0",
-            turnover: "0",
-          };
+  //       await data.forEach(async (match) => {
+  //         const team1Statistic = {
+  //           match_id: match.id,
+  //           team_id: match.teamlandlord_id,
+  //           successful_effort: "0",
+  //           total_effort: "0",
+  //           successful_freethrow: "0",
+  //           total_freethrow: "0",
+  //           succesful_twopointer: "0",
+  //           total_twopointer: "0",
+  //           succesful_threepointer: "0",
+  //           total_threepointer: "0",
+  //           steal: "0",
+  //           assist: "0",
+  //           block: "0",
+  //           rebound: "0",
+  //           foul: "0",
+  //           turnover: "0",
+  //         };
 
-          const team2Statistic = {
-            match_id: match.id,
-            team_id: match.teamguest_id,
-            successful_effort: "0",
-            total_effort: "0",
-            successful_freethrow: "0",
-            total_freethrow: "0",
-            succesful_twopointer: "0",
-            total_twopointer: "0",
-            succesful_threepointer: "0",
-            total_threepointer: "0",
-            steal: "0",
-            assist: "0",
-            block: "0",
-            rebound: "0",
-            foul: "0",
-            turnover: "0",
-          };
+  //         const team2Statistic = {
+  //           match_id: match.id,
+  //           team_id: match.teamguest_id,
+  //           successful_effort: "0",
+  //           total_effort: "0",
+  //           successful_freethrow: "0",
+  //           total_freethrow: "0",
+  //           succesful_twopointer: "0",
+  //           total_twopointer: "0",
+  //           succesful_threepointer: "0",
+  //           total_threepointer: "0",
+  //           steal: "0",
+  //           assist: "0",
+  //           block: "0",
+  //           rebound: "0",
+  //           foul: "0",
+  //           turnover: "0",
+  //         };
 
-          await postToDb(
-            team1Statistic,
-            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
-          );
+  //         await postToDb(
+  //           team1Statistic,
+  //           "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
+  //         );
 
-          await postToDb(
-            team2Statistic,
-            "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
-          );
+  //         await postToDb(
+  //           team2Statistic,
+  //           "http://localhost/WeBall_Statistics-Backend/API/teamLiveStatistics.php"
+  //         );
 
-          await createPlayerStatisticsTable(match.teamguest_name, match.id);
+  //         await createPlayerStatisticsTable(match.teamguest_name, match.id);
 
-          await createPlayerStatisticsTable(match.teamlandlord_name, match.id);
-        });
-      };
+  //         await createPlayerStatisticsTable(match.teamlandlord_name, match.id);
+  //       });
+  //     };
 
-      const insertMatches = async () => {
-        await FinalListOfMatches.forEach(async (m) => {
-          await postToDb(
-            m,
-            "http://localhost/WeBall_Statistics-Backend/API/match.php"
-          );
-        });
-        await createStatisticsTable();
-      };
+  //     const insertMatches = async () => {
+  //       await FinalListOfMatches.forEach(async (m) => {
+  //         await postToDb(
+  //           m,
+  //           "http://localhost/WeBall_Statistics-Backend/API/match.php"
+  //         );
+  //       });
+  //       await createStatisticsTable();
+  //     };
 
-      await insertMatches();
-      await alert(
-        `Congrats! You just randomly created a ${
-          teams.length - 1
-        }-week championship. 
-        Check the app for results!`
-      );
-    });
+  //     await insertMatches();
+  //     await alert(
+  //       `Congrats! You just randomly created a ${
+  //         teams.length - 1
+  //       }-week championship.
+  //       Check the app for results!`
+  //     );
+  //   });
 };
