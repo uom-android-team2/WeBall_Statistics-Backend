@@ -339,7 +339,7 @@ const start = async (teams) => {
       };
 
       await insertMatches();
-      alert(
+      await alert(
         `Congrats! You just randomly created a ${
           teams.length - 1
         }-week championship. 

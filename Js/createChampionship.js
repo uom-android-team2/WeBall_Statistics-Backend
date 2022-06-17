@@ -8,7 +8,7 @@ fetch("http://localhost/WeBall_Statistics-Backend/API/team.php") //fetch("http:/
   })
   .catch((error) => console.log("error", error));
 
-const start = (teams) => {
+const start = async (teams) => {
   if (teams.length % 4 != 0) {
     for (let i = 0; i < teams.length % 4; i++) {
       teams.push("-");
@@ -190,7 +190,7 @@ const start = (teams) => {
     return chunks;
   }
   //Done button clicked
-  document
+  await document
     .getElementById("submit-button")
     .addEventListener("click", async function () {
       //This function handles all actions that need to be done once the done button is clicked by the admin
@@ -371,7 +371,7 @@ const start = (teams) => {
       };
 
       const insertMatches = async () => {
-        FinalListOfMatches.forEach(async (m) => {
+        await FinalListOfMatches.forEach(async (m) => {
           await postToDb(
             m,
             "http://localhost/WeBall_Statistics-Backend/API/match.php" //"http://localhost/backend/API/match.php"
@@ -381,7 +381,7 @@ const start = (teams) => {
       };
 
       await insertMatches();
-      alert(
+      await alert(
         `Congrats! You just manually created a ${numberOfWeeks}-week championship.`
       );
     });
