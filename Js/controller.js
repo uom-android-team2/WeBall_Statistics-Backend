@@ -31,7 +31,9 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
         photo: player.photo,
       };
       //Insert only new players that aren't already in DB
-      if (!isPlayerExistInDB(playerObj.name + playerObj.surname, playersInDBArr)) {
+      if (
+        !isPlayerExistInDB(playerObj.name + playerObj.surname, playersInDBArr)
+      ) {
         playersAdded++;
         await postToDB(playerObj, PATH.PLAYER_API_PATH);
       }
@@ -57,15 +59,19 @@ const controlData = async function (teamsInDBArr, playersInDBArr) {
   if (playersAdded === 0 && teamsAdded === 0) {
     alert("Teams and Players already added in Database!");
   } else {
-    alert(`Successful registration of ${teamsAdded} teams and ${playersAdded} players in the database!`);
+    alert(
+      `Successful registration of ${teamsAdded} teams and ${playersAdded} players in the database!`
+    );
   }
 };
 
 const createTeamStatisticsTable = async (teamsInDBArr) => {
-  const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/team.php");
+  const res = await fetch(
+    "http://localhost/WeBall_Statistics-Backend/API/team.php"
+  );
 
   const teams = await res.json();
-  teams.forEach(async (team) => {
+  await teams.forEach(async (team) => {
     if (!isTeamExistInDB(team.name, teamsInDBArr)) {
       const teamCompletedStats = {
         team_id: team.id,
@@ -93,10 +99,12 @@ const createTeamStatisticsTable = async (teamsInDBArr) => {
 };
 
 const createPlayerStatisticsTable = async (playersInDBArr) => {
-  const res = await fetch("http://localhost/WeBall_Statistics-Backend/API/player.php");
+  const res = await fetch(
+    "http://localhost/WeBall_Statistics-Backend/API/player.php"
+  );
 
   const players = await res.json();
-  players.forEach(async (player) => {
+  await players.forEach(async (player) => {
     if (!isPlayerExistInDB(player.name + player.surname, playersInDBArr)) {
       const playerCompletedStats = {
         player_id: player.id,
