@@ -278,7 +278,7 @@ const start = async (teams, listOfTeams) => {
           await createPlayerStatisticsTable(match.teamlandlord_name, match.id);
         });
       };
-      const insertMatches = async () => {
+      const insertMatches = async (finalMatches) => {
         await finalMatches.forEach(async (m) => {
           await postToDb(
             m,
@@ -287,7 +287,7 @@ const start = async (teams, listOfTeams) => {
         });
         await createStatisticsTable();
       };
-      await insertMatches();
+      await insertMatches(finalMatches);
       setTimeout(() => {
         alert(
           `Congrats! You just randomly created a ${
