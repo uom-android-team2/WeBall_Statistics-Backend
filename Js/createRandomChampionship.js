@@ -94,6 +94,9 @@ const start = async (teams, listOfTeams) => {
 
   while (listOfPossibleMatches.length > 0) {
     let week = Math.floor(Math.random() * 6 + 1);
+    while (visitedCountMap.get(week) === 4) {
+      week = Math.floor(Math.random() * 6 + 1);
+    }
     if (!visited.has(week)) {
       visited.set(week, new Set());
     }
@@ -114,7 +117,7 @@ const start = async (teams, listOfTeams) => {
           visited.get(week).add(listOfPossibleMatches[i].teamguest_id);
           visited.get(week).add(listOfPossibleMatches[i].teamlandlord_id);
           listOfPossibleMatches.slice(i, 1);
-          visitedCountMap.set(week, 0);
+          visitedCountMap.set(week, 4);
           // week++;
           // visited.set(week, new Set());
           break;
