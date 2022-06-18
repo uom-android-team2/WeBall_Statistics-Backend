@@ -381,8 +381,13 @@ const start = async (teams) => {
       };
 
       await insertMatches();
-      await alert(
-        `Congrats! You just manually created a ${numberOfWeeks}-week championship.`
-      );
+      setTimeout(() => {
+        alert(
+          `Congrats! You just randomly created a ${
+            teams.length - 1
+          }-week championship. 
+          Check the app for results!`
+        );
+      }, 6000);
     });
 };
