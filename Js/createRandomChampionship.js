@@ -76,15 +76,15 @@ const start = async (teams, listOfTeams) => {
           }
           if (unique) {
             const match = new FinalMatch(-1, teamLandord.id, teamGuest.id, -1);
+            const match2 = new FinalMatch(-1, teamGuest.id, teamLandord.id, -1);
             visited.set(pair1, true);
             visited.set(pair2, true);
             listOfPossibleMatches.push(match);
+            listOfPossibleMatches.push(match2);
           }
         }
       });
     });
-
-    console.log(listOfPossibleMatches);
 
     function shuffle(array) {
       let currentIndex = array.length,
@@ -103,13 +103,10 @@ const start = async (teams, listOfTeams) => {
       return array;
     }
 
-    console.log(listOfPossibleMatches);
-
     let week = 1;
     visited = new Map();
     visited.set(week, new Set());
     const finalMatches = [];
-    listOfPossibleMatches = listOfPossibleMatches.concat(listOfPossibleMatches).concat(listOfPossibleMatches);
 
     while (finalMatches.length < 28) {
       listOfPossibleMatches = shuffle(listOfPossibleMatches);
@@ -121,9 +118,6 @@ const start = async (teams, listOfTeams) => {
           visited.get(week).add(listOfPossibleMatches[i].teamguest_id);
           finalMatches.push(match);
           listOfPossibleMatches.splice(i, 1);
-
-          console.log("hereeee");
-          console.log(listOfPossibleMatches.length);
           if (visited.get(week).size === 8) {
             week++;
             visited.set(week, new Set());
@@ -132,11 +126,7 @@ const start = async (teams, listOfTeams) => {
         }
       }
     }
-    console.log(
-      finalMatches.sort((a, b) => {
-        return a.date - b.date;
-      })
-    );
+    console.log(finalMatches);
   });
 
   // console.log(finalMatches);
