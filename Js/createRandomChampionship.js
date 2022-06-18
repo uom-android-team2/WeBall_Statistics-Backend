@@ -82,68 +82,68 @@ const start = async (teams, listOfTeams) => {
     });
   });
 
-  first = true;
-  const finalMaches = [];
-  let count = 0;
-  let week = 1;
-  const randomSet = new Set();
+  console.log(listOfPossibleMatches);
+
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
+  console.log(listOfPossibleMatches);
+
+  let = week = 1;
   visited = new Map();
   visited.set(week, new Set());
-  const visitedCountMap = new Map();
-  visitedCountMap.set(week, 0);
+  const finalMatches = [];
 
   while (listOfPossibleMatches.length > 0) {
-    let week = Math.floor(Math.random() * 6 + 1);
-    while (visitedCountMap.get(week) === 4) {
-      week = Math.floor(Math.random() * 6 + 1);
-    }
-    if (!visited.has(week)) {
-      visited.set(week, new Set());
-    }
-    if (!visitedCountMap.has(week)) {
-      visitedCountMap.set(week, 0);
-    }
-    let index = Math.floor(Math.random() * listOfPossibleMatches.length);
-    console.log(week);
-    // if (Math.floor(Math.random() * 3) === Math.floor(Math.random() * 3)) {
-    //   index = 0;
-    // }
+    listOfPossibleMatches = shuffle(listOfPossibleMatches);
+    for (let i = 0; i < listOfPossibleMatches.length; i++) {
+      if (
+        !visited.get(week).has(listOfPossibleMatches[i].teamlandlord_id) &&
+        !visited.get(week).has(listOfPossibleMatches[i].teamguest_id)
+      ) {
+        const match = listOfPossibleMatches[i];
+        match.date = week;
+        visited.get(week).add(listOfPossibleMatches[i].teamlandlord_id);
+        visited.get(week).add(listOfPossibleMatches[i].teamguest_id);
+        finalMatches.push(match);
+        listOfPossibleMatches.splice(i, 1);
 
-    if (visitedCountMap.get(week) === 3) {
-      const setWeekMatchedAdded = visited.get(week);
-      for (let i = 0; i < listOfPossibleMatches.length; i++) {
-        if (!setWeekMatchedAdded.has(listOfPossibleMatches[i].teamlandlord_id) && !setWeekMatchedAdded.has(listOfPossibleMatches[i].teamguest_id)) {
-          finalMaches.push(listOfPossibleMatches[i]);
-          visited.get(week).add(listOfPossibleMatches[i].teamguest_id);
-          visited.get(week).add(listOfPossibleMatches[i].teamlandlord_id);
-          listOfPossibleMatches.slice(i, 1);
-          visitedCountMap.set(week, 4);
-          // week++;
-          // visited.set(week, new Set());
-          break;
+        console.log("hereeee");
+        console.log(listOfPossibleMatches.length);
+        if (visited.get(week).size === 8) {
+          week++;
+          visited.set(week, new Set());
         }
+        break;
       }
     }
-    const match = listOfPossibleMatches[index];
-    let unique = true;
-    if (visited.get(week).has(match.teamlandlord_id) || visited.get(week).has(match.teamguest_id)) {
-      unique = false;
-    }
-    if (unique) {
-      match.date = week;
-      listOfPossibleMatches.splice(index, 1);
-      finalMaches.push(match);
-      visitedCountMap.set(week, visitedCountMap.get(week) + 1);
-      visited.get(week).add(match.teamlandlord_id);
-      visited.get(week).add(match.teamguest_id);
-    }
   }
-  console.log(finalMaches);
+
+  // console.log(finalMatches);
 
   //console.log(championship);
   //   console.log(championship);
   const no_teams_section = document.getElementById("no-teams-section");
-  const not_enough_teams_section = document.getElementById("not-enough-teams-section");
+  const not_enough_teams_section = document.getElementById(
+    "not-enough-teams-section"
+  );
 
   //no teams -> Works
   if (teams.length === 0) {
