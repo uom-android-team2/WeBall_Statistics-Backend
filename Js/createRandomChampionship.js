@@ -155,7 +155,9 @@ const start = async (teams, listOfTeams) => {
       visited = new Map();
       visited.set(week, new Set());
       const finalMatches = [];
-
+      listOfPossibleMatches = listOfPossibleMatches.concat(
+        listOfPossibleMatches
+      );
       while (finalMatches.length < 28) {
         listOfPossibleMatches = shuffle(listOfPossibleMatches);
         for (let i = 0; i < listOfPossibleMatches.length; i++) {
@@ -164,10 +166,17 @@ const start = async (teams, listOfTeams) => {
             !visited.get(week).has(listOfPossibleMatches[i].teamguest_id)
           ) {
             const match = listOfPossibleMatches[i];
-            match.date = week;
+            const newM = {
+              id: -1,
+              teamlandlord_id: listOfPossibleMatches[i].teamlandlord_id,
+              teamguest_id: listOfPossibleMatches[i].teamguest_id,
+              date: week,
+              progress: false,
+              completed: false,
+            };
             visited.get(week).add(listOfPossibleMatches[i].teamlandlord_id);
             visited.get(week).add(listOfPossibleMatches[i].teamguest_id);
-            finalMatches.push(match);
+            finalMatches.push(newM);
             listOfPossibleMatches.splice(i, 1);
             if (visited.get(week).size === 8) {
               week++;
