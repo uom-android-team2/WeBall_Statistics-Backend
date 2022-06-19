@@ -99,8 +99,8 @@ require_once "initialize.php";
                 <div class="thirdfOfColumn">
                     <div class="first-after-third-column"><img src="photos/github.png">
                         <h2>Commits</h2>
-                        <p>As of right now our project consists of _ commits. _ of those for the backend implementation
-                            of the app and _ for the android app implemenation.</p>
+                        <p>As of right now our project organization consists of <span style="font-weight:bold;">800+</span> commits. <span style="font-weight:bold;">170+</span> of those for the backend implementation
+                            of the app and <span style="font-weight:bold;">650+</span> for the android app implemenation.</p>
 
                     </div>
 
