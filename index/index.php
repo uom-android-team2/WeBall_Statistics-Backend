@@ -11,7 +11,7 @@ require_once "initialize.php";
     <title>WeBall Statistics - Admin Website</title>
     <meta name="description" content="Core HTML Project">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="/photos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./photos/favicon.ico">
     <link rel="stylesheet" href="indexStyle.css">
     <script defer src="script.js"></script>
 </head>

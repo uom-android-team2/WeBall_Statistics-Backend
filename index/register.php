@@ -109,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="icon" type="image/x-icon" href="/photos/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./photos/favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="register-login.css">
     <style>
