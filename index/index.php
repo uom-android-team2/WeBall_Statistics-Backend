@@ -9,10 +9,9 @@ require_once "initialize.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WeBall Statistics - Admin Website</title>
-    <link rel="icon" type="image/ico" href="https://lh3.googleusercontent.com/YJkZQ9JYWp6-caFc5c1NDjVtsDypBj3A7Qzkt46sX72ovnFBCQyd0UpTq3WTOaOd9ymJ5A=s85">
     <meta name="description" content="Core HTML Project">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" type="image/x-icon" href="/photos/favicon.ico">
     <link rel="stylesheet" href="indexStyle.css">
     <script defer src="script.js"></script>
 </head>
