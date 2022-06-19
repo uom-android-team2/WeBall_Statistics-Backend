@@ -19,7 +19,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
-    <link rel="icon" type="image/ico" href="https://lh3.googleusercontent.com/YJkZQ9JYWp6-caFc5c1NDjVtsDypBj3A7Qzkt46sX72ovnFBCQyd0UpTq3WTOaOd9ymJ5A=s85">
+    <link rel="icon" type="image/x-icon" href="/photos/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="css/style.css">
