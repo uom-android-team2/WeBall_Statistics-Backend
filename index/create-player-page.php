@@ -82,8 +82,6 @@
           $object = json_decode($res);
           // API URL
 
-          echo $object->id;
-
           $url = "http://localhost/WeBall_Statistics-Backend/API/playerStatisticsCompleted.php";
           // Create a new cURL resource
           $ch = curl_init($url);
