@@ -77,7 +77,11 @@
           $mysqli->query($sql);
           // Move the uploaded image into the folder: image
           $stored = move_uploaded_file($tempname, $folder.$filename);
-          $res = file_get_contents("http://localhost/WeBall_Statistics-Backend/API/player.php?name=$name");
+
+          $temp = str_replace(' ', '%20', $name);
+
+
+          $res = file_get_contents("http://localhost/WeBall_Statistics-Backend/API/player.php?name=$temp");
         
           $object = json_decode($res);
           // API URL

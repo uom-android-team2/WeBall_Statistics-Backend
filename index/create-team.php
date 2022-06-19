@@ -58,7 +58,8 @@
         
           // Now let's move the uploaded image into the folder: image
           if (move_uploaded_file($tempname, $folder.$filename)) {
-            $res = file_get_contents("http://localhost/WeBall_Statistics-Backend/API/team.php?name=$name");
+            $temp = str_replace(' ', '%20', $name);
+            $res = file_get_contents("http://localhost/WeBall_Statistics-Backend/API/team.php?name=$temp");
             $object = json_decode($res);
             $teamStats = new TeamStatisticsCompleted($object->id, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, $mysqli);
 
