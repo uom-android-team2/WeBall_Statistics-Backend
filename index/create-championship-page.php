@@ -40,7 +40,7 @@
             <div id="team-container" ></div>
         </div>
         <div id="button-div">
-        <button id='submit-button' type="submit" >Done</button>
+          <button id='submit-button' type="submit" >Done</button>
         </div>
 
     </body>

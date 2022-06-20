@@ -139,7 +139,8 @@ const start = async (teams, listOfTeams) => {
     visited = new Map();
     visited.set(week, new Set());
     const finalMatches = [];
-    listOfPossibleMatches = listOfPossibleMatches.concat(listOfPossibleMatches);
+    listOfPossibleMatches = listOfPossibleMatches.concat(listOfPossibleMatches).concat(listOfPossibleMatches).concat(listOfPossibleMatches);
+
     while (finalMatches.length < numberOfTotalMatched) {
       listOfPossibleMatches = shuffle(listOfPossibleMatches);
       for (let i = 0; i < listOfPossibleMatches.length; i++) {

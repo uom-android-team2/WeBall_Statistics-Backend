@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0px 5px;
 }
 #container {
@@ -64,7 +64,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-family: arial, sans-serif;
   font-weight: bold;
 }
@@ -91,6 +91,7 @@
   text-decoration: none;
   font-size: 26px;
   font-weight: bold;
+  display: block;
 }
 .hidden {
   display: none;
