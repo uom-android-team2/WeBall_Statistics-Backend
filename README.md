@@ -18,6 +18,10 @@
 <h4>Video presentation of the app on YouTube: <a href="https://www.youtube.com/watch?v=ouzMwkUCQ-s&list=LL&index=12"><b><i>presentation video</i></b><a/></h4>
 <h4>Visit the other repository, with the android mobile application: <a href="https://github.com/uom-android-team2/WeBall_Statistics"><b><i>Android App - Front-End</i></b><a/></h4>
   
+# Navigating the app's back-end UI  
+<img src="screenshots-github/index-page.png" height="450" />
+<h4>This is the home/index page of the back-end admin UI. From there one can see information about the software that was developed, such as team members, course teachers, etc. Through this page, the admin user has the options to Login or create an account by selecting the appropriate link from the nav bar.</h4>
+  
 # Prerequisites
 <ul>
   <li>Android Studio</li>
