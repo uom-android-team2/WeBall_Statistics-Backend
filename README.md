@@ -15,8 +15,8 @@
   <li><b><i>Stefou George-John</i></b></li>
 </ul>
 
-<h4>Video presentation of the app on YouTube: <a href="https://www.youtube.com/watch?v=ouzMwkUCQ-s&list=LL&index=12"><b><i>presentation video</i></b><a/></h4>
-<h4>Visit the other repo, with the android mobile application: <a href="https://github.com/uom-android-team2/WeBall_Statistics"><b><i>Android App - Front-End</i></b><a/></h4>
+<h4>Video presentation of the app on YouTube: <a href="https://www.youtube.com/watch?v=ouzMwkUCQ-s&list=LL&index=12" target="_blank"><b><i>presentation video</i></b><a/></h4>
+<h4>Visit the other repo, with the android mobile application: <a href="https://github.com/uom-android-team2/WeBall_Statistics" target="_blank"><b><i>Android App - Front-End</i></b><a/></h4>
   
 # Prerequisites
 <ul>
