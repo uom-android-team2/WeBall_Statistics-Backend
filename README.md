@@ -27,7 +27,7 @@
   <img src="screenshots-github/admin-login-page.png" width="400" />
   <img src="screenshots-github/admin-register-page.png" width="400" />
 </div>
-<h4>Through the left screen, the admin can login to their account. If he does not have an account, he can create one through the form shown on the right screen.</h4>
+<h4>Through the first screen, the admin can login to their account. If he does not have an account, he can create one through the form shown on the second screen.</h4>
 <hr width="70%">
 <br>
 <img src="screenshots-github/admin-panel-page.png" width="950" />
